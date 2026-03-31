@@ -1,0 +1,19 @@
+# Keep repository text files normalized for Ubuntu/Linux.
+* text=auto eol=lf
+
+# Preserve native line endings for Windows script files when present.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Mark common binary assets so Git never attempts line-ending conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.pdf binary
