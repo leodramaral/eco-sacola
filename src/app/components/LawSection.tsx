@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShieldAlert, Eye, Brain, Lightbulb, TrendingDown } from 'lucide-react';
+import { RefCitation } from './RefCitation';
 
 const reasons = [
   {
@@ -136,6 +137,7 @@ export function LawSection() {
                 Manaus tentou implementar medidas para reduzir e posteriormente proibir o uso de
                 sacolas plásticas em estabelecimentos comerciais, seguindo tendências nacionais. No
                 entanto, a iniciativa não teve o resultado esperado.
+                <RefCitation ids={[8, 9]} />
               </p>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
@@ -296,6 +298,12 @@ export function LawSection() {
             </div>
           ))}
         </motion.div>
+        <div className="mt-3 text-right">
+          <RefCitation ids={[10]} />
+          <span className="text-white/30 text-xs ml-1" style={{ fontFamily: 'var(--font-body)' }}>
+            Dados: SEMMAS, 2022
+          </span>
+        </div>
       </div>
     </section>
   );

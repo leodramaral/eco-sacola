@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { RefCitation } from './RefCitation';
 
 const RECYCLING_IMAGE = 'https://images.unsplash.com/flagged/photo-1574380555089-06f915e8c074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
@@ -18,6 +19,7 @@ const initiatives = [
     details: ['40+ bairros atendidos', 'Coleta quinzenal', 'Pontos verdes estratégicos'],
     status: 'Ativo',
     statusColor: '#4ADE80',
+    refIds: [20],
   },
   {
     id: 1,
@@ -32,6 +34,7 @@ const initiatives = [
     details: ['500+ cooperativados em Manaus', 'Renda média de R$ 1.200/mês', 'Coleta porta-a-porta'],
     status: 'Ativo',
     statusColor: '#22D3EE',
+    refIds: [21],
   },
   {
     id: 2,
@@ -46,6 +49,7 @@ const initiatives = [
     details: ['15 pontos ativos', 'Inclui eletrônicos', 'Parceria com setor privado'],
     status: 'Em expansão',
     statusColor: '#A78BFA',
+    refIds: [22],
   },
   {
     id: 3,
@@ -60,6 +64,7 @@ const initiatives = [
     details: ['Mensal — última semana', '200+ voluntários por ação', 'Mais de 50 toneladas recolhidas/ano'],
     status: 'Ativo',
     statusColor: '#60A5FA',
+    refIds: [23],
   },
   {
     id: 4,
@@ -74,6 +79,7 @@ const initiatives = [
     details: ['3 igarapés recuperados', '1.200 alunos impactados', 'Monitoramento trimestral'],
     status: 'Em andamento',
     statusColor: '#34D399',
+    refIds: [23],
   },
   {
     id: 5,
@@ -88,6 +94,7 @@ const initiatives = [
     details: ['120 escolas participantes', '50.000 alunos alcançados', 'Material didático gratuito'],
     status: 'Ativo',
     statusColor: '#FBBF24',
+    refIds: [20],
   },
 ];
 
@@ -233,6 +240,7 @@ export function InitiativesSection() {
                       style={{ fontFamily: 'var(--font-body)' }}
                     >
                       {item.description}
+                      <RefCitation ids={item.refIds} />
                     </p>
                     <div className="space-y-1.5">
                       {item.details.map((d, j) => (

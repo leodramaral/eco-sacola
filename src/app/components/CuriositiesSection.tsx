@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { RefCitation } from './RefCitation';
 
 const curiosities = [
   {
@@ -9,6 +10,7 @@ const curiosities = [
     answer: 'Entre 100 e 400 anos! Nesse período, ela se fragmenta em microplásticos que contaminam solo, água e seres vivos.',
     color: '#EF4444',
     bg: 'linear-gradient(135deg, #1A0505, #2D0A0A)',
+    refIds: [5],
   },
   {
     id: 1,
@@ -17,6 +19,7 @@ const curiosities = [
     answer: 'Apenas 25 minutos! Uma sacola usada por menos de meia hora pode contaminar o meio ambiente por séculos.',
     color: '#F97316',
     bg: 'linear-gradient(135deg, #1A0D00, #2D1500)',
+    refIds: [5],
   },
   {
     id: 2,
@@ -25,6 +28,7 @@ const curiosities = [
     answer: 'Apenas 2%! O Brasil é o 4º maior gerador de lixo plástico do mundo, mas recicla uma fração mínima.',
     color: '#FBBF24',
     bg: 'linear-gradient(135deg, #1A1400, #2D2000)',
+    refIds: [6, 19],
   },
   {
     id: 3,
@@ -33,6 +37,7 @@ const curiosities = [
     answer: 'Mais de 8 milhões de toneladas por ano. O equivalente a despejar um caminhão de lixo por minuto nos oceanos.',
     color: '#22D3EE',
     bg: 'linear-gradient(135deg, #001A20, #002D35)',
+    refIds: [18],
   },
   {
     id: 4,
@@ -41,6 +46,7 @@ const curiosities = [
     answer: 'Uma ecobag de algodão pode substituir até 500 sacolas plásticas ao longo de sua vida útil de 3 a 5 anos.',
     color: '#4ADE80',
     bg: 'linear-gradient(135deg, #021A08, #042D10)',
+    refIds: [5],
   },
   {
     id: 5,
@@ -49,6 +55,7 @@ const curiosities = [
     answer: 'Sim! Estudos confirmaram que peixes do Amazonas já apresentam microplásticos em seus organismos — e chegam à nossa mesa.',
     color: '#60A5FA',
     bg: 'linear-gradient(135deg, #021020, #041830)',
+    refIds: [16],
   },
   {
     id: 6,
@@ -57,6 +64,7 @@ const curiosities = [
     answer: 'Mais de 5 trilhões de sacolas plásticas são produzidas anualmente no mundo — 160.000 por segundo!',
     color: '#A78BFA',
     bg: 'linear-gradient(135deg, #0D0520, #180A35)',
+    refIds: [17],
   },
   {
     id: 7,
@@ -65,6 +73,7 @@ const curiosities = [
     answer: 'Sim! Estudos mostram que os humanos ingerem cerca de 5g de plástico por semana — o equivalente a um cartão de crédito!',
     color: '#F472B6',
     bg: 'linear-gradient(135deg, #200510, #35091A)',
+    refIds: [15],
   },
 ];
 
@@ -128,6 +137,7 @@ function FlipCard({ item }: { item: typeof curiosities[0] }) {
             style={{ fontFamily: 'var(--font-body)', color: item.color }}
           >
             {item.answer}
+            <RefCitation ids={item.refIds} />
           </p>
           <span className="mt-3 text-xs text-white/30" style={{ fontFamily: 'var(--font-body)' }}>
             Toque para voltar ↺

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { RefCitation } from './RefCitation';
 
 const SP_IMAGE = 'https://images.unsplash.com/photo-1662122849254-ee3cb9f6bfa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 const CITY_IMAGE = 'https://images.unsplash.com/photo-1725287959957-809232e71674?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
@@ -30,6 +31,7 @@ const cases = [
       ecobagLabel: 'ecobags distribuídas',
     },
     keys: ['Multas efetivas para descumpridores', 'Campanhas massivas de comunicação', 'Distribuição gratuita de ecobags', 'Engajamento da sociedade civil'],
+    refIds: [11, 12],
   },
   {
     city: 'Rio de Janeiro',
@@ -54,6 +56,7 @@ const cases = [
       ecobagLabel: 'ecobags em uso',
     },
     keys: ['Parcerias com supermercados', 'Programas nas escolas', 'Pontos de troca de plástico', 'Campanha "Rio sem Plástico"'],
+    refIds: [13, 14],
   },
 ];
 
@@ -155,6 +158,7 @@ export function SuccessCasesSection() {
                   style={{ fontFamily: 'var(--font-body)' }}
                 >
                   {c.description}
+                  <RefCitation ids={c.refIds} />
                 </p>
               </div>
             </div>

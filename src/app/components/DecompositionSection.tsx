@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { RefCitation } from './RefCitation';
 
 const items = [
   {
@@ -16,6 +17,7 @@ const items = [
     context:
       'Uma sacola plástica dura centenas de anos no meio ambiente, liberando microplásticos durante todo esse período. Em Manaus, milhares são descartadas nos igarapés diariamente.',
     fact: 'Uma sacola pode matar animais marinhos mesmo 400 anos após ser descartada.',
+    refIds: [5],
   },
   {
     id: 1,
@@ -31,6 +33,7 @@ const items = [
     context:
       'Uma garrafa PET demora mais de 4 séculos para se decompor. O Rio Negro já apresenta contaminação por fragmentos de PET em análises recentes.',
     fact: 'Apenas 1,28% das garrafas PET no Brasil são efetivamente recicladas.',
+    refIds: [5, 7],
   },
   {
     id: 2,
@@ -46,6 +49,7 @@ const items = [
     context:
       'Copos descartáveis de plástico não são aceitos nos programas de reciclagem. A maioria vai para aterros ou rios. Em Manaus, são muito usados em mercados e feiras.',
     fact: 'O Brasil usa 40 bilhões de copos descartáveis por ano.',
+    refIds: [6],
   },
 ];
 
@@ -239,6 +243,7 @@ export function DecompositionSection() {
                   style={{ fontFamily: 'var(--font-body)', color: activeItem.color }}
                 >
                   {activeItem.fact}
+                  <RefCitation ids={activeItem.refIds} />
                 </p>
               </div>
             </div>

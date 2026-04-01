@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { RefCitation } from './RefCitation';
 
 const POLLUTION_IMAGE = 'https://images.unsplash.com/photo-1759868411143-aec66f57d370?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 const TURTLE_IMAGE = 'https://images.unsplash.com/photo-1638644344507-be07bf38377a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
@@ -16,6 +17,7 @@ const impacts = [
       'Sacolas plásticas bloqueiam igarapés de Manaus, causando enchentes e contaminando o Rio Negro com microplásticos que entram na cadeia alimentar.',
     stat: '70%',
     statLabel: 'dos igarapés urbanos contaminados',
+    refIds: [1, 4],
     image: POLLUTION_IMAGE,
   },
   {
@@ -28,6 +30,7 @@ const impacts = [
       'Animais confundem plásticos com alimento. Peixes do Rio Negro já apresentam fragmentos de plástico em seu estômago.',
     stat: '100K+',
     statLabel: 'animais mortos por plástico/ano',
+    refIds: [3],
     image: TURTLE_IMAGE,
   },
   {
@@ -40,6 +43,7 @@ const impacts = [
       'Manaus gera toneladas de sacolas plásticas por dia. Apenas uma fração é descartada corretamente, o restante vai para rios ou lixões.',
     stat: '1.800t',
     statLabel: 'de lixo gerado por dia em Manaus',
+    refIds: [2, 4],
     image: null,
   },
   {
@@ -52,6 +56,7 @@ const impacts = [
       'Microplásticos já foram encontrados em peixes do Amazonas, na água potável e até no ar de Manaus. São invisíveis e impossíveis de remover.',
     stat: '5mm',
     statLabel: 'tamanho máximo de microplástico',
+    refIds: [1, 16],
     image: null,
   },
 ];
@@ -202,6 +207,7 @@ export function ImpactsSection() {
                     style={{ fontFamily: 'var(--font-body)' }}
                   >
                     {impact.description}
+                    <RefCitation ids={impact.refIds} />
                   </p>
                 </motion.div>
 
