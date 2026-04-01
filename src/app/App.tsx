@@ -9,6 +9,7 @@ import { AlternativesSection } from './components/AlternativesSection';
 import { InitiativesSection } from './components/InitiativesSection';
 import { CuriositiesSection } from './components/CuriositiesSection';
 import { FinalCTASection } from './components/FinalCTASection';
+import { ReferencesSection } from './components/ReferencesSection';
 
 const TOTAL_SECTIONS = 9;
 
@@ -58,6 +59,13 @@ export default function App() {
     }
   }, []);
 
+  const navigateToReferences = useCallback(() => {
+    const el = document.getElementById('section-references');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
+
   return (
     <div
       className="relative"
@@ -78,7 +86,8 @@ export default function App() {
       <AlternativesSection />
       <InitiativesSection />
       <CuriositiesSection />
-      <FinalCTASection onRestart={() => navigateTo(0)} />
+      <FinalCTASection onRestart={() => navigateTo(0)} onReferences={navigateToReferences} />
+      <ReferencesSection onBackToTop={() => navigateTo(0)} />
     </div>
   );
 }

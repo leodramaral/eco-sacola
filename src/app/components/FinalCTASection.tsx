@@ -16,9 +16,10 @@ const commitments = [
 
 interface FinalCTASectionProps {
   onRestart: () => void;
+  onReferences: () => void;
 }
 
-export function FinalCTASection({ onRestart }: FinalCTASectionProps) {
+export function FinalCTASection({ onRestart, onReferences }: FinalCTASectionProps) {
   const [checked, setChecked] = useState<number[]>([]);
   const [shared, setShared] = useState(false);
 
@@ -310,6 +311,15 @@ export function FinalCTASection({ onRestart }: FinalCTASectionProps) {
           >
             Feita com 💚 para proteger o Amazonas
           </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={onReferences}
+            className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/15 text-white/40 hover:text-white/70 hover:border-white/30 transition-all cursor-pointer text-xs"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            📚 Ver referências e fontes
+          </motion.button>
         </motion.div>
       </div>
     </section>
