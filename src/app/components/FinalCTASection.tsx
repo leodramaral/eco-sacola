@@ -302,7 +302,7 @@ export function FinalCTASection({ onRestart }: FinalCTASectionProps) {
             className="text-white/30 text-sm"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            EcoSacola Manaus — Cartilha Digital Educativa · 2025
+            EcoSacola Manaus — Cartilha Digital Educativa · 2026
           </p>
           <p
             className="text-white/20 text-xs mt-1"
