@@ -7,14 +7,8 @@ interface RefCitationProps {
 export function RefCitation({ ids }: RefCitationProps) {
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    // Scroll to references section
-    const el = document.getElementById('section-references');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    // Dispatch highlight event
     document.dispatchEvent(
-      new CustomEvent('ecosacola-highlight-ref', { detail: { refIds: ids } })
+      new CustomEvent('ecosacola-open-ref', { detail: { refIds: ids } })
     );
   };
 
@@ -22,7 +16,7 @@ export function RefCitation({ ids }: RefCitationProps) {
     <sup>
       <button
         onClick={handleClick}
-        title={`Ver referência${ids.length > 1 ? 's' : ''} [${ids.join(', ')}]`}
+        title={`Abrir referência${ids.length > 1 ? 's' : ''} [${ids.join(', ')}]`}
         style={{
           display: 'inline-flex',
           alignItems: 'center',

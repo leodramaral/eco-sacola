@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Share2, CheckCircle } from 'lucide-react';
+import { Share2, CheckCircle, Download, Files } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 // @ts-ignore
 import confetti from 'canvas-confetti';
@@ -17,9 +17,14 @@ const commitments = [
 interface FinalCTASectionProps {
   onRestart: () => void;
   onReferences: () => void;
+  onDownloadPdf: () => void;
 }
 
-export function FinalCTASection({ onRestart, onReferences }: FinalCTASectionProps) {
+export function FinalCTASection({
+  onRestart,
+  onReferences,
+  onDownloadPdf,
+}: FinalCTASectionProps) {
   const [checked, setChecked] = useState<number[]>([]);
   const [shared, setShared] = useState(false);
 
@@ -311,15 +316,29 @@ export function FinalCTASection({ onRestart, onReferences }: FinalCTASectionProp
           >
             Feita com 💚 para proteger o Amazonas
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={onReferences}
-            className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/15 text-white/40 hover:text-white/70 hover:border-white/30 transition-all cursor-pointer text-xs"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            📚 Ver referências e fontes
-          </motion.button>
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={onReferences}
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs text-white/40 transition-all hover:border-white/30 hover:text-white/70 cursor-pointer"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              <Files className="h-3.5 w-3.5" />
+              Ver referências e fontes
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={onDownloadPdf}
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/8 px-4 py-2 text-xs text-emerald-300 transition-all hover:border-emerald-500/35 hover:bg-emerald-500/12 cursor-pointer"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              <Download className="h-3.5 w-3.5" />
+              Baixar referências em PDF
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </section>
