@@ -21,7 +21,7 @@ export interface ReferenceGroup {
 
 export const referenceGroups: ReferenceGroup[] = [
   {
-    section: 'Impactos do Plástico',
+    section: 'Impactos em Manaus e na Amazônia',
     emoji: '🌊',
     color: '#22D3EE',
     borderColor: 'rgba(34,211,238,0.25)',
@@ -38,16 +38,6 @@ export const referenceGroups: ReferenceGroup[] = [
           'Reportagem sobre a presença de microplásticos em rios e igarapés de Manaus, com dados e entrevistas sobre contaminação, saneamento e impactos ambientais na região.',
       },
       {
-        id: 2,
-        title: 'Panorama dos Resíduos Sólidos no Brasil 2025',
-        author: 'ABREMA — Associação Brasileira de Resíduos e Meio Ambiente',
-        year: '2025',
-        url: 'https://static.poder360.com.br/2025/12/panorama-2025.pdf',
-        type: 'relatorio',
-        description:
-          'Fonte nacional de referência sobre geração, coleta e destinação de resíduos sólidos no Brasil.',
-      },
-      {
         id: 3,
         title: 'Estudo aponta extensa e preocupante contaminação por plásticos na Amazônia',
         author: 'MCTI — Ministério da Ciência, Tecnologia e Inovação',
@@ -56,6 +46,26 @@ export const referenceGroups: ReferenceGroup[] = [
         type: 'institucional',
         description:
           'Notícia institucional sobre estudo que relata contaminação extensa por plásticos na Amazônia, destacando a gravidade do problema ambiental na região.',
+      },
+      {
+        id: 29,
+        title: 'Ingestão de microplásticos por espécies de peixes amazônicas com diferentes hábitos alimentares',
+        author: 'Maria Tereza Vasconcelos-Souza et al. / INPA',
+        year: '2022',
+        url: 'https://repositorio.inpa.gov.br/entities/publication/f7ba8da8-f89a-4c3b-a6dc-7080ae95c34a',
+        type: 'estudo',
+        description:
+          'Estudo vinculado ao INPA sobre a presença de microplásticos no trato gastrointestinal de peixes amazônicos de água doce, útil para contextualizar os impactos da poluição plástica sobre a fauna aquática da Amazônia.',
+      },
+      {
+        id: 30,
+        title: 'Com apoio do Governo do Amazonas, pesquisa registra a presença de plástico no trato gastrointestinal de peixes',
+        author: 'FAPEAM — Fundação de Amparo à Pesquisa do Estado do Amazonas',
+        year: '2023',
+        url: 'https://www.fapeam.am.gov.br/com-apoio-do-governo-do-amazonas-pesquisa-registra-a-presenca-de-plastico-no-trato-gastrointestinal-de-peixes/',
+        type: 'institucional',
+        description:
+          'Notícia institucional sobre pesquisa apoiada pela Fapeam que registrou plástico no trato gastrointestinal de peixes comercializados em Tefe, reforçando o recorte amazônico sobre contaminação por microplásticos em espécies consumidas pela população.',
       },
     ],
   },
@@ -99,7 +109,7 @@ export const referenceGroups: ReferenceGroup[] = [
     ],
   },
   {
-    section: 'Lei de Manaus',
+    section: 'Lei das Sacolas em Manaus e no Amazonas',
     emoji: '⚖️',
     color: '#F97316',
     borderColor: 'rgba(249,115,22,0.25)',
@@ -258,8 +268,8 @@ export const referenceGroups: ReferenceGroup[] = [
     ],
   },
   {
-    section: 'Curiosidades e Dados Globais',
-    emoji: '💡',
+    section: 'Microplásticos, Saúde e Exposição Humana',
+    emoji: '🔬',
     color: '#A78BFA',
     borderColor: 'rgba(167,139,250,0.25)',
     bgColor: 'rgba(167,139,250,0.06)',
@@ -284,25 +294,24 @@ export const referenceGroups: ReferenceGroup[] = [
         description:
           'Relatório técnico do PNUMA sobre substâncias químicas presentes nos plásticos, importante para contextualizar riscos ambientais e à saúde e fortalecer a discussão sobre os impactos da poluição plástica.',
       },
+    ],
+  },
+  {
+    section: 'Resíduos, Reciclagem e Economia Circular',
+    emoji: '♻️',
+    color: '#84CC16',
+    borderColor: 'rgba(132,204,22,0.25)',
+    bgColor: 'rgba(132,204,22,0.06)',
+    refs: [
       {
-        id: 29,
-        title: 'Ingestão de microplásticos por espécies de peixes amazônicas com diferentes hábitos alimentares',
-        author: 'Maria Tereza Vasconcelos-Souza et al. / INPA',
-        year: '2022',
-        url: 'https://repositorio.inpa.gov.br/entities/publication/f7ba8da8-f89a-4c3b-a6dc-7080ae95c34a',
-        type: 'estudo',
+        id: 2,
+        title: 'Panorama dos Resíduos Sólidos no Brasil 2025',
+        author: 'ABREMA — Associação Brasileira de Resíduos e Meio Ambiente',
+        year: '2025',
+        url: 'https://static.poder360.com.br/2025/12/panorama-2025.pdf',
+        type: 'relatorio',
         description:
-          'Estudo vinculado ao INPA sobre a presença de microplásticos no trato gastrointestinal de peixes amazônicos de água doce, útil para contextualizar os impactos da poluição plástica sobre a fauna aquática da Amazônia.',
-      },
-      {
-        id: 30,
-        title: 'Com apoio do Governo do Amazonas, pesquisa registra a presença de plástico no trato gastrointestinal de peixes',
-        author: 'FAPEAM — Fundação de Amparo à Pesquisa do Estado do Amazonas',
-        year: '2023',
-        url: 'https://www.fapeam.am.gov.br/com-apoio-do-governo-do-amazonas-pesquisa-registra-a-presenca-de-plastico-no-trato-gastrointestinal-de-peixes/',
-        type: 'institucional',
-        description:
-          'Notícia institucional sobre pesquisa apoiada pela Fapeam que registrou plástico no trato gastrointestinal de peixes comercializados em Tefe, reforçando o recorte amazônico sobre contaminação por microplásticos em espécies consumidas pela população.',
+          'Fonte nacional de referência sobre geração, coleta e destinação de resíduos sólidos no Brasil.',
       },
       {
         id: 31,
@@ -327,7 +336,7 @@ export const referenceGroups: ReferenceGroup[] = [
     ],
   },
   {
-    section: 'Iniciativas em Manaus',
+    section: 'Iniciativas e Soluções em Manaus',
     emoji: '📍',
     color: '#34D399',
     borderColor: 'rgba(52,211,153,0.25)',
