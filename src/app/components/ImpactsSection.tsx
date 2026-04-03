@@ -14,10 +14,10 @@ const impacts = [
     accent: '#22D3EE',
     tag: 'Rio Negro · Igarapés Urbanos',
     description:
-      'Em Manaus, plásticos e microplásticos já aparecem em rios e igarapés, agravando a poluição da água e revelando falhas no descarte e no saneamento.',
+      'Em Manaus, plásticos e microplásticos já aparecem em rios e igarapés, agravando a poluição da água e revelando falhas no descarte e no saneamento. Estudos no Amazonas também já relataram esses fragmentos em peixes de água doce, mostrando que a contaminação alcança a cadeia alimentar regional.',
     stat: 'Alerta',
     statLabel: 'para drenagem urbana e qualidade da água',
-    refIds: [1],
+    refIds: [1, 28],
     image: POLLUTION_IMAGE,
   },
   {
@@ -53,10 +53,10 @@ const impacts = [
     accent: '#A78BFA',
     tag: 'Invisíveis · Tóxicos · Permanentes',
     description:
-      'Microplásticos já foram relatados em rios amazônicos e em peixes no Amazonas, sinal de uma contaminação difusa e difícil de reverter.',
+      'Microplásticos já foram relatados em rios amazônicos e em peixes no Amazonas, sinal de uma contaminação difusa e difícil de reverter. Eles também podem chegar às pessoas pela água, pelo ar e pelos alimentos, mantendo o problema ativo mesmo quando o resíduo deixa de ser visível.',
     stat: '<5mm',
     statLabel: 'fragmentos classificados como microplásticos',
-    refIds: [1, 3],
+    refIds: [1, 3, 27],
     image: null,
   },
 ];
@@ -215,62 +215,6 @@ export function ImpactsSection() {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="rounded-2xl border p-5"
-            style={{
-              background: 'rgba(96,165,250,0.08)',
-              borderColor: 'rgba(96,165,250,0.2)',
-            }}
-          >
-            <span
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-blue-300 mb-3"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              <span>🐟</span> Destaque local
-            </span>
-            <p
-              className="text-sm sm:text-base text-white/80 leading-relaxed"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              Estudos ja relataram microplasticos em peixes de agua doce do Amazonas, mostrando que
-              a contaminacao nao fica longe: ela entra na cadeia alimentar regional.
-              <RefCitation ids={[28]} />
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="rounded-2xl border p-5"
-            style={{
-              background: 'rgba(244,114,182,0.08)',
-              borderColor: 'rgba(244,114,182,0.2)',
-            }}
-          >
-            <span
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-pink-300 mb-3"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              <span>💧</span> Impacto invisivel
-            </span>
-            <p
-              className="text-sm sm:text-base text-white/80 leading-relaxed"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              Microplasticos podem chegar as pessoas pela agua, pelo ar e pelos alimentos, o que
-              reforca que esse problema continua mesmo quando o residuo deixa de ser visivel.
-              <RefCitation ids={[27]} />
-            </p>
-          </motion.div>
         </div>
       </div>
     </section>
