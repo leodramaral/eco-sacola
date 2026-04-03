@@ -8,93 +8,98 @@ const RECYCLING_IMAGE = 'https://images.unsplash.com/flagged/photo-1574380555089
 const initiatives = [
   {
     id: 0,
-    emoji: '🗑️',
-    title: 'Coleta Seletiva',
-    zone: 'Todo Manaus',
+    emoji: '🚛',
+    title: 'Coleta Seletiva Porta a Porta',
+    zone: 'Dom Pedro · Flores · bairros programados',
     color: '#4ADE80',
     bg: 'rgba(74,222,128,0.08)',
     border: 'rgba(74,222,128,0.2)',
     description:
-      'A coleta seletiva em Manaus organiza o encaminhamento de recicláveis e ajuda a aproximar parte da população de rotinas de descarte mais responsáveis.',
-    details: ['Integra descarte e triagem de recicláveis', 'Apoia a destinação correta', 'Depende de adesão contínua da população'],
-    status: 'Ativo',
+      'Lançado pela Semulsp em abril de 2024, o serviço recolhe recicláveis semanalmente nas residências e encaminha o material para associações de catadores.',
+    details: [
+      'Começou pelos bairros Dom Pedro e Flores',
+      'Atende residências avisadas previamente por educadores ambientais',
+      'Funciona como complemento aos PEVs já espalhados pela cidade',
+    ],
+    status: 'Semanal',
     statusColor: '#4ADE80',
     refIds: [32],
   },
   {
     id: 1,
-    emoji: '🤝',
-    title: 'Cooperativas de Reciclagem',
-    zone: 'Jorge Teixeira · Compensa · Cidade Nova',
+    emoji: '📍',
+    title: 'Pontos de Entrega Voluntária (PEVs)',
+    zone: 'Supermercados · sedes públicas · várias zonas',
     color: '#22D3EE',
     bg: 'rgba(34,211,238,0.08)',
     border: 'rgba(34,211,238,0.2)',
     description:
-      'Cooperativas de reciclagem fortalecem a economia circular, valorizam o trabalho dos catadores e evitam que parte dos resíduos siga para descarte inadequado.',
-    details: ['Fortalecem a cadeia da reciclagem', 'Geram renda a partir dos recicláveis', 'Ajudam a retirar materiais do fluxo de descarte comum'],
-    status: 'Ativo',
+      'A rede de PEVs da Semulsp oferece pontos fixos para descarte voluntário de recicláveis, inclusive embalagens plásticas limpas, aproximando a coleta da rotina urbana.',
+    details: [
+      'A listagem pública reúne dezenas de endereços em Manaus',
+      'Há pontos em supermercados e em equipamentos públicos',
+      'Recebem plástico, papel, vidro e metais; rejeitos ficam de fora',
+    ],
+    status: 'Rede ativa',
     statusColor: '#22D3EE',
     refIds: [33],
   },
   {
     id: 2,
-    emoji: '📍',
-    title: 'EcoPoints Manaus',
-    zone: 'Shoppings · Mercados',
+    emoji: '♻️',
+    title: 'ASCARMAN + InnPacto Amazônia',
+    zone: 'Colônia Terra Nova · 6 bairros',
     color: '#A78BFA',
     bg: 'rgba(167,139,250,0.08)',
     border: 'rgba(167,139,250,0.2)',
     description:
-      'Pontos de entrega voluntária facilitam o descarte correto em locais de circulação intensa e ajudam a incorporar a reciclagem à rotina urbana.',
-    details: ['Aproximam a coleta do cotidiano', 'Dependem de sinalização clara', 'Podem ampliar o engajamento do setor privado'],
-    status: 'Em expansão',
+      'O laboratório reinaugurado em 2025 fortalece a ASCARMAN com infraestrutura, educação ambiental e renda complementar para ampliar a reciclagem de plástico em Manaus.',
+    details: [
+      'O projeto beneficia diretamente 32 pessoas',
+      'A ASCARMAN recolhe mais de 60 toneladas por mês',
+      'Há foco no reaproveitamento de poliestireno pós-consumo',
+    ],
+    status: '2025',
     statusColor: '#A78BFA',
     refIds: [34],
   },
   {
     id: 3,
-    emoji: '🌊',
-    title: 'Mutirão Rio Negro',
-    zone: 'Orla de Manaus',
+    emoji: '🧵',
+    title: 'ARPA + EcoForte',
+    zone: 'Manaus · cadeia local de reciclagem',
     color: '#60A5FA',
     bg: 'rgba(96,165,250,0.08)',
     border: 'rgba(96,165,250,0.2)',
     description:
-      'Ações coletivas de limpeza e mobilização ajudam a dar visibilidade ao problema do plástico e reforçam a responsabilidade compartilhada sobre rios e margens urbanas.',
-    details: ['Mobilizam voluntariado e instituições', 'Dão visibilidade ao descarte irregular', 'Podem gerar educação ambiental prática'],
-    status: 'Ativo',
+      'A ARPA transforma sacolas e outros filmes plásticos em novos sacos para lixo, depois comercializados em Manaus pela EcoForte, mantendo o material em circulação.',
+    details: [
+      'A ARPA recicla cerca de 180 toneladas de resíduos por mês',
+      'Parte das sacolas vira sacos resistentes para lixo',
+      'O produto final volta ao mercado local com matéria-prima reciclada',
+    ],
+    status: 'Em operação',
     statusColor: '#60A5FA',
-    refIds: [35],
+    refIds: [35, 36],
   },
   {
     id: 4,
-    emoji: '🌱',
-    title: 'Projeto Igarapé Limpo',
-    zone: 'Educandos · Tarumã · Cachoeirinha',
-    color: '#34D399',
-    bg: 'rgba(52,211,153,0.08)',
-    border: 'rgba(52,211,153,0.2)',
-    description:
-      'Projetos voltados aos igarapés urbanos combinam recuperação ambiental, sensibilização comunitária e atenção a áreas pressionadas pelo descarte de resíduos.',
-    details: ['Relacionam limpeza e educação ambiental', 'Fortalecem o olhar sobre os igarapés', 'Apoiam ações urbanas de preservação'],
-    status: 'Em andamento',
-    statusColor: '#34D399',
-    refIds: [35],
-  },
-  {
-    id: 5,
-    emoji: '🎓',
-    title: 'Educação Ambiental nas Escolas',
-    zone: 'Rede Municipal de Ensino',
+    emoji: '💰',
+    title: 'Plastic Bank + Lord + ASCARMAN',
+    zone: 'Terra Nova · operação iniciada em maio de 2025',
     color: '#FBBF24',
     bg: 'rgba(251,191,36,0.08)',
     border: 'rgba(251,191,36,0.2)',
     description:
-      'A educação ambiental nas escolas ajuda a transformar hábitos de consumo e descarte desde cedo, conectando a pauta do plástico à preservação da Amazônia.',
-    details: ['Amplia a consciência ambiental', 'Pode fortalecer hábitos de reutilização', 'Conecta escola, bairro e cidade'],
-    status: 'Ativo',
+      'A parceria paga bônus por quilo de plástico entregue para reciclagem e busca evitar que garrafas PET cheguem aos rios e igarapés da Amazônia.',
+    details: [
+      'A meta é impedir 3 milhões de garrafas até o fim de 2025',
+      'O bônus pode elevar a renda dos catadores em até 30%',
+      'A operação usa rastreabilidade em blockchain',
+    ],
+    status: 'Novo',
     statusColor: '#FBBF24',
-    refIds: [32],
+    refIds: [37, 38],
   },
 ];
 
@@ -137,7 +142,8 @@ export function InitiativesSection() {
             className="text-white/60 max-w-xl mx-auto"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Iniciativas reais que estão transformando a relação de Manaus com o plástico.
+            Da coleta na porta de casa ao retorno do plástico para a indústria, Manaus já tem uma
+            rede real de iniciativas em funcionamento.
           </p>
         </motion.div>
 
@@ -160,13 +166,14 @@ export function InitiativesSection() {
               className="text-white text-2xl mb-1"
               style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
             >
-              Juntos por Manaus
+              Coleta, triagem e retorno
             </h3>
             <p
               className="text-white/70 text-sm max-w-sm"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              Cada iniciativa é um passo em direção a uma cidade mais limpa e sustentável.
+              As iniciativas locais conectam moradores, catadores, PEVs e empresas para tirar
+              plástico do descarte comum.
             </p>
           </div>
         </motion.div>
@@ -264,7 +271,7 @@ export function InitiativesSection() {
           ))}
         </div>
 
-        {/* Map placeholder */}
+        {/* Network overview */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -275,7 +282,7 @@ export function InitiativesSection() {
         >
           <div className="p-4 border-b border-white/10 flex items-center gap-2">
             <span className="text-sm text-white/70" style={{ fontFamily: 'var(--font-body)' }}>
-              🗺️ Mapa de Iniciativas — Manaus, AM
+              🔗 Rede das iniciativas — Manaus, AM
             </span>
           </div>
           <div
@@ -289,7 +296,7 @@ export function InitiativesSection() {
               `,
             }}
           >
-            {/* Fake map dots */}
+            {/* Illustrative network dots */}
             {initiatives.map((item, i) => {
               const positions = [
                 { top: '35%', left: '30%' },
@@ -297,7 +304,6 @@ export function InitiativesSection() {
                 { top: '25%', left: '70%' },
                 { top: '65%', left: '40%' },
                 { top: '45%', left: '80%' },
-                { top: '70%', left: '20%' },
               ];
               const pos = positions[i];
               return (
@@ -323,7 +329,7 @@ export function InitiativesSection() {
             })}
             <div className="text-center z-10 pointer-events-none">
               <p className="text-white/20 text-sm" style={{ fontFamily: 'var(--font-body)' }}>
-                Manaus, Amazonas
+                Coleta · Triagem · Reciclagem
               </p>
             </div>
           </div>
