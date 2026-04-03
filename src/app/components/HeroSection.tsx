@@ -130,7 +130,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           className="flex flex-wrap justify-center gap-6 mb-12 text-center"
         >
           {[
-            { value: '100-400', label: 'Anos para decomposição de uma sacola', unit: '' },
+            { value: 'até 20', label: 'Anos de permanência estimada de uma sacola', unit: '' },
             { value: String(referenceGroups.length), label: 'Eixos temáticos de referência', unit: '' },
             { value: String(totalReferences), label: 'Fontes curadas no site', unit: '' },
           ].map((stat, i) => (
