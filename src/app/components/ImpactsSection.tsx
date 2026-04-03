@@ -14,10 +14,10 @@ const impacts = [
     accent: '#22D3EE',
     tag: 'Rio Negro · Igarapés Urbanos',
     description:
-      'Sacolas plásticas bloqueiam igarapés de Manaus, causando enchentes e contaminando o Rio Negro com microplásticos que entram na cadeia alimentar.',
+      'Em Manaus, plásticos e microplásticos já aparecem em rios e igarapés, agravando a poluição da água e revelando falhas no descarte e no saneamento.',
     stat: 'Alerta',
     statLabel: 'para drenagem urbana e qualidade da água',
-    refIds: [1, 4],
+    refIds: [1],
     image: POLLUTION_IMAGE,
   },
   {
@@ -27,7 +27,7 @@ const impacts = [
     accent: '#FB923C',
     tag: 'Peixes · Tartarugas · Aves',
     description:
-      'Animais confundem plásticos com alimento. Peixes do Rio Negro já apresentam fragmentos de plástico em seu estômago.',
+      'A contaminação por plásticos já preocupa a fauna amazônica. Peixes e outros animais podem ingerir fragmentos que entram na cadeia alimentar.',
     stat: 'Risco',
     statLabel: 'para peixes, aves e outros animais',
     refIds: [3],
@@ -40,10 +40,10 @@ const impacts = [
     accent: '#FBBF24',
     tag: 'Bairros · Ruas · Mercados',
     description:
-      'O descarte inadequado de plásticos pressiona a limpeza urbana de Manaus e amplia o volume de resíduos que alcançam ruas, igarapés e margens.',
+      'O volume de resíduos sólidos urbanos e o descarte inadequado de plásticos ampliam a pressão sobre coleta, triagem e destinação correta, com reflexos em ruas, margens e cursos d’água.',
     stat: 'Pressão',
     statLabel: 'sobre limpeza urbana e destinação correta',
-    refIds: [2, 4],
+    refIds: [2],
     image: null,
   },
   {
@@ -53,10 +53,10 @@ const impacts = [
     accent: '#A78BFA',
     tag: 'Invisíveis · Tóxicos · Permanentes',
     description:
-      'Microplásticos já foram encontrados em peixes do Amazonas, na água potável e até no ar de Manaus. São invisíveis e impossíveis de remover.',
+      'Microplásticos já foram relatados em rios amazônicos e em peixes no Amazonas, sinal de uma contaminação difusa e difícil de reverter.',
     stat: '<5mm',
     statLabel: 'fragmentos classificados como microplásticos',
-    refIds: [1, 28],
+    refIds: [1, 3],
     image: null,
   },
 ];
@@ -114,8 +114,8 @@ export function ImpactsSection() {
             className="text-white/60 max-w-xl mx-auto text-base sm:text-lg"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Manaus, capital do Amazonas, enfrenta uma crise silenciosa de poluição plástica que
-            afeta seus rios, fauna e comunidades.
+            Em Manaus e na Amazônia, a poluição plástica já aparece nos rios, na fauna e na rotina
+            urbana, com efeitos que continuam mesmo quando o resíduo deixa de ser visível.
           </p>
         </motion.div>
 
@@ -244,9 +244,9 @@ export function ImpactsSection() {
                 className="text-white/70 text-sm leading-relaxed"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                O Rio Negro e os igarapés urbanos sofrem com o descarte irregular de plásticos. Em
-                períodos de cheia, esse material pode se espalhar por áreas alagáveis e ampliar o
-                impacto sobre ecossistemas e comunidades.
+                Reportagens e estudos recentes reforçam que Manaus está inserida num cenário mais
+                amplo de contaminação plástica na Amazônia, com pressão sobre igarapés urbanos,
+                peixes, drenagem e qualidade ambiental.
               </p>
             </div>
           </div>
