@@ -26,21 +26,21 @@ const practicalCards = [
     title: 'Reutilize, mas sem perder a prioridade',
     text:
       'Se você já tem sacolas em casa, reaproveitar é melhor do que descartar logo, inclusive em usos específicos como lixo doméstico ou transporte pontual. Ainda assim, o objetivo principal continua sendo pegar menos sacolas novas a cada compra.',
-    refIds: [31],
+    refIds: [32],
   },
   {
     emoji: '♻️',
     title: 'Separe recicláveis de forma simples',
     text:
       'Plástico, papel, metal e vidro ficam mais fáceis de aproveitar quando são separados do lixo orgânico e encaminhados de forma adequada. Manter os recicláveis limpos, secos e agrupados melhora a triagem e fortalece o trabalho de associações e catadores.',
-    refIds: [32, 34],
+    refIds: [33, 35],
   },
   {
     emoji: '📍',
     title: 'Use os serviços que Manaus já oferece',
     text:
       'A cidade já conta com coleta seletiva em bairros programados e com PEVs para entrega voluntária de recicláveis. Quando o descarte não pode ser evitado, essa estrutura ajuda a encaminhar melhor o material, inclusive quando sua rua ainda não está na rota da coleta seletiva.',
-    refIds: [32, 33],
+    refIds: [33, 34],
   },
 ];
 

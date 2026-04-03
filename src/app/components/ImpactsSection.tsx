@@ -17,7 +17,7 @@ const impacts = [
       'Em Manaus, plásticos e microplásticos já aparecem em rios e igarapés, agravando a poluição da água e revelando falhas no descarte e no saneamento. Estudos no Amazonas também já relataram esses fragmentos em peixes de água doce, mostrando que a contaminação alcança a cadeia alimentar regional.',
     stat: 'Alerta',
     statLabel: 'para drenagem urbana e qualidade da água',
-    refIds: [1, 28],
+    refIds: [1, 29, 30],
     image: POLLUTION_IMAGE,
   },
   {
@@ -53,10 +53,10 @@ const impacts = [
     accent: '#A78BFA',
     tag: 'Invisíveis · Tóxicos · Permanentes',
     description:
-      'Microplásticos já foram relatados em rios amazônicos e em peixes no Amazonas, sinal de uma contaminação difusa e difícil de reverter. Eles também podem chegar às pessoas pela água, pelo ar e pelos alimentos, mantendo o problema ativo mesmo quando o resíduo deixa de ser visível.',
+      'Microplásticos já foram relatados em rios amazônicos e em peixes no Amazonas, sinal de uma contaminação difusa e difícil de reverter. Eles também podem chegar às pessoas pela água, pelo ar e pelos alimentos, enquanto aditivos e outras substâncias associadas aos plásticos ampliam a preocupação com efeitos à saúde e ao ambiente.',
     stat: '<5mm',
     statLabel: 'fragmentos classificados como microplásticos',
-    refIds: [1, 3, 27],
+    refIds: [1, 3, 27, 28],
     image: null,
   },
 ];

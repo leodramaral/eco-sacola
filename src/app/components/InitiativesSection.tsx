@@ -23,7 +23,7 @@ const initiatives = [
     ],
     status: 'Semanal',
     statusColor: '#4ADE80',
-    refIds: [32],
+    refIds: [33],
   },
   {
     id: 1,
@@ -42,7 +42,7 @@ const initiatives = [
     ],
     status: 'Rede ativa',
     statusColor: '#22D3EE',
-    refIds: [33],
+    refIds: [34],
   },
   {
     id: 2,
@@ -61,7 +61,7 @@ const initiatives = [
     ],
     status: '2025',
     statusColor: '#A78BFA',
-    refIds: [34],
+    refIds: [35],
   },
   {
     id: 3,
@@ -80,7 +80,7 @@ const initiatives = [
     ],
     status: 'Em operação',
     statusColor: '#60A5FA',
-    refIds: [35, 36],
+    refIds: [36, 37],
   },
   {
     id: 4,
@@ -99,7 +99,7 @@ const initiatives = [
     ],
     status: 'Novo',
     statusColor: '#FBBF24',
-    refIds: [37, 38],
+    refIds: [38, 39],
   },
 ];
 

@@ -266,26 +266,46 @@ export const referenceGroups: ReferenceGroup[] = [
     refs: [
       {
         id: 27,
-        title: 'No Plastic in Nature: Assessing Plastic Ingestion from Nature to People',
-        author: 'WWF — World Wildlife Fund',
-        year: '2019',
-        url: 'https://www.wwf.org.br/natureza_brasileira/reducao_de_impactos2/clima/relatorio-no-plastic-in-nature/',
+        title: 'Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health',
+        author: 'WHO — World Health Organization',
+        year: '2022',
+        url: 'https://www.who.int/publications/i/item/9789240054608',
         type: 'estudo',
         description:
-          'Relatório importante para discutir como a poluição plástica afeta ecossistemas e seres humanos.',
+          'Relatório da OMS sobre exposição humana a nano e microplásticos por alimentação e inalação, útil para discutir como a poluição plástica do ambiente pode alcançar o corpo humano e quais são as possíveis implicações para a saúde.',
       },
       {
         id: 28,
-        title: 'Microplásticos em peixes de água doce do Rio Amazonas',
-        author: 'INPA — Instituto Nacional de Pesquisas da Amazônia',
-        year: '2021',
-        url: 'https://www.inpa.gov.br',
-        type: 'estudo',
+        title: 'Chemicals in Plastics: A Technical Report',
+        author: 'UNEP — United Nations Environment Programme',
+        year: '2023',
+        url: 'https://www.unep.org/resources/report/chemicals-plastics-technical-report',
+        type: 'relatorio',
         description:
-          'Referência altamente relevante para o contexto amazônico. O link leva ao portal institucional do INPA, pois não foi localizada uma página pública específica e estável para o material citado.',
+          'Relatório técnico do PNUMA sobre substâncias químicas presentes nos plásticos, importante para contextualizar riscos ambientais e à saúde e fortalecer a discussão sobre os impactos da poluição plástica.',
       },
       {
         id: 29,
+        title: 'Ingestão de microplásticos por espécies de peixes amazônicas com diferentes hábitos alimentares',
+        author: 'Maria Tereza Vasconcelos-Souza et al. / INPA',
+        year: '2022',
+        url: 'https://repositorio.inpa.gov.br/entities/publication/f7ba8da8-f89a-4c3b-a6dc-7080ae95c34a',
+        type: 'estudo',
+        description:
+          'Estudo vinculado ao INPA sobre a presença de microplásticos no trato gastrointestinal de peixes amazônicos de água doce, útil para contextualizar os impactos da poluição plástica sobre a fauna aquática da Amazônia.',
+      },
+      {
+        id: 30,
+        title: 'Com apoio do Governo do Amazonas, pesquisa registra a presença de plástico no trato gastrointestinal de peixes',
+        author: 'FAPEAM — Fundação de Amparo à Pesquisa do Estado do Amazonas',
+        year: '2023',
+        url: 'https://www.fapeam.am.gov.br/com-apoio-do-governo-do-amazonas-pesquisa-registra-a-presenca-de-plastico-no-trato-gastrointestinal-de-peixes/',
+        type: 'institucional',
+        description:
+          'Notícia institucional sobre pesquisa apoiada pela Fapeam que registrou plástico no trato gastrointestinal de peixes comercializados em Tefe, reforçando o recorte amazônico sobre contaminação por microplásticos em espécies consumidas pela população.',
+      },
+      {
+        id: 31,
         title: 'Production, use, and fate of all plastics ever made',
         author: 'Roland Geyer et al. — Science Advances',
         year: '2017',
@@ -295,24 +315,14 @@ export const referenceGroups: ReferenceGroup[] = [
           'Artigo científico de referência internacional sobre produção e destino dos plásticos no mundo.',
       },
       {
-        id: 30,
-        title: 'Plásticos nos Oceanos: 8 milhões de toneladas por ano',
-        author: 'PNUMA — Programa das Nações Unidas para o Meio Ambiente',
-        year: '2021',
-        url: 'https://www.unep.org/resources/report/beating-plastic-pollution',
-        type: 'relatorio',
-        description:
-          'Fonte internacional útil para contextualizar os impactos globais do descarte inadequado de plástico.',
-      },
-      {
-        id: 31,
-        title: 'Taxa de reciclagem de plásticos no Brasil: desafios e perspectivas',
+        id: 32,
+        title: 'Resíduos sólidos, reciclagem e economia circular',
         author: 'IPEA — Instituto de Pesquisa Econômica Aplicada',
-        year: '2022',
-        url: 'https://www.ipea.gov.br',
+        year: '2025',
+        url: 'https://repositorio.ipea.gov.br/bitstreams/d52c091f-896a-4087-95d9-5e4cdaf75a9d/download',
         type: 'relatorio',
         description:
-          'Referência mantida por relevância temática para discutir os limites e desafios da reciclagem no Brasil. O link leva ao portal institucional do IPEA, pois não foi localizada uma página pública específica do conteúdo citado.',
+          'Texto para Discussão do IPEA que apresenta dados sobre resíduos sólidos no Brasil e analisa reciclagem, economia circular e desafios de implementação das políticas públicas, sendo útil para discutir os limites estruturais da reciclagem no país.',
       },
     ],
   },
@@ -324,7 +334,7 @@ export const referenceGroups: ReferenceGroup[] = [
     bgColor: 'rgba(52,211,153,0.06)',
     refs: [
       {
-        id: 32,
+        id: 33,
         title: 'Abril de 2024 — Coleta seletiva porta a porta começa por bairros de Manaus',
         author: 'Prefeitura de Manaus / Semulsp',
         year: '2024',
@@ -334,7 +344,7 @@ export const referenceGroups: ReferenceGroup[] = [
           'Fonte oficial sobre o lançamento do serviço porta a porta da Semulsp, com coleta semanal de recicláveis em bairros programados e destinação do material para associações de catadores.',
       },
       {
-        id: 33,
+        id: 34,
         title: 'Novembro de 2024 — Listagem de Pontos de Entrega Voluntária (PEVs) de Manaus',
         author: 'SEMULSP — Secretaria Municipal de Limpeza Urbana',
         year: '2024',
@@ -344,7 +354,7 @@ export const referenceGroups: ReferenceGroup[] = [
           'Listagem pública oficial dos PEVs de Manaus, com endereços e indicação dos materiais aceitos, incluindo embalagens plásticas e outros recicláveis.',
       },
       {
-        id: 34,
+        id: 35,
         title: 'Março de 2025 — Laboratório de reciclagem de plástico fortalece economia circular em Manaus',
         author: 'FAS — Fundação Amazônia Sustentável',
         year: '2025',
@@ -354,7 +364,7 @@ export const referenceGroups: ReferenceGroup[] = [
           'Reportagem institucional sobre o laboratório de reciclagem ligado à ASCARMAN e ao InnPacto Amazônia, com atuação em seis bairros, educação ambiental e geração de renda.',
       },
       {
-        id: 35,
+        id: 36,
         title: 'Novembro de 2019 — ARPA transforma sacolas plásticas em sacos resistentes em Manaus',
         author: 'Portal Amazônia',
         year: '2019',
@@ -364,7 +374,7 @@ export const referenceGroups: ReferenceGroup[] = [
           'Reportagem sobre a ARPA, que recicla parte das sacolas e filmes plásticos coletados em Manaus para produzir novos sacos para lixo.',
       },
       {
-        id: 36,
+        id: 37,
         title: 'EcoForte — sacos para lixo com material totalmente reciclado',
         author: 'EcoForte',
         year: 's.d.',
@@ -374,7 +384,7 @@ export const referenceGroups: ReferenceGroup[] = [
           'Página institucional da empresa que comercializa sacos para lixo produzidos com matéria-prima reciclada coletada em Manaus e região metropolitana.',
       },
       {
-        id: 37,
+        id: 38,
         title: 'Maio de 2025 — Bônus para catadores impede que plásticos poluam rios da Amazônia',
         author: 'Agência Brasil',
         year: '2025',
@@ -384,7 +394,7 @@ export const referenceGroups: ReferenceGroup[] = [
           'Reportagem sobre a parceria entre Plastic Bank, Lord e ASCARMAN em Manaus, com bônus por quilo de plástico, meta de evitar milhões de garrafas nos rios e aumento de renda para catadores.',
       },
       {
-        id: 38,
+        id: 39,
         title: 'Maio de 2025 — Plastic Bank, Lord e ASCARMAN iniciam projeto para barrar PET nos rios',
         author: 'A Crítica',
         year: '2025',
