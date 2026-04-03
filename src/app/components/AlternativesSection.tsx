@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { RefCitation } from './RefCitation';
 
 const ECOBAG_IMAGE = 'https://images.unsplash.com/photo-1763634708808-c56bf88021fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
@@ -59,12 +60,6 @@ export function AlternativesSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm text-emerald-400 border border-emerald-500/30 bg-emerald-950/30 mb-4"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            ♻️ Alternativas Sustentáveis
-          </span>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
@@ -267,6 +262,34 @@ export function AlternativesSection() {
               </span>
             )}
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="mb-10 rounded-2xl border p-5 sm:p-6"
+          style={{
+            background: 'rgba(251,191,36,0.08)',
+            borderColor: 'rgba(251,191,36,0.2)',
+          }}
+        >
+          <span
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-amber-300 mb-3"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            <span>💡</span> Antes de depender da reciclagem
+          </span>
+          <p
+            className="text-sm sm:text-base text-white/80 leading-relaxed"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            A reciclagem do plastico no Brasil ainda enfrenta limites de coleta, triagem e
+            reaproveitamento. Por isso, reduzir o uso e reutilizar no dia a dia costuma ser mais
+            eficaz do que contar apenas com o descarte correto.
+            <RefCitation ids={[31]} />
+          </p>
         </motion.div>
 
         {/* Interactive choice */}

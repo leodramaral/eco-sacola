@@ -88,12 +88,6 @@ export function ImpactsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm text-red-400 border border-red-500/30 bg-red-950/30 mb-4"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            ⚠️ Impactos Reais
-          </span>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
@@ -223,34 +217,61 @@ export function ImpactsSection() {
           ))}
         </div>
 
-        {/* Local focus callout */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-10 p-6 rounded-2xl border border-emerald-500/20 bg-emerald-950/30 backdrop-blur-sm"
-        >
-          <div className="flex items-start gap-4">
-            <span className="text-4xl">📍</span>
-            <div>
-              <h4
-                className="text-white mb-1 text-lg"
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-              >
-                Realidade de Manaus
-              </h4>
-              <p
-                className="text-white/70 text-sm leading-relaxed"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                Reportagens e estudos recentes reforçam que Manaus está inserida num cenário mais
-                amplo de contaminação plástica na Amazônia, com pressão sobre igarapés urbanos,
-                peixes, drenagem e qualidade ambiental.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="rounded-2xl border p-5"
+            style={{
+              background: 'rgba(96,165,250,0.08)',
+              borderColor: 'rgba(96,165,250,0.2)',
+            }}
+          >
+            <span
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-blue-300 mb-3"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              <span>🐟</span> Destaque local
+            </span>
+            <p
+              className="text-sm sm:text-base text-white/80 leading-relaxed"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Estudos ja relataram microplasticos em peixes de agua doce do Amazonas, mostrando que
+              a contaminacao nao fica longe: ela entra na cadeia alimentar regional.
+              <RefCitation ids={[28]} />
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="rounded-2xl border p-5"
+            style={{
+              background: 'rgba(244,114,182,0.08)',
+              borderColor: 'rgba(244,114,182,0.2)',
+            }}
+          >
+            <span
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-pink-300 mb-3"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              <span>💧</span> Impacto invisivel
+            </span>
+            <p
+              className="text-sm sm:text-base text-white/80 leading-relaxed"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Microplasticos podem chegar as pessoas pela agua, pelo ar e pelos alimentos, o que
+              reforca que esse problema continua mesmo quando o residuo deixa de ser visivel.
+              <RefCitation ids={[27]} />
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

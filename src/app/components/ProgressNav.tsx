@@ -8,7 +8,6 @@ const sections = [
   { label: 'Sucesso', emoji: '✅' },
   { label: 'Alternativas', emoji: '♻️' },
   { label: 'Iniciativas', emoji: '🤝' },
-  { label: 'Curiosidades', emoji: '💡' },
   { label: 'Ação', emoji: '🌱' },
 ];
 

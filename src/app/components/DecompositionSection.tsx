@@ -139,6 +139,29 @@ export function DecompositionSection() {
                   >
                     {activeItem.comparisonNote}
                   </p>
+
+                  <div
+                    className="mt-5 max-w-xl rounded-2xl border p-4"
+                    style={{
+                      background: 'rgba(251,191,36,0.08)',
+                      borderColor: 'rgba(251,191,36,0.18)',
+                    }}
+                  >
+                    <span
+                      className="inline-flex text-[11px] uppercase tracking-[0.18em] text-amber-300 mb-2"
+                      style={{ fontFamily: 'var(--font-body)' }}
+                    >
+                      Voce sabia?
+                    </span>
+                    <p
+                      className="text-sm text-white/80 leading-relaxed"
+                      style={{ fontFamily: 'var(--font-body)' }}
+                    >
+                      Mesmo quando deixa de ser visivel, a sacola nao desaparece por completo: ela
+                      pode se fragmentar e continuar circulando no ambiente em partes menores.
+                      <RefCitation ids={[5, 7]} />
+                    </p>
+                  </div>
                 </div>
               </div>
 

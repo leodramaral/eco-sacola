@@ -68,12 +68,6 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <span
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-emerald-300 border border-emerald-500/40 bg-emerald-950/50 backdrop-blur-sm"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            <span>🌿</span> Cartilha Digital Educativa · Manaus, AM
-          </span>
         </motion.div>
 
         {/* Main title */}
@@ -110,7 +104,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           className="text-lg sm:text-xl md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed"
           style={{ fontFamily: 'var(--font-body)' }}
         >
-          Conscientização sobre sacolas plásticas, sustentabilidade e impactos ambientais na
+          Cartilha educativa sobre sacolas plásticas, sustentabilidade e impactos ambientais na
           capital do Amazonas
         </motion.p>
 

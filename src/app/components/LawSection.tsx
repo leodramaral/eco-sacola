@@ -247,31 +247,6 @@ export function LawSection() {
                           </p>
                         </div>
                       </div>
-
-                      <div
-                        className="sm:w-44 flex-shrink-0 rounded-2xl border p-4"
-                        style={{
-                          background: 'rgba(0,0,0,0.16)',
-                          borderColor: 'rgba(255,255,255,0.08)',
-                        }}
-                      >
-                        <p
-                          className="text-xs uppercase tracking-[0.18em] text-white/40 mb-2"
-                          style={{ fontFamily: 'var(--font-body)' }}
-                        >
-                          Efeito do marco
-                        </p>
-                        <p
-                          className="text-sm leading-relaxed text-white/72"
-                          style={{ fontFamily: 'var(--font-body)' }}
-                        >
-                          {index < 2 && 'Criação da base legal e definição do ritmo de adaptação.'}
-                          {index === 2 && 'Entrada visível da norma na rotina dos consumidores.'}
-                          {index === 3 && 'Ampliação da política para todo o território estadual.'}
-                          {index === 4 && 'Mudança de calendário sem revogação da política.'}
-                          {index === 5 && 'Manutenção das regras após contestação judicial.'}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </motion.div>

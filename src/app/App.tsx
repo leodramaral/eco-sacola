@@ -7,7 +7,6 @@ import { LawSection } from './components/LawSection';
 import { SuccessCasesSection } from './components/SuccessCasesSection';
 import { AlternativesSection } from './components/AlternativesSection';
 import { InitiativesSection } from './components/InitiativesSection';
-import { CuriositiesSection } from './components/CuriositiesSection';
 import { FinalCTASection } from './components/FinalCTASection';
 import { ReferencesSection } from './components/ReferencesSection';
 import { ReferenceModal } from './components/ReferenceModal';
@@ -18,7 +17,7 @@ import {
   sanitizeReferenceIds,
 } from './components/reference-utils';
 
-const TOTAL_SECTIONS = 9;
+const TOTAL_SECTIONS = 8;
 
 type AppRoute =
   | {
@@ -189,7 +188,6 @@ export default function App() {
       <SuccessCasesSection />
       <AlternativesSection />
       <InitiativesSection />
-      <CuriositiesSection />
       <FinalCTASection
         onRestart={() => navigateToSection(0)}
         onReferences={() => navigateToReferences()}

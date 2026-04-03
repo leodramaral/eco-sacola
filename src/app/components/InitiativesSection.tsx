@@ -116,12 +116,6 @@ export function InitiativesSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm text-green-400 border border-green-500/30 bg-green-950/30 mb-4"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            🤝 Iniciativas Locais
-          </span>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
