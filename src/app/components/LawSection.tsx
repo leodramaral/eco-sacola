@@ -13,7 +13,7 @@ const reasons = [
     description:
       'A lei não foi acompanhada de uma estrutura eficaz de fiscalização. Comércios continuaram distribuindo sacolas plásticas sem penalidades reais. Em Manaus, a fiscalização ambiental é limitada e focada em outras prioridades.',
     impact: 'Alto',
-    detail: 'Sem fiscais, a lei virou letra morta em mais de 80% dos estabelecimentos.',
+    detail: 'Sem acompanhamento institucional contínuo, a norma perdeu força na prática cotidiana do comércio.',
   },
   {
     id: 1,
@@ -24,7 +24,7 @@ const reasons = [
     description:
       'A população não foi adequadamente informada sobre os impactos das sacolas plásticas nem sobre as alternativas disponíveis. Campanhas educativas foram insuficientes e de curto prazo.',
     impact: 'Alto',
-    detail: 'Apenas 18% dos manauaras conheciam a lei e suas implicações ambientais.',
+    detail: 'Sem campanhas permanentes, a mudança de hábito tende a ser lenta e desigual.',
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const reasons = [
     description:
       'O hábito de usar sacolas plásticas está profundamente enraizado na cultura de compras em Manaus. Feiras, mercados e supermercados sempre as oferecem gratuitamente, tornando a mudança de comportamento difícil.',
     impact: 'Médio',
-    detail: 'Um consumidor médio de Manaus usa até 300 sacolas plásticas por ano.',
+    detail: 'Quando o descartável segue disponível como padrão, a transição para alternativas reutilizáveis encontra mais resistência.',
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const reasons = [
     description:
       'Ecobags e alternativas sustentáveis têm custo mais alto e não estavam amplamente disponíveis. Para populações de baixa renda, o custo extra é uma barreira real à mudança de comportamento.',
     impact: 'Médio',
-    detail: 'Uma ecobag custa entre R$ 5–30 — inacessível para muitas famílias.',
+    detail: 'Sem oferta acessível e incentivo prático, alternativas sustentáveis demoram mais para ganhar escala.',
   },
 ];
 
@@ -134,9 +134,10 @@ export function LawSection() {
                 className="text-white/70 text-sm leading-relaxed mb-3"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                Manaus tentou implementar medidas para reduzir e posteriormente proibir o uso de
-                sacolas plásticas em estabelecimentos comerciais, seguindo tendências nacionais. No
-                entanto, a iniciativa não teve o resultado esperado.
+                Manaus aprovou uma referência legal importante para reduzir o uso de sacolas
+                plásticas em estabelecimentos comerciais, em diálogo com a Política Nacional de
+                Resíduos Sólidos. Ainda assim, a transformação prática dependeu de fiscalização,
+                comunicação e alternativas acessíveis.
                 <RefCitation ids={[8, 9]} />
               </p>
               <div className="flex items-center gap-2">
@@ -145,7 +146,7 @@ export function LawSection() {
                   className="text-red-400 text-sm"
                   style={{ fontFamily: 'var(--font-body)' }}
                 >
-                  Status: Implementação ineficaz
+                  Desafio ainda presente na implementação local
                 </span>
               </div>
             </div>
@@ -273,10 +274,10 @@ export function LawSection() {
           className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4"
         >
           {[
-            { icon: '📋', label: 'Lei aprovada', value: '2015' },
-            { icon: '📉', label: 'Redução real', value: '<10%' },
-            { icon: '🏪', label: 'Conformidade', value: '~20%' },
-            { icon: '🔍', label: 'Fiscalizações', value: 'Raras' },
+            { icon: '📋', label: 'Marco municipal', value: '2011' },
+            { icon: '♻️', label: 'Base nacional', value: 'PNRS 2010' },
+            { icon: '🔍', label: 'Desafio central', value: 'Fiscalização' },
+            { icon: '🧭', label: 'Caminho necessário', value: 'Educação' },
           ].map((item, i) => (
             <div
               key={i}
@@ -301,7 +302,7 @@ export function LawSection() {
         <div className="mt-3 text-right">
           <RefCitation ids={[10]} />
           <span className="text-white/30 text-xs ml-1" style={{ fontFamily: 'var(--font-body)' }}>
-            Dados: SEMMAS, 2022
+            Contexto institucional local
           </span>
         </div>
       </div>

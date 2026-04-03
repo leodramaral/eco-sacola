@@ -13,10 +13,10 @@ const items = [
     bgColor: 'from-red-950 to-rose-900',
     barColor: '#EF4444',
     barWidth: '100%',
-    usageTime: 'Usada por ~25 minutos',
+    usageTime: 'Uso geralmente breve',
     context:
-      'Uma sacola plástica dura centenas de anos no meio ambiente, liberando microplásticos durante todo esse período. Em Manaus, milhares são descartadas nos igarapés diariamente.',
-    fact: 'Uma sacola pode matar animais marinhos mesmo 400 anos após ser descartada.',
+      'Uma sacola plástica pode permanecer por muitas décadas ou séculos no ambiente, liberando microplásticos ao longo desse processo. Em Manaus, isso agrava a pressão sobre igarapés, drenagem urbana e paisagens naturais.',
+    fact: 'Mesmo depois do descarte, a sacola continua se fragmentando e espalhando partículas plásticas por muito tempo.',
     refIds: [5],
   },
   {
@@ -29,10 +29,10 @@ const items = [
     bgColor: 'from-orange-950 to-amber-900',
     barColor: '#F97316',
     barWidth: '96%',
-    usageTime: 'Usada por ~3 dias',
+    usageTime: 'Uso cotidiano',
     context:
-      'Uma garrafa PET demora mais de 4 séculos para se decompor. O Rio Negro já apresenta contaminação por fragmentos de PET em análises recentes.',
-    fact: 'Apenas 1,28% das garrafas PET no Brasil são efetivamente recicladas.',
+      'Uma garrafa plástica pode permanecer no ambiente por séculos. Em rios amazônicos, a presença de fragmentos plásticos reforça a importância da coleta e destinação adequadas.',
+    fact: 'Embalagens plásticas duráveis exigem sistemas consistentes de coleta, triagem e reciclagem para não se acumularem no ambiente.',
     refIds: [5, 7],
   },
   {
@@ -45,10 +45,10 @@ const items = [
     bgColor: 'from-yellow-950 to-amber-900',
     barColor: '#EAB308',
     barWidth: '40%',
-    usageTime: 'Usado por ~15 minutos',
+    usageTime: 'Uso rápido',
     context:
-      'Copos descartáveis de plástico não são aceitos nos programas de reciclagem. A maioria vai para aterros ou rios. Em Manaus, são muito usados em mercados e feiras.',
-    fact: 'O Brasil usa 40 bilhões de copos descartáveis por ano.',
+      'Copos plásticos descartáveis têm vida útil muito curta, mas ampliam o volume de resíduos quando substituem opções reutilizáveis. Em feiras, eventos e mercados, esse consumo se torna especialmente visível.',
+    fact: 'Trocar itens descartáveis por alternativas reutilizáveis ajuda a reduzir a pressão sobre coleta e destinação final.',
     refIds: [6],
   },
 ];

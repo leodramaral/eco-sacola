@@ -15,8 +15,8 @@ const curiosities = [
   {
     id: 1,
     front: '⏱️',
-    question: 'Por quanto tempo uma sacola plástica é usada em média?',
-    answer: 'Apenas 25 minutos! Uma sacola usada por menos de meia hora pode contaminar o meio ambiente por séculos.',
+    question: 'Por que uma sacola descartável preocupa tanto?',
+    answer: 'Porque costuma ter um uso muito curto, mas pode permanecer no ambiente por décadas ou séculos, fragmentando-se em partículas menores ao longo do tempo.',
     color: '#F97316',
     bg: 'linear-gradient(135deg, #1A0D00, #2D1500)',
     refIds: [5],
@@ -25,7 +25,7 @@ const curiosities = [
     id: 2,
     front: '♻️',
     question: 'Qual é a taxa de reciclagem de plástico no Brasil?',
-    answer: 'Apenas 2%! O Brasil é o 4º maior gerador de lixo plástico do mundo, mas recicla uma fração mínima.',
+    answer: 'A reciclagem de plásticos no Brasil ainda enfrenta muitos desafios de coleta, triagem e reaproveitamento, o que limita o retorno desse material à cadeia produtiva.',
     color: '#FBBF24',
     bg: 'linear-gradient(135deg, #1A1400, #2D2000)',
     refIds: [6, 19],
@@ -43,7 +43,7 @@ const curiosities = [
     id: 4,
     front: '🌿',
     question: 'Quanto uma ecobag de algodão substitui?',
-    answer: 'Uma ecobag de algodão pode substituir até 500 sacolas plásticas ao longo de sua vida útil de 3 a 5 anos.',
+    answer: 'Uma ecobag reutilizada com frequência pode substituir muitas sacolas descartáveis ao longo do tempo, especialmente quando entra na rotina semanal de compras.',
     color: '#4ADE80',
     bg: 'linear-gradient(135deg, #021A08, #042D10)',
     refIds: [5],
@@ -60,8 +60,8 @@ const curiosities = [
   {
     id: 6,
     front: '🏭',
-    question: 'Quantas sacolas plásticas são produzidas por ano no mundo?',
-    answer: 'Mais de 5 trilhões de sacolas plásticas são produzidas anualmente no mundo — 160.000 por segundo!',
+    question: 'Por que o plástico virou um problema global?',
+    answer: 'Porque a produção de plásticos cresceu intensamente nas últimas décadas e grande parte desse material não retorna de forma segura à economia ou ao ambiente.',
     color: '#A78BFA',
     bg: 'linear-gradient(135deg, #0D0520, #180A35)',
     refIds: [17],
@@ -70,7 +70,7 @@ const curiosities = [
     id: 7,
     front: '💧',
     question: 'Você consome microplástico?',
-    answer: 'Sim! Estudos mostram que os humanos ingerem cerca de 5g de plástico por semana — o equivalente a um cartão de crédito!',
+    answer: 'Microplásticos já fazem parte da cadeia alimentar e podem alcançar o ser humano por meio da água, do ar e dos alimentos contaminados.',
     color: '#F472B6',
     bg: 'linear-gradient(135deg, #200510, #35091A)',
     refIds: [15],
@@ -259,11 +259,11 @@ export function CuriositiesSection() {
             className="relative z-10 text-xl text-white"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
           >
-            🌍 Se cada pessoa de Manaus{' '}
-            <span className="text-purple-400">substituísse 1 sacola por dia</span>,
+            🌍 Em Manaus, pequenas trocas de hábito no dia a dia
             <br />
-            seriam{' '}
-            <span className="text-pink-400">720 milhões</span> de sacolas a menos por ano!
+            podem representar{' '}
+            <span className="text-pink-400">menos descarte plástico</span> e mais cuidado com os
+            igarapés.
           </p>
         </motion.div>
       </div>

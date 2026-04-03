@@ -14,8 +14,8 @@ export function AlternativesSection() {
 
   // Animate bag counter
   useEffect(() => {
-    if (bagCount < 500) {
-      const timer = setTimeout(() => setBagCount((c) => Math.min(c + 7, 500)), 20);
+    if (bagCount < 365) {
+      const timer = setTimeout(() => setBagCount((c) => Math.min(c + 7, 365)), 20);
       return () => clearTimeout(timer);
     }
   }, [bagCount]);
@@ -85,7 +85,7 @@ export function AlternativesSection() {
             className="text-white/70 text-lg italic"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 300 }}
           >
-            "Uma escolha simples pode evitar centenas de sacolas plásticas"
+            "Pequenas escolhas repetidas podem reduzir muito o descarte"
           </p>
         </motion.div>
 
@@ -147,11 +147,11 @@ export function AlternativesSection() {
                     </div>
                     <div className="flex-1 space-y-3">
                       {[
-                        { icon: '❌', text: 'Uso único — ~25 minutos de vida útil' },
-                        { icon: '❌', text: 'Demora 400 anos para se decompor' },
-                        { icon: '❌', text: 'Contamina rios, igarapés e solos' },
-                        { icon: '❌', text: 'Mata animais silvestres' },
-                        { icon: '❌', text: '2% de taxa de reciclagem no Brasil' },
+                        { icon: '❌', text: 'Uso geralmente curto no dia a dia' },
+                        { icon: '❌', text: 'Pode permanecer no ambiente por décadas ou séculos' },
+                        { icon: '❌', text: 'Pode alcançar rios, igarapés e solos' },
+                        { icon: '❌', text: 'Afeta fauna, paisagem urbana e drenagem' },
+                        { icon: '❌', text: 'A reciclagem ainda enfrenta limites no Brasil' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3">
                           <span>{item.icon}</span>
@@ -194,11 +194,11 @@ export function AlternativesSection() {
                     </div>
                     <div className="flex-1 space-y-3">
                       {[
-                        { icon: '✅', text: 'Reutilizável — até 5 anos de vida útil' },
-                        { icon: '✅', text: '1 ecobag = até 500 sacolas evitadas' },
+                        { icon: '✅', text: 'Reutilizável em diferentes compras' },
+                        { icon: '✅', text: 'Pode substituir muitas sacolas ao longo do tempo' },
                         { icon: '✅', text: 'Reduz poluição de rios e igarapés' },
-                        { icon: '✅', text: 'Biodegradável ao final da vida útil' },
-                        { icon: '✅', text: 'Custo médio de R$ 5 a R$ 30' },
+                        { icon: '✅', text: 'Incentiva planejamento e consumo mais consciente' },
+                        { icon: '✅', text: 'Há modelos duráveis e acessíveis' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3">
                           <span>{item.icon}</span>
@@ -230,7 +230,7 @@ export function AlternativesSection() {
             className="text-white/60 text-sm mb-2"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Com 1 ecobag usada por 1 ano, você economiza:
+            Em um hábito diário de reutilização, você pode evitar:
           </p>
           <div className="flex items-baseline justify-center gap-3 mb-2">
             <span
@@ -243,7 +243,7 @@ export function AlternativesSection() {
               className="text-2xl text-white/60"
               style={{ fontFamily: 'var(--font-heading)', fontWeight: 400 }}
             >
-              sacolas plásticas
+              sacolas descartáveis em 1 ano
             </span>
           </div>
           <div className="flex justify-center gap-1 flex-wrap mt-3">
@@ -392,7 +392,7 @@ export function AlternativesSection() {
                   className="text-white/70 text-sm mt-1"
                   style={{ fontFamily: 'var(--font-body)' }}
                 >
-                  Essa sacola pode contaminar o Rio Negro por 400 anos. Experimente a ecobag!
+                  Esse descarte pode permanecer no ambiente por muito tempo. Experimente a ecobag!
                 </p>
               </motion.div>
             )}

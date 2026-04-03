@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { referenceGroups } from '../content/references';
 
 const FOREST_IMAGE = 'https://images.unsplash.com/photo-1771292861005-c6d22476a2b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
@@ -10,6 +11,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ onExplore }: HeroSectionProps) {
+  const totalReferences = referenceGroups.reduce((sum, group) => sum + group.refs.length, 0);
   const [leafPositions] = useState(() =>
     Array.from({ length: 12 }, (_, i) => ({
       id: i,
@@ -108,7 +110,8 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           className="text-lg sm:text-xl md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed"
           style={{ fontFamily: 'var(--font-body)' }}
         >
-          Conscientização sobre o uso de sacolas plásticas na capital do Amazonas
+          Conscientização sobre sacolas plásticas, sustentabilidade e impactos ambientais na
+          capital do Amazonas
         </motion.p>
 
         {/* Divider line */}
@@ -127,9 +130,9 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           className="flex flex-wrap justify-center gap-6 mb-12 text-center"
         >
           {[
-            { value: '400', label: 'Anos para decomposição', unit: 'anos' },
-            { value: '12B', label: 'Sacolas por ano no Brasil', unit: '' },
-            { value: '2%', label: 'Taxa de reciclagem', unit: '' },
+            { value: '100-400', label: 'Anos para decomposição de uma sacola', unit: '' },
+            { value: String(referenceGroups.length), label: 'Eixos temáticos de referência', unit: '' },
+            { value: String(totalReferences), label: 'Fontes curadas no site', unit: '' },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
               <span

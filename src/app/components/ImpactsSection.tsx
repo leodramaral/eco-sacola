@@ -15,8 +15,8 @@ const impacts = [
     tag: 'Rio Negro · Igarapés Urbanos',
     description:
       'Sacolas plásticas bloqueiam igarapés de Manaus, causando enchentes e contaminando o Rio Negro com microplásticos que entram na cadeia alimentar.',
-    stat: '70%',
-    statLabel: 'dos igarapés urbanos contaminados',
+    stat: 'Alerta',
+    statLabel: 'para drenagem urbana e qualidade da água',
     refIds: [1, 4],
     image: POLLUTION_IMAGE,
   },
@@ -28,8 +28,8 @@ const impacts = [
     tag: 'Peixes · Tartarugas · Aves',
     description:
       'Animais confundem plásticos com alimento. Peixes do Rio Negro já apresentam fragmentos de plástico em seu estômago.',
-    stat: '100K+',
-    statLabel: 'animais mortos por plástico/ano',
+    stat: 'Risco',
+    statLabel: 'para peixes, aves e outros animais',
     refIds: [3],
     image: TURTLE_IMAGE,
   },
@@ -40,9 +40,9 @@ const impacts = [
     accent: '#FBBF24',
     tag: 'Bairros · Ruas · Mercados',
     description:
-      'Manaus gera toneladas de sacolas plásticas por dia. Apenas uma fração é descartada corretamente, o restante vai para rios ou lixões.',
-    stat: '1.800t',
-    statLabel: 'de lixo gerado por dia em Manaus',
+      'O descarte inadequado de plásticos pressiona a limpeza urbana de Manaus e amplia o volume de resíduos que alcançam ruas, igarapés e margens.',
+    stat: 'Pressão',
+    statLabel: 'sobre limpeza urbana e destinação correta',
     refIds: [2, 4],
     image: null,
   },
@@ -54,8 +54,8 @@ const impacts = [
     tag: 'Invisíveis · Tóxicos · Permanentes',
     description:
       'Microplásticos já foram encontrados em peixes do Amazonas, na água potável e até no ar de Manaus. São invisíveis e impossíveis de remover.',
-    stat: '5mm',
-    statLabel: 'tamanho máximo de microplástico',
+    stat: '<5mm',
+    statLabel: 'fragmentos classificados como microplásticos',
     refIds: [1, 16],
     image: null,
   },
@@ -244,9 +244,9 @@ export function ImpactsSection() {
                 className="text-white/70 text-sm leading-relaxed"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                O Rio Negro e os igarapés urbanos como o Educandos e o Tarumã sofrem com o descarte
-                irregular de sacolas plásticas. Em períodos de cheia, o plástico se espalha por toda
-                a várzea amazônica.
+                O Rio Negro e os igarapés urbanos sofrem com o descarte irregular de plásticos. Em
+                períodos de cheia, esse material pode se espalhar por áreas alagáveis e ampliar o
+                impacto sobre ecossistemas e comunidades.
               </p>
             </div>
           </div>
