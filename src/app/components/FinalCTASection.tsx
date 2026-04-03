@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Share2, CheckCircle, Download, Files } from 'lucide-react';
+import { Share2, CheckCircle, Download, Files, ArrowUpRight, RotateCcw } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-// @ts-ignore
-import confetti from 'canvas-confetti';
 
-const FOREST_IMAGE = 'https://images.unsplash.com/photo-1771292861005-c6d22476a2b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
-
-const commitments = [
-  'Usar ecobag nas compras',
-  'Recusar sacolas plásticas',
-  'Levar sacolas de casa',
-  'Reutilizar embalagens',
-];
+const FOREST_IMAGE =
+  'https://images.unsplash.com/photo-1771292861005-c6d22476a2b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
 interface FinalCTASectionProps {
   onRestart: () => void;
@@ -25,47 +17,39 @@ export function FinalCTASection({
   onReferences,
   onDownloadPdf,
 }: FinalCTASectionProps) {
-  const [checked, setChecked] = useState<number[]>([]);
-  const [shared, setShared] = useState(false);
+  const [shareState, setShareState] = useState<'idle' | 'copied' | 'shared'>('idle');
 
-  const toggleCommitment = (i: number) => {
-    setChecked((prev) => {
-      const newChecked = prev.includes(i) ? prev.filter((c) => c !== i) : [...prev, i];
-      if (newChecked.length === commitments.length) {
-        // All checked — celebrate!
-        confetti({
-          particleCount: 120,
-          spread: 80,
-          origin: { y: 0.6 },
-          colors: ['#4ADE80', '#22D3EE', '#FBBF24', '#A78BFA'],
-        });
-      }
-      return newChecked;
-    });
+  const flashShareState = (state: 'copied' | 'shared') => {
+    setShareState(state);
+    window.setTimeout(() => setShareState('idle'), 2200);
   };
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: 'EcoSacola Manaus',
-        text: 'Aprendi sobre o impacto das sacolas plásticas em Manaus. Você também deveria conhecer essa cartilha! 🌿',
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      setShared(true);
-      setTimeout(() => setShared(false), 2000);
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: 'EcoSacola Manaus',
+          text: 'Aprendi sobre o impacto das sacolas plásticas em Manaus. Você também deveria conhecer essa cartilha! 🌿',
+          url: window.location.href,
+        });
+        flashShareState('shared');
+        return;
+      }
+
+      await navigator.clipboard.writeText(window.location.href);
+      flashShareState('copied');
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        return;
+      }
     }
   };
-
-  const allChecked = checked.length === commitments.length;
 
   return (
     <section
       id="section-6"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-20"
     >
-      {/* Background */}
       <div className="absolute inset-0">
         <ImageWithFallback
           src={FOREST_IMAGE}
@@ -75,7 +59,6 @@ export function FinalCTASection({
         <div className="absolute inset-0 bg-gradient-to-b from-[#021A08]/90 via-[#021A08]/85 to-[#021A08]/95" />
       </div>
 
-      {/* Floating particles */}
       {Array.from({ length: 10 }).map((_, i) => (
         <motion.div
           key={i}
@@ -96,8 +79,7 @@ export function FinalCTASection({
         </motion.div>
       ))}
 
-      <div className="relative z-10 max-w-2xl mx-auto w-full text-center">
-        {/* Progress complete badge */}
+      <div className="relative z-10 max-w-5xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -119,51 +101,18 @@ export function FinalCTASection({
           </div>
         </motion.div>
 
-        {/* Progress bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-10"
-        >
-          <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '100%' }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: 'easeOut', delay: 0.3 }}
-              className="h-full rounded-full"
-              style={{ background: 'linear-gradient(90deg, #4ADE80, #22D3EE, #A78BFA)' }}
-            />
-          </div>
-          <div className="flex justify-between mt-1">
-            {Array.from({ length: 7 }).map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.1 }}
-                className="w-2 h-2 rounded-full bg-emerald-400"
-              />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Main message */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-10"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-10"
         >
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 900 }}
           >
-            Pequenas{' '}
+            Faça esta{' '}
             <span
               className="text-transparent"
               style={{
@@ -172,137 +121,169 @@ export function FinalCTASection({
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              escolhas
-            </span>
-            <br />
-            geram grandes{' '}
-            <span
-              className="text-transparent"
-              style={{
-                background: 'linear-gradient(135deg, #FBBF24, #F97316)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              impactos
+              cartilha circular
             </span>
           </h2>
           <p
-            className="text-white/70 text-base sm:text-lg leading-relaxed max-w-lg mx-auto"
+            className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            Você chegou até aqui e já deu o primeiro passo. Agora é hora de agir. Manaus precisa de
-            você.
+            A leitura termina aqui, mas o movimento começa agora. Compartilhe a cartilha, abra as
+            fontes e leve as referências com você para continuar essa conversa fora daqui.
           </p>
         </motion.div>
 
-        {/* Commitment checklist */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mb-10 rounded-2xl p-6 border border-white/10 text-left"
-          style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)' }}
-        >
-          <h3
-            className="text-white mb-4 text-center"
-            style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-          >
-            Meus compromissos 🌿
-          </h3>
-          <div className="space-y-3">
-            {commitments.map((c, i) => (
-              <motion.button
-                key={i}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => toggleCommitment(i)}
-                className="w-full flex items-center gap-3 p-3 rounded-xl border transition-all duration-200 cursor-pointer text-left"
-                style={{
-                  borderColor: checked.includes(i) ? 'rgba(74,222,128,0.4)' : 'rgba(255,255,255,0.1)',
-                  background: checked.includes(i) ? 'rgba(74,222,128,0.1)' : 'rgba(255,255,255,0.03)',
-                }}
-              >
-                <div
-                  className={`w-6 h-6 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                    checked.includes(i) ? 'bg-emerald-500 border-emerald-500' : 'border-white/30'
-                  }`}
-                >
-                  {checked.includes(i) && (
-                    <motion.span
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="text-white text-xs"
-                    >
-                      ✓
-                    </motion.span>
-                  )}
-                </div>
-                <span
-                  className={`text-sm transition-all duration-300 ${
-                    checked.includes(i) ? 'text-emerald-400' : 'text-white/70'
-                  }`}
-                  style={{ fontFamily: 'var(--font-body)' }}
-                >
-                  {c}
-                </span>
-              </motion.button>
-            ))}
-          </div>
-          {allChecked && (
-            <motion.p
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center text-emerald-400 mt-4"
-              style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-            >
-              🎉 Parabéns! Você é um Eco-Herói de Manaus!
-            </motion.p>
-          )}
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={onRestart}
-            className="px-8 py-4 rounded-full text-white cursor-pointer"
+        <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.95fr] gap-4 sm:gap-5">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="rounded-[2rem] border border-white/10 p-6 sm:p-8 text-left"
             style={{
-              fontFamily: 'var(--font-heading)',
-              fontWeight: 700,
-              background: 'linear-gradient(135deg, #16A34A, #0891B2)',
-              boxShadow: '0 0 40px rgba(22, 163, 74, 0.4)',
+              background:
+                'linear-gradient(135deg, rgba(22,163,74,0.18) 0%, rgba(8,145,178,0.12) 55%, rgba(255,255,255,0.05) 100%)',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 24px 80px rgba(2, 26, 8, 0.35)',
             }}
           >
-            🌱 Começar Hoje
-          </motion.button>
+            <span
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-300"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              <Share2 className="h-3.5 w-3.5" />
+              Ação principal
+            </span>
 
+            <h3
+              className="mt-4 text-2xl sm:text-3xl text-white leading-tight max-w-xl"
+              style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
+            >
+              Compartilhe esta cartilha e faça a conversa chegar mais longe.
+            </h3>
+            <p
+              className="mt-3 text-sm sm:text-base text-white/72 leading-relaxed max-w-xl"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Quando a cartilha circula, ela deixa de ser só leitura e vira repertório para casa,
+              escola, comércio e sala de aula.
+            </p>
+
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={handleShare}
+              className="mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-full px-7 py-4 text-white cursor-pointer"
+              style={{
+                fontFamily: 'var(--font-heading)',
+                fontWeight: 700,
+                background: 'linear-gradient(135deg, #16A34A, #0891B2)',
+                boxShadow: '0 0 40px rgba(22, 163, 74, 0.35)',
+              }}
+            >
+              <span className="inline-flex items-center gap-2">
+                {shareState === 'copied'
+                  ? 'Link copiado'
+                  : shareState === 'shared'
+                    ? 'Compartilhada'
+                    : 'Compartilhar'}
+                <ArrowUpRight className="w-4 h-4" />
+              </span>
+            </motion.button>
+          </motion.div>
+
+          <div className="grid grid-cols-1 gap-4 sm:gap-5">
+            <motion.button
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.38 }}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={onReferences}
+              className="rounded-[1.75rem] border border-white/10 bg-white/6 p-6 text-left cursor-pointer transition-colors hover:bg-white/8"
+              style={{ backdropFilter: 'blur(10px)' }}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div className="w-11 h-11 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 flex items-center justify-center text-cyan-300">
+                  <Files className="w-5 h-5" />
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-white/35" />
+              </div>
+              <h3
+                className="mt-5 text-xl text-white"
+                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+              >
+                Ver página de referências
+              </h3>
+              <p
+                className="mt-2 text-sm text-white/65 leading-relaxed"
+                style={{ fontFamily: 'var(--font-body)' }}
+              >
+                Navegue pelas fontes organizadas por tema, abra os links originais e use a página
+                como apoio para leitura, aula ou apresentação.
+              </p>
+            </motion.button>
+
+            <motion.button
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.46 }}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={onDownloadPdf}
+              className="rounded-[1.75rem] border border-white/10 bg-white/6 p-6 text-left cursor-pointer transition-colors hover:bg-white/8"
+              style={{ backdropFilter: 'blur(10px)' }}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div className="w-11 h-11 rounded-2xl border border-amber-400/20 bg-amber-400/10 flex items-center justify-center text-amber-300">
+                  <Download className="w-5 h-5" />
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-white/35" />
+              </div>
+              <h3
+                className="mt-5 text-xl text-white"
+                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+              >
+                Baixar arquivo de referências
+              </h3>
+              <p
+                className="mt-2 text-sm text-white/65 leading-relaxed"
+                style={{ fontFamily: 'var(--font-body)' }}
+              >
+                Gere um PDF em formato ABNT para consultar offline, anexar em trabalho ou guardar
+                como material de apoio.
+              </p>
+            </motion.button>
+          </div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.55 }}
+          className="flex justify-center mt-8"
+        >
           <motion.button
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            onClick={handleShare}
-            className="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white/10 transition-all cursor-pointer"
-            style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+            onClick={onRestart}
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white/65 transition-all hover:border-white/25 hover:text-white cursor-pointer"
+            style={{ fontFamily: 'var(--font-body)' }}
           >
-            <Share2 className="w-4 h-4" />
-            {shared ? 'Link copiado! ✓' : 'Compartilhar'}
+            <RotateCcw className="w-4 h-4" />
+            Voltar ao topo da cartilha
           </motion.button>
         </motion.div>
 
-        {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-16 pt-8 border-t border-white/10"
+          className="mt-16 pt-8 border-t border-white/10 text-center"
         >
           <p
             className="text-white/30 text-sm"
@@ -316,29 +297,6 @@ export function FinalCTASection({
           >
             Feita com 💚 para proteger o Amazonas
           </p>
-          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={onReferences}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs text-white/40 transition-all hover:border-white/30 hover:text-white/70 cursor-pointer"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              <Files className="h-3.5 w-3.5" />
-              Ver referências e fontes
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={onDownloadPdf}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/8 px-4 py-2 text-xs text-emerald-300 transition-all hover:border-emerald-500/35 hover:bg-emerald-500/12 cursor-pointer"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              <Download className="h-3.5 w-3.5" />
-              Baixar referências em PDF
-            </motion.button>
-          </div>
         </motion.div>
       </div>
     </section>
