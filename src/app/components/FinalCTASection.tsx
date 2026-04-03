@@ -62,7 +62,7 @@ export function FinalCTASection({
 
   return (
     <section
-      id="section-7"
+      id="section-6"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-20"
     >
       {/* Background */}
@@ -114,7 +114,7 @@ export function FinalCTASection({
               className="text-emerald-400 text-sm"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              Cartilha completa — 8/8 seções
+              Cartilha completa — 7/7 seções
             </span>
           </div>
         </motion.div>
@@ -138,7 +138,7 @@ export function FinalCTASection({
             />
           </div>
           <div className="flex justify-between mt-1">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: 7 }).map((_, i) => (
               <motion.div
                 key={i}
                 initial={{ scale: 0 }}

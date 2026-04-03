@@ -108,7 +108,7 @@ export function InitiativesSection() {
 
   return (
     <section
-      id="section-6"
+      id="section-5"
       className="relative py-20 px-4 min-h-screen flex flex-col justify-center"
       style={{ background: 'linear-gradient(180deg, #021408 0%, #031A0C 50%, #021408 100%)' }}
     >

@@ -5,7 +5,6 @@ const sections = [
   { label: 'Impactos', emoji: '⚠️' },
   { label: 'Decomposição', emoji: '⏱️' },
   { label: 'Lei', emoji: '⚖️' },
-  { label: 'Sucesso', emoji: '✅' },
   { label: 'Alternativas', emoji: '♻️' },
   { label: 'Iniciativas', emoji: '🤝' },
   { label: 'Ação', emoji: '🌱' },

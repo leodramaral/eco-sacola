@@ -258,55 +258,6 @@ export const referenceGroups: ReferenceGroup[] = [
     ],
   },
   {
-    section: 'Casos de Sucesso no Brasil',
-    emoji: '🏆',
-    color: '#4ADE80',
-    borderColor: 'rgba(74,222,128,0.25)',
-    bgColor: 'rgba(74,222,128,0.06)',
-    refs: [
-      {
-        id: 23,
-        title: 'Lei Municipal n.º 15.374/2011 — Proibição de Sacolas Plásticas em São Paulo',
-        author: 'Câmara Municipal de São Paulo',
-        year: '2011',
-        url: 'https://www.camara.sp.gov.br',
-        type: 'lei',
-        description:
-          'Referência usada para comparação com outras experiências urbanas no Brasil. O link leva ao portal institucional da Câmara de São Paulo, pois não foi localizada uma URL pública estável para o texto específico citado.',
-      },
-      {
-        id: 24,
-        title: 'Impactos da Proibição de Sacolas Plásticas em São Paulo: 10 anos de resultados',
-        author: 'SOS Mata Atlântica / SVMA-SP',
-        year: '2022',
-        url: 'https://www.sosma.org.br',
-        type: 'relatorio',
-        description:
-          'Referência mantida pela relevância temática sobre políticas de redução de plásticos. O link leva ao portal institucional da organização, já que não foi encontrada a página pública exata do material.',
-      },
-      {
-        id: 25,
-        title: 'Programa Lixo Zero Rio: resultados e desafios',
-        author: 'Secretaria Municipal de Meio Ambiente do Rio de Janeiro',
-        year: '2021',
-        url: 'https://www.rio.rj.gov.br/web/guest/exibeconteudo?id=4433078',
-        type: 'relatorio',
-        description:
-          'Exemplo brasileiro de política pública urbana voltada para redução de resíduos e educação ambiental.',
-      },
-      {
-        id: 26,
-        title: 'Sacolas Plásticas no Brasil: panorama legislativo estadual e municipal',
-        author: 'CEMPRE — Compromisso Empresarial para Reciclagem',
-        year: '2022',
-        url: 'https://cempre.org.br/central-de-conhecimento/',
-        type: 'artigo',
-        description:
-          'Fonte útil para panorama de reciclagem, legislação e educação ambiental. O link leva à central de conhecimento do CEMPRE por não ter sido localizada a página exata do conteúdo citado.',
-      },
-    ],
-  },
-  {
     section: 'Curiosidades e Dados Globais',
     emoji: '💡',
     color: '#A78BFA',

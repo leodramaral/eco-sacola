@@ -47,7 +47,7 @@ const practicalCards = [
 export function AlternativesSection() {
   return (
     <section
-      id="section-5"
+      id="section-4"
       className="relative py-20 px-4 min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #021A08 0%, #042D10 50%, #021A08 100%)' }}
     >

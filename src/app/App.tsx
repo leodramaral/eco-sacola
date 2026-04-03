@@ -4,7 +4,6 @@ import { HeroSection } from './components/HeroSection';
 import { ImpactsSection } from './components/ImpactsSection';
 import { DecompositionSection } from './components/DecompositionSection';
 import { LawSection } from './components/LawSection';
-import { SuccessCasesSection } from './components/SuccessCasesSection';
 import { AlternativesSection } from './components/AlternativesSection';
 import { InitiativesSection } from './components/InitiativesSection';
 import { FinalCTASection } from './components/FinalCTASection';
@@ -17,7 +16,7 @@ import {
   sanitizeReferenceIds,
 } from './components/reference-utils';
 
-const TOTAL_SECTIONS = 8;
+const TOTAL_SECTIONS = 7;
 
 type AppRoute =
   | {
@@ -185,7 +184,6 @@ export default function App() {
       <ImpactsSection />
       <DecompositionSection />
       <LawSection />
-      <SuccessCasesSection />
       <AlternativesSection />
       <InitiativesSection />
       <FinalCTASection
