@@ -1,98 +1,129 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ShieldAlert, Eye, Brain, Lightbulb, TrendingDown } from 'lucide-react';
+import React from 'react';
+import { motion } from 'motion/react';
+import {
+  CalendarRange,
+  Clock3,
+  Gavel,
+  Landmark,
+  Scale,
+  ScrollText,
+} from 'lucide-react';
 import { RefCitation } from './RefCitation';
 
-const reasons = [
+const timelineItems = [
   {
     id: 0,
-    icon: Eye,
-    emoji: '👁️',
-    title: 'Falta de Fiscalização',
+    period: 'Maio de 2021',
+    eyebrow: 'Marco municipal inicial',
+    title: 'Nasce a lei municipal original',
+    summary:
+      'A Lei n.º 485/2021 proibiu a distribuição gratuita de sacolas plásticas nos estabelecimentos comerciais de Manaus e inaugurou o ciclo regulatório mais recente da cidade.',
+    detail:
+      'O debate saiu do plano político e virou norma local, com foco na redução do descartável e no incentivo a alternativas reutilizáveis.',
+    refs: [8, 9, 10],
+    icon: ScrollText,
     color: '#F97316',
-    description:
-      'A lei não foi acompanhada de uma estrutura eficaz de fiscalização. Comércios continuaram distribuindo sacolas plásticas sem penalidades reais. Em Manaus, a fiscalização ambiental é limitada e focada em outras prioridades.',
-    impact: 'Alto',
-    detail: 'Sem acompanhamento institucional contínuo, a norma perdeu força na prática cotidiana do comércio.',
   },
   {
     id: 1,
-    icon: Brain,
-    emoji: '🧠',
-    title: 'Baixa Conscientização',
-    color: '#A78BFA',
-    description:
-      'A população não foi adequadamente informada sobre os impactos das sacolas plásticas nem sobre as alternativas disponíveis. Campanhas educativas foram insuficientes e de curto prazo.',
-    impact: 'Alto',
-    detail: 'Sem campanhas permanentes, a mudança de hábito tende a ser lenta e desigual.',
+    period: 'Outubro de 2021',
+    eyebrow: 'Lei alterada',
+    title: 'A regra ganha cronograma de adaptação',
+    summary:
+      'A Lei n.º 2.799/2021 alterou o texto original e organizou uma transição mais gradual para o comércio, com novas regras de adequação.',
+    detail:
+      'Esse momento foi decisivo porque mostrou que a política pública não seria aplicada de uma só vez, mas em etapas.',
+    refs: [11, 12, 13],
+    icon: CalendarRange,
+    color: '#FB923C',
   },
   {
     id: 2,
-    icon: TrendingDown,
-    emoji: '🔄',
-    title: 'Cultura de Uso Forte',
-    color: '#22D3EE',
-    description:
-      'O hábito de usar sacolas plásticas está profundamente enraizado na cultura de compras em Manaus. Feiras, mercados e supermercados sempre as oferecem gratuitamente, tornando a mudança de comportamento difícil.',
-    impact: 'Médio',
-    detail: 'Quando o descartável segue disponível como padrão, a transição para alternativas reutilizáveis encontra mais resistência.',
+    period: 'Outubro de 2022',
+    eyebrow: 'Aplicação prática',
+    title: 'A regra municipal chega aos grandes supermercados',
+    summary:
+      'As restrições sobre a distribuição e a venda de sacolas plásticas convencionais começaram a ser percebidas na prática nos grandes supermercados de Manaus.',
+    detail:
+      'Aqui a legislação sai do papel e entra no cotidiano do consumidor, marcando a passagem da regulamentação para a implementação.',
+    refs: [14, 15],
+    icon: Scale,
+    color: '#FBBF24',
   },
   {
     id: 3,
-    icon: Lightbulb,
-    emoji: '💰',
-    title: 'Falta de Alternativas Acessíveis',
-    color: '#4ADE80',
-    description:
-      'Ecobags e alternativas sustentáveis têm custo mais alto e não estavam amplamente disponíveis. Para populações de baixa renda, o custo extra é uma barreira real à mudança de comportamento.',
-    impact: 'Médio',
-    detail: 'Sem oferta acessível e incentivo prático, alternativas sustentáveis demoram mais para ganhar escala.',
+    period: 'Dezembro de 2022',
+    eyebrow: 'Escala estadual',
+    title: 'O Amazonas aprova uma lei para todo o estado',
+    summary:
+      'Com a Lei estadual n.º 6.077/2022, o tema deixou de ser apenas municipal e passou a valer em todo o Amazonas, com disciplina para alternativas biodegradáveis ou biocompostáveis.',
+    detail:
+      'Esse passo ampliou o alcance da política e reposicionou o debate para além da capital.',
+    refs: [16, 17, 18],
+    icon: Landmark,
+    color: '#22D3EE',
+  },
+  {
+    id: 4,
+    period: 'Outubro e novembro de 2023',
+    eyebrow: 'Adiamento parcial',
+    title: 'A fase mais rígida é empurrada para 20 de outubro de 2026',
+    summary:
+      'A Lei n.º 3.189/2023 não revogou a política, mas adiou a etapa mais severa da legislação municipal, redesenhando o ritmo da implementação.',
+    detail:
+      'Esse marco é importante porque muda o calendário de exigência sem apagar a existência da lei.',
+    refs: [19, 20],
+    icon: Clock3,
+    color: '#A78BFA',
+  },
+  {
+    id: 5,
+    period: 'Maio e junho de 2024',
+    eyebrow: 'Disputa judicial',
+    title: 'A discussão chega ao Tribunal de Justiça do Amazonas',
+    summary:
+      'Uma ação passou a questionar a legislação municipal e estadual sobre sacolas plásticas, mas acabou extinta, mantendo as regras em vigor.',
+    detail:
+      'O tema deixou de ser apenas legislativo e administrativo, ganhando também uma camada jurídica formal.',
+    refs: [21, 22],
+    icon: Gavel,
+    color: '#F87171',
   },
 ];
 
 export function LawSection() {
-  const [expanded, setExpanded] = useState<number | null>(null);
-
   return (
     <section
       id="section-3"
-      className="relative py-20 px-4 min-h-screen flex flex-col justify-center"
-      style={{ background: 'linear-gradient(180deg, #1A0E00 0%, #2D1800 50%, #1A0A00 100%)' }}
+      className="relative py-20 px-4 min-h-screen flex flex-col justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #160B00 0%, #261300 48%, #120700 100%)' }}
     >
-      {/* Texture overlay */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(255,255,255,0.03) 10px,
-            rgba(255,255,255,0.03) 11px
-          )`,
+          backgroundImage:
+            'linear-gradient(rgba(249,115,22,1) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,1) 1px, transparent 1px)',
+          backgroundSize: '72px 72px',
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto w-full">
-        {/* Header */}
+      <div
+        className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full blur-3xl"
+        style={{ background: 'rgba(249,115,22,0.16)' }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-6"
+          className="text-center mb-10"
         >
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm text-orange-400 border border-orange-500/30 bg-orange-950/30 mb-4"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            ⚖️ Legislação Local
-          </span>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
           >
-            A Lei de{' '}
             <span
               className="text-transparent"
               style={{
@@ -101,209 +132,152 @@ export function LawSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              Manaus
+              Lei das Sacolas
             </span>
           </h2>
+
+          <p
+            className="text-white/65 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            Legislação criada para reduzir a distribuição de sacolas plásticas no comércio de
+            Manaus, depois alterada, ampliada para o Amazonas e discutida judicialmente.
+          </p>
         </motion.div>
 
-        {/* Law summary card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative rounded-2xl p-6 mb-10 border border-orange-500/20 overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #2D1A00, #1A1000)' }}
-        >
-          <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-orange-500 to-amber-600 rounded-l-2xl" />
-          <div className="flex items-start gap-4">
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ background: 'rgba(249, 115, 22, 0.2)' }}
-            >
-              <ShieldAlert className="w-6 h-6 text-orange-400" />
-            </div>
-            <div>
-              <h3
-                className="text-white text-lg mb-2"
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-              >
-                Lei Municipal de Manaus — Redução de Sacolas Plásticas
-              </h3>
-              <p
-                className="text-white/70 text-sm leading-relaxed mb-3"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                Manaus passou a regular a distribuição de sacolas plásticas com a Lei n.º
-                485/2021, depois alterada pela Lei n.º 2.799/2021 e adiada em sua fase mais rígida
-                pela Lei n.º 3.189/2023. Ainda assim, a transformação prática dependeu de
-                fiscalização, comunicação e alternativas acessíveis.
-                <RefCitation ids={[10, 13, 20]} />
-              </p>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span
-                  className="text-red-400 text-sm"
-                  style={{ fontFamily: 'var(--font-body)' }}
+        <div className="relative mb-12">
+          <div
+            className="absolute left-[19px] sm:left-6 top-3 bottom-3 w-px"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(249,115,22,0.85) 0%, rgba(251,191,36,0.55) 45%, rgba(248,113,113,0.45) 100%)',
+            }}
+          />
+
+          <div className="space-y-5">
+            {timelineItems.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, delay: index * 0.08 }}
+                  className="relative pl-14 sm:pl-20"
                 >
-                  Aplicação ainda em transição no cenário local
-                </span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Reasons heading */}
-        <motion.h3
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center text-white/80 mb-6 text-xl"
-          style={{ fontFamily: 'var(--font-heading)', fontWeight: 500 }}
-        >
-          Por que não funcionou?
-        </motion.h3>
-
-        {/* Reason cards */}
-        <div className="space-y-4">
-          {reasons.map((reason, i) => {
-            const Icon = reason.icon;
-            const isOpen = expanded === i;
-            return (
-              <motion.div
-                key={reason.id}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-2xl border overflow-hidden transition-all duration-300 cursor-pointer"
-                style={{
-                  borderColor: isOpen ? `${reason.color}40` : 'rgba(255,255,255,0.08)',
-                  background: isOpen
-                    ? `linear-gradient(135deg, ${reason.color}10, rgba(255,255,255,0.03))`
-                    : 'rgba(255,255,255,0.04)',
-                }}
-                onClick={() => setExpanded(isOpen ? null : i)}
-              >
-                {/* Card header */}
-                <div className="flex items-center gap-4 p-5">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                    className="absolute left-0 top-4 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center border"
                     style={{
-                      background: isOpen ? `${reason.color}25` : 'rgba(255,255,255,0.07)',
+                      background: `${item.color}1A`,
+                      borderColor: `${item.color}40`,
+                      boxShadow: `0 0 20px ${item.color}20`,
                     }}
                   >
-                    <span className="text-xl">{reason.emoji}</span>
+                    <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" style={{ color: item.color }} />
                   </div>
-                  <div className="flex-1">
-                    <h4
-                      className="text-white transition-all duration-300"
-                      style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontWeight: 600,
-                        color: isOpen ? reason.color : 'white',
-                      }}
-                    >
-                      {reason.title}
-                    </h4>
-                    <span
-                      className="text-xs px-2 py-0.5 rounded-full"
-                      style={{
-                        fontFamily: 'var(--font-body)',
-                        color: reason.color,
-                        background: `${reason.color}15`,
-                      }}
-                    >
-                      Impacto: {reason.impact}
-                    </span>
-                  </div>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-white/40 text-lg flex-shrink-0"
-                  >
-                    ▾
-                  </motion.span>
-                </div>
 
-                {/* Expanded content */}
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-5 pb-5 pt-1 border-t border-white/5">
+                  <div
+                    className="absolute left-10 sm:left-12 top-9 h-px w-4"
+                    style={{ background: `${item.color}55` }}
+                  />
+
+                  <div
+                    className="rounded-3xl border p-5 sm:p-6"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))',
+                      borderColor: `${item.color}30`,
+                    }}
+                  >
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                          <span
+                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs"
+                            style={{
+                              fontFamily: 'var(--font-body)',
+                              color: item.color,
+                              background: `${item.color}15`,
+                              border: `1px solid ${item.color}2E`,
+                            }}
+                          >
+                            <span
+                              className="w-1.5 h-1.5 rounded-full"
+                              style={{ background: item.color }}
+                            />
+                            {item.period}
+                          </span>
+
+                          <span
+                            className="inline-block px-3 py-1 rounded-full text-xs text-white/60 border border-white/10 bg-white/4"
+                            style={{ fontFamily: 'var(--font-body)' }}
+                          >
+                            {item.eyebrow}
+                          </span>
+                        </div>
+
+                        <h3
+                          className="text-white text-xl sm:text-2xl mb-2"
+                          style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+                        >
+                          {item.title}
+                        </h3>
+
                         <p
-                          className="text-white/75 text-sm leading-relaxed mb-3"
+                          className="text-white/78 text-sm sm:text-base leading-relaxed mb-3"
                           style={{ fontFamily: 'var(--font-body)' }}
                         >
-                          {reason.description}
+                          {item.summary}
+                          <RefCitation ids={item.refs} />
                         </p>
+
                         <div
-                          className="flex items-start gap-2 p-3 rounded-xl"
-                          style={{ background: `${reason.color}12` }}
+                          className="rounded-2xl p-4 border"
+                          style={{
+                            background: `${item.color}10`,
+                            borderColor: `${item.color}22`,
+                          }}
                         >
-                          <span className="text-base flex-shrink-0">📊</span>
                           <p
-                            className="text-sm italic"
-                            style={{ fontFamily: 'var(--font-body)', color: reason.color }}
+                            className="text-sm leading-relaxed"
+                            style={{ fontFamily: 'var(--font-body)', color: item.color }}
                           >
-                            {reason.detail}
+                            {item.detail}
                           </p>
                         </div>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
 
-        {/* Infographic summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4"
-        >
-          {[
-            { icon: '📋', label: 'Marco municipal', value: '2021' },
-            { icon: '♻️', label: 'Expansão estadual', value: 'Lei 6.077/2022' },
-            { icon: '🔍', label: 'Desafio central', value: 'Fiscalização' },
-            { icon: '🧭', label: 'Próximo marco', value: 'Out. 2026' },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center text-center p-4 rounded-xl border border-white/8 bg-white/4"
-            >
-              <span className="text-2xl mb-2">{item.icon}</span>
-              <span
-                className="text-xl text-amber-400 mb-1"
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-              >
-                {item.value}
-              </span>
-              <span
-                className="text-xs text-white/50"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </motion.div>
-        <div className="mt-3 text-right">
-          <RefCitation ids={[11, 16, 22]} />
-          <span className="text-white/30 text-xs ml-1" style={{ fontFamily: 'var(--font-body)' }}>
-            Contexto institucional local
-          </span>
+                      <div
+                        className="sm:w-44 flex-shrink-0 rounded-2xl border p-4"
+                        style={{
+                          background: 'rgba(0,0,0,0.16)',
+                          borderColor: 'rgba(255,255,255,0.08)',
+                        }}
+                      >
+                        <p
+                          className="text-xs uppercase tracking-[0.18em] text-white/40 mb-2"
+                          style={{ fontFamily: 'var(--font-body)' }}
+                        >
+                          Efeito do marco
+                        </p>
+                        <p
+                          className="text-sm leading-relaxed text-white/72"
+                          style={{ fontFamily: 'var(--font-body)' }}
+                        >
+                          {index < 2 && 'Criação da base legal e definição do ritmo de adaptação.'}
+                          {index === 2 && 'Entrada visível da norma na rotina dos consumidores.'}
+                          {index === 3 && 'Ampliação da política para todo o território estadual.'}
+                          {index === 4 && 'Mudança de calendário sem revogação da política.'}
+                          {index === 5 && 'Manutenção das regras após contestação judicial.'}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
