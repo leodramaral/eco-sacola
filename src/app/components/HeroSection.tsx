@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -12,15 +12,6 @@ interface HeroSectionProps {
 
 export function HeroSection({ onExplore }: HeroSectionProps) {
   const totalReferences = referenceGroups.reduce((sum, group) => sum + group.refs.length, 0);
-  const [leafPositions] = useState(() =>
-    Array.from({ length: 12 }, (_, i) => ({
-      id: i,
-      left: `${Math.random() * 90 + 5}%`,
-      delay: Math.random() * 4,
-      duration: 4 + Math.random() * 4,
-      size: 12 + Math.random() * 20,
-    }))
-  );
 
   return (
     <section
@@ -39,25 +30,6 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
         {/* Color wash */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/40 via-transparent to-green-950/60" />
       </div>
-
-      {/* Floating leaves */}
-      {leafPositions.map((leaf) => (
-        <motion.div
-          key={leaf.id}
-          className="absolute top-0 pointer-events-none select-none"
-          style={{ left: leaf.left }}
-          initial={{ y: -40, opacity: 0, rotate: 0 }}
-          animate={{ y: '110vh', opacity: [0, 0.7, 0.7, 0], rotate: 360 }}
-          transition={{
-            duration: leaf.duration,
-            delay: leaf.delay,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        >
-          <span style={{ fontSize: leaf.size }}>🍃</span>
-        </motion.div>
-      ))}
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto pt-16">

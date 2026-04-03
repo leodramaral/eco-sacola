@@ -59,26 +59,6 @@ export function FinalCTASection({
         <div className="absolute inset-0 bg-gradient-to-b from-[#021A08]/90 via-[#021A08]/85 to-[#021A08]/95" />
       </div>
 
-      {Array.from({ length: 10 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute pointer-events-none"
-          style={{
-            left: `${10 + i * 9}%`,
-            bottom: '-10%',
-          }}
-          animate={{ y: '-120vh', opacity: [0, 0.6, 0] }}
-          transition={{
-            duration: 6 + i * 0.8,
-            repeat: Infinity,
-            delay: i * 0.7,
-            ease: 'linear',
-          }}
-        >
-          <span style={{ fontSize: 14 + i * 2 }}>🍃</span>
-        </motion.div>
-      ))}
-
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
