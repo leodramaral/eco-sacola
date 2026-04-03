@@ -31,7 +31,7 @@ const cases = [
       ecobagLabel: 'de alternativas reutilizáveis',
     },
     keys: ['Multas efetivas para descumpridores', 'Campanhas massivas de comunicação', 'Distribuição gratuita de ecobags', 'Engajamento da sociedade civil'],
-    refIds: [11, 12],
+    refIds: [23, 24],
   },
   {
     city: 'Rio de Janeiro',
@@ -56,7 +56,7 @@ const cases = [
       ecobagLabel: 'de engajamento e descarte correto',
     },
     keys: ['Parcerias com supermercados', 'Programas nas escolas', 'Pontos de troca de plástico', 'Campanha "Rio sem Plástico"'],
-    refIds: [13, 14],
+    refIds: [25, 26],
   },
 ];
 

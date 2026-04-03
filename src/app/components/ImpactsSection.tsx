@@ -56,7 +56,7 @@ const impacts = [
       'Microplásticos já foram encontrados em peixes do Amazonas, na água potável e até no ar de Manaus. São invisíveis e impossíveis de remover.',
     stat: '<5mm',
     statLabel: 'fragmentos classificados como microplásticos',
-    refIds: [1, 16],
+    refIds: [1, 28],
     image: null,
   },
 ];

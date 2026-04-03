@@ -28,7 +28,7 @@ const curiosities = [
     answer: 'A reciclagem de plásticos no Brasil ainda enfrenta muitos desafios de coleta, triagem e reaproveitamento, o que limita o retorno desse material à cadeia produtiva.',
     color: '#FBBF24',
     bg: 'linear-gradient(135deg, #1A1400, #2D2000)',
-    refIds: [6, 19],
+    refIds: [6, 31],
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const curiosities = [
     answer: 'Mais de 8 milhões de toneladas por ano. O equivalente a despejar um caminhão de lixo por minuto nos oceanos.',
     color: '#22D3EE',
     bg: 'linear-gradient(135deg, #001A20, #002D35)',
-    refIds: [18],
+    refIds: [30],
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const curiosities = [
     answer: 'Sim! Estudos confirmaram que peixes do Amazonas já apresentam microplásticos em seus organismos — e chegam à nossa mesa.',
     color: '#60A5FA',
     bg: 'linear-gradient(135deg, #021020, #041830)',
-    refIds: [16],
+    refIds: [28],
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const curiosities = [
     answer: 'Porque a produção de plásticos cresceu intensamente nas últimas décadas e grande parte desse material não retorna de forma segura à economia ou ao ambiente.',
     color: '#A78BFA',
     bg: 'linear-gradient(135deg, #0D0520, #180A35)',
-    refIds: [17],
+    refIds: [29],
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const curiosities = [
     answer: 'Microplásticos já fazem parte da cadeia alimentar e podem alcançar o ser humano por meio da água, do ar e dos alimentos contaminados.',
     color: '#F472B6',
     bg: 'linear-gradient(135deg, #200510, #35091A)',
-    refIds: [15],
+    refIds: [27],
   },
 ];
 

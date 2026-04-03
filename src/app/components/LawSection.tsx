@@ -134,11 +134,11 @@ export function LawSection() {
                 className="text-white/70 text-sm leading-relaxed mb-3"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
-                Manaus aprovou uma referência legal importante para reduzir o uso de sacolas
-                plásticas em estabelecimentos comerciais, em diálogo com a Política Nacional de
-                Resíduos Sólidos. Ainda assim, a transformação prática dependeu de fiscalização,
-                comunicação e alternativas acessíveis.
-                <RefCitation ids={[8, 9]} />
+                Manaus passou a regular a distribuição de sacolas plásticas com a Lei n.º
+                485/2021, depois alterada pela Lei n.º 2.799/2021 e adiada em sua fase mais rígida
+                pela Lei n.º 3.189/2023. Ainda assim, a transformação prática dependeu de
+                fiscalização, comunicação e alternativas acessíveis.
+                <RefCitation ids={[10, 13, 20]} />
               </p>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
@@ -146,7 +146,7 @@ export function LawSection() {
                   className="text-red-400 text-sm"
                   style={{ fontFamily: 'var(--font-body)' }}
                 >
-                  Desafio ainda presente na implementação local
+                  Aplicação ainda em transição no cenário local
                 </span>
               </div>
             </div>
@@ -274,10 +274,10 @@ export function LawSection() {
           className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4"
         >
           {[
-            { icon: '📋', label: 'Marco municipal', value: '2011' },
-            { icon: '♻️', label: 'Base nacional', value: 'PNRS 2010' },
+            { icon: '📋', label: 'Marco municipal', value: '2021' },
+            { icon: '♻️', label: 'Expansão estadual', value: 'Lei 6.077/2022' },
             { icon: '🔍', label: 'Desafio central', value: 'Fiscalização' },
-            { icon: '🧭', label: 'Caminho necessário', value: 'Educação' },
+            { icon: '🧭', label: 'Próximo marco', value: 'Out. 2026' },
           ].map((item, i) => (
             <div
               key={i}
@@ -300,7 +300,7 @@ export function LawSection() {
           ))}
         </motion.div>
         <div className="mt-3 text-right">
-          <RefCitation ids={[10]} />
+          <RefCitation ids={[11, 16, 22]} />
           <span className="text-white/30 text-xs ml-1" style={{ fontFamily: 'var(--font-body)' }}>
             Contexto institucional local
           </span>

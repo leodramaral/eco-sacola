@@ -19,7 +19,7 @@ const initiatives = [
     details: ['Integra descarte e triagem de recicláveis', 'Apoia a destinação correta', 'Depende de adesão contínua da população'],
     status: 'Ativo',
     statusColor: '#4ADE80',
-    refIds: [20],
+    refIds: [32],
   },
   {
     id: 1,
@@ -34,7 +34,7 @@ const initiatives = [
     details: ['Fortalecem a cadeia da reciclagem', 'Geram renda a partir dos recicláveis', 'Ajudam a retirar materiais do fluxo de descarte comum'],
     status: 'Ativo',
     statusColor: '#22D3EE',
-    refIds: [21],
+    refIds: [33],
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ const initiatives = [
     details: ['Aproximam a coleta do cotidiano', 'Dependem de sinalização clara', 'Podem ampliar o engajamento do setor privado'],
     status: 'Em expansão',
     statusColor: '#A78BFA',
-    refIds: [22],
+    refIds: [34],
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ const initiatives = [
     details: ['Mobilizam voluntariado e instituições', 'Dão visibilidade ao descarte irregular', 'Podem gerar educação ambiental prática'],
     status: 'Ativo',
     statusColor: '#60A5FA',
-    refIds: [23],
+    refIds: [35],
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ const initiatives = [
     details: ['Relacionam limpeza e educação ambiental', 'Fortalecem o olhar sobre os igarapés', 'Apoiam ações urbanas de preservação'],
     status: 'Em andamento',
     statusColor: '#34D399',
-    refIds: [23],
+    refIds: [35],
   },
   {
     id: 5,
@@ -94,7 +94,7 @@ const initiatives = [
     details: ['Amplia a consciência ambiental', 'Pode fortalecer hábitos de reutilização', 'Conecta escola, bairro e cidade'],
     status: 'Ativo',
     statusColor: '#FBBF24',
-    refIds: [20],
+    refIds: [32],
   },
 ];
 
