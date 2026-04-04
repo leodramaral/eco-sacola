@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, ChevronDown, BookOpen, ArrowUp, Download } from 'lucide-react';
+import {
+  IconAlertTriangle,
+  IconArrowUp,
+  IconBook,
+  IconChevronDown,
+  IconDownload,
+  IconExternalLink,
+  IconHeart,
+} from '@tabler/icons-react';
 import {
   referenceGroups,
   refIdToGroup,
@@ -64,7 +72,16 @@ function ReferenceGroupCard({
         onClick={() => setIsOpen((open) => !open)}
         className="w-full flex items-center gap-4 p-5 cursor-pointer text-left"
       >
-        <span className="text-2xl flex-shrink-0">{group.emoji}</span>
+        <div
+          className="flex h-11 w-11 items-center justify-center rounded-2xl border flex-shrink-0"
+          style={{
+            color: group.color,
+            background: `${group.color}14`,
+            borderColor: `${group.color}30`,
+          }}
+        >
+          <group.icon className="eco-icon eco-icon-xl" aria-hidden="true" />
+        </div>
         <div className="flex-1">
           <span
             className="text-base text-white"
@@ -81,7 +98,7 @@ function ReferenceGroupCard({
           transition={{ duration: 0.3 }}
           className="flex-shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-white/40" />
+          <IconChevronDown className="eco-icon w-5 h-5 text-white/40" aria-hidden="true" />
         </motion.div>
       </button>
 
@@ -194,7 +211,7 @@ function ReferenceGroupCard({
                         title={getLinkLabel(reference)}
                       >
                         {getLinkLabel(reference)}
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <IconExternalLink className="eco-icon w-3.5 h-3.5" aria-hidden="true" />
                       </a>
                     </div>
                   </motion.div>
@@ -278,7 +295,7 @@ export function ReferencesSection({
                 border: '1px solid rgba(74,222,128,0.25)',
               }}
             >
-              <BookOpen className="w-8 h-8 text-emerald-400" />
+              <IconBook className="eco-icon w-8 h-8 text-emerald-400" aria-hidden="true" />
             </div>
           </div>
 
@@ -286,7 +303,10 @@ export function ReferencesSection({
             className="inline-block px-4 py-1.5 rounded-full text-sm text-emerald-400 border border-emerald-500/30 bg-emerald-950/30 mb-4"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            📚 Fontes e Referências
+            <span className="inline-flex items-center gap-1.5">
+              <IconBook className="eco-icon eco-icon-sm" aria-hidden="true" />
+              Fontes e Referências
+            </span>
           </span>
 
           <h2
@@ -400,14 +420,20 @@ export function ReferencesSection({
           transition={{ duration: 0.6 }}
           className="p-5 rounded-2xl border border-white/8 bg-white/3 mb-8 text-center"
         >
-          <p
-            className="text-white/50 text-xs leading-relaxed"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            ⚠️ Toda referência desta cartilha possui URL de acesso. Quando não há uma página
-            pública específica do documento citado, o botão leva ao portal institucional
-            relacionado e isso é informado na descrição da fonte.
-          </p>
+          <div className="flex items-start justify-center gap-2 text-left">
+            <IconAlertTriangle
+              className="eco-icon eco-icon-md text-amber-300 mt-0.5"
+              aria-hidden="true"
+            />
+            <p
+              className="text-white/50 text-xs leading-relaxed"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Toda referência desta cartilha possui URL de acesso. Quando não há uma página
+              pública específica do documento citado, o botão leva ao portal institucional
+              relacionado e isso é informado na descrição da fonte.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -432,7 +458,10 @@ export function ReferencesSection({
               boxShadow: isDownloading ? 'none' : '0 0 30px rgba(22,163,74,0.35)',
             }}
           >
-            <Download className={`w-4 h-4 ${isDownloading ? 'animate-bounce' : ''}`} />
+            <IconDownload
+              className={`eco-icon w-4 h-4 ${isDownloading ? 'animate-bounce' : ''}`}
+              aria-hidden="true"
+            />
             {isDownloading ? 'Gerando PDF…' : 'Baixar em PDF (ABNT)'}
           </motion.button>
 
@@ -443,7 +472,7 @@ export function ReferencesSection({
             className="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-all cursor-pointer"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 600 }}
           >
-            <ArrowUp className="w-4 h-4" />
+            <IconArrowUp className="eco-icon w-4 h-4" aria-hidden="true" />
             {backLabel}
           </motion.button>
         </motion.div>
@@ -459,7 +488,11 @@ export function ReferencesSection({
             EcoSacola Manaus — Cartilha Digital Educativa · 2025
           </p>
           <p className="text-white/15 text-xs mt-1" style={{ fontFamily: 'var(--font-body)' }}>
-            Feita com 💚 para proteger o Amazonas
+            <span className="inline-flex items-center gap-1.5">
+              Feita com
+              <IconHeart className="eco-icon eco-icon-sm text-emerald-300/80" aria-hidden="true" />
+              para proteger o Amazonas
+            </span>
           </p>
         </motion.div>
       </div>

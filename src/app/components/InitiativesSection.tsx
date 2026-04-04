@@ -1,14 +1,39 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import {
+  IconBuildingFactory2,
+  IconChevronDown,
+  IconChevronUp,
+  IconCircle,
+  IconCoins,
+  IconExternalLink,
+  IconMapPin,
+  IconRecycle,
+  IconTruck,
+  type TablerIcon,
+} from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { RefCitation } from './RefCitation';
 
 const RECYCLING_IMAGE = 'https://images.unsplash.com/flagged/photo-1574380555089-06f915e8c074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
-const initiatives = [
+const initiatives: {
+  id: number;
+  icon: TablerIcon;
+  title: string;
+  zone: string;
+  color: string;
+  bg: string;
+  border: string;
+  description: string;
+  details: string[];
+  status: string;
+  statusColor: string;
+  refIds: number[];
+}[] = [
   {
     id: 0,
-    emoji: '🚛',
+    icon: IconTruck,
     title: 'Coleta Seletiva Porta a Porta',
     zone: 'Dom Pedro · Flores · bairros programados',
     color: '#4ADE80',
@@ -27,7 +52,7 @@ const initiatives = [
   },
   {
     id: 1,
-    emoji: '📍',
+    icon: IconMapPin,
     title: 'Pontos de Entrega Voluntária (PEVs)',
     zone: 'Supermercados · sedes públicas · várias zonas',
     color: '#22D3EE',
@@ -46,7 +71,7 @@ const initiatives = [
   },
   {
     id: 2,
-    emoji: '♻️',
+    icon: IconRecycle,
     title: 'ASCARMAN + InnPacto Amazônia',
     zone: 'Colônia Terra Nova · 6 bairros',
     color: '#A78BFA',
@@ -65,7 +90,7 @@ const initiatives = [
   },
   {
     id: 3,
-    emoji: '🧵',
+    icon: IconBuildingFactory2,
     title: 'ARPA + EcoForte',
     zone: 'Manaus · cadeia local de reciclagem',
     color: '#60A5FA',
@@ -84,7 +109,7 @@ const initiatives = [
   },
   {
     id: 4,
-    emoji: '💰',
+    icon: IconCoins,
     title: 'Plastic Bank + Lord + ASCARMAN',
     zone: 'Terra Nova · operação iniciada em maio de 2025',
     color: '#FBBF24',
@@ -180,95 +205,118 @@ export function InitiativesSection() {
 
         {/* Grid of cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {initiatives.map((item, i) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              onClick={() => setSelected(selected === item.id ? null : item.id)}
-              className="rounded-2xl border p-5 cursor-pointer transition-all duration-300"
-              style={{
-                background: selected === item.id ? item.bg : 'rgba(255,255,255,0.04)',
-                borderColor: selected === item.id ? item.border.replace('0.2', '0.4') : 'rgba(255,255,255,0.08)',
-              }}
-            >
-              {/* Card header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{item.emoji}</span>
-                  <div>
-                    <h4
-                      className="text-white text-sm"
-                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-                    >
-                      {item.title}
-                    </h4>
-                    <p
-                      className="text-xs text-white/40 mt-0.5"
-                      style={{ fontFamily: 'var(--font-body)' }}
-                    >
-                      📍 {item.zone}
-                    </p>
-                  </div>
-                </div>
-                <span
-                  className="text-xs px-2 py-0.5 rounded-full flex-shrink-0"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    color: item.statusColor,
-                    background: `${item.statusColor}15`,
-                    border: `1px solid ${item.statusColor}30`,
-                  }}
-                >
-                  {item.status}
-                </span>
-              </div>
+          {initiatives.map((item, i) => {
+            const Icon = item.icon;
+            const ToggleIcon = selected === item.id ? IconChevronUp : IconChevronDown;
 
-              {/* Expandable content */}
-              <AnimatePresence>
-                {selected === item.id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="overflow-hidden"
-                  >
-                    <p
-                      className="text-white/70 text-xs leading-relaxed mb-3"
-                      style={{ fontFamily: 'var(--font-body)' }}
-                    >
-                      {item.description}
-                      <RefCitation ids={item.refIds} />
-                    </p>
-                    <div className="space-y-1.5">
-                      {item.details.map((d, j) => (
-                        <div key={j} className="flex items-center gap-2">
-                          <span style={{ color: item.color }} className="text-xs">●</span>
-                          <span
-                            className="text-xs text-white/60"
-                            style={{ fontFamily: 'var(--font-body)' }}
-                          >
-                            {d}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {/* Tap hint */}
-              <p
-                className="text-xs mt-3"
-                style={{ fontFamily: 'var(--font-body)', color: item.color, opacity: 0.7 }}
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                onClick={() => setSelected(selected === item.id ? null : item.id)}
+                className="rounded-2xl border p-5 cursor-pointer transition-all duration-300"
+                style={{
+                  background: selected === item.id ? item.bg : 'rgba(255,255,255,0.04)',
+                  borderColor:
+                    selected === item.id
+                      ? item.border.replace('0.2', '0.4')
+                      : 'rgba(255,255,255,0.08)',
+                }}
               >
-                {selected === item.id ? '▲ Fechar' : '▼ Ver detalhes'}
-              </p>
-            </motion.div>
-          ))}
+                {/* Card header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="flex h-11 w-11 items-center justify-center rounded-2xl border"
+                      style={{
+                        color: item.color,
+                        background: `${item.color}16`,
+                        borderColor: `${item.color}30`,
+                      }}
+                    >
+                      <Icon className="eco-icon eco-icon-xl" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h4
+                        className="text-white text-sm"
+                        style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+                      >
+                        {item.title}
+                      </h4>
+                      <p
+                        className="mt-0.5 flex items-center gap-1.5 text-xs text-white/40"
+                        style={{ fontFamily: 'var(--font-body)' }}
+                      >
+                        <IconMapPin className="eco-icon eco-icon-sm" aria-hidden="true" />
+                        {item.zone}
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    className="text-xs px-2 py-0.5 rounded-full flex-shrink-0"
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      color: item.statusColor,
+                      background: `${item.statusColor}15`,
+                      border: `1px solid ${item.statusColor}30`,
+                    }}
+                  >
+                    {item.status}
+                  </span>
+                </div>
+
+                {/* Expandable content */}
+                <AnimatePresence>
+                  {selected === item.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35 }}
+                      className="overflow-hidden"
+                    >
+                      <p
+                        className="text-white/70 text-xs leading-relaxed mb-3"
+                        style={{ fontFamily: 'var(--font-body)' }}
+                      >
+                        {item.description}
+                        <RefCitation ids={item.refIds} />
+                      </p>
+                      <div className="space-y-1.5">
+                        {item.details.map((d, j) => (
+                          <div key={j} className="flex items-center gap-2">
+                            <IconCircle
+                              className="eco-icon eco-icon-xs"
+                              aria-hidden="true"
+                              style={{ color: item.color, fill: item.color, strokeWidth: 0 }}
+                            />
+                            <span
+                              className="text-xs text-white/60"
+                              style={{ fontFamily: 'var(--font-body)' }}
+                            >
+                              {d}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Tap hint */}
+                <p
+                  className="mt-3 flex items-center gap-1.5 text-xs"
+                  style={{ fontFamily: 'var(--font-body)', color: item.color, opacity: 0.7 }}
+                >
+                  <ToggleIcon className="eco-icon eco-icon-sm" aria-hidden="true" />
+                  {selected === item.id ? 'Fechar' : 'Ver detalhes'}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Network overview */}
@@ -281,8 +329,9 @@ export function InitiativesSection() {
           style={{ background: 'rgba(255,255,255,0.04)' }}
         >
           <div className="p-4 border-b border-white/10 flex items-center gap-2">
+            <IconExternalLink className="eco-icon eco-icon-md text-white/55" aria-hidden="true" />
             <span className="text-sm text-white/70" style={{ fontFamily: 'var(--font-body)' }}>
-              🔗 Rede das iniciativas — Manaus, AM
+              Rede das iniciativas — Manaus, AM
             </span>
           </div>
           <div

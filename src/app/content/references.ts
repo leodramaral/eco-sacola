@@ -1,3 +1,13 @@
+import {
+  IconClockHour3,
+  IconMapPin,
+  IconMicroscope,
+  IconRecycle,
+  IconScale,
+  IconWaveSine,
+  type TablerIcon,
+} from '@tabler/icons-react';
+
 export type ReferenceType = 'relatorio' | 'lei' | 'estudo' | 'artigo' | 'institucional';
 
 export interface Reference {
@@ -12,7 +22,7 @@ export interface Reference {
 
 export interface ReferenceGroup {
   section: string;
-  emoji: string;
+  icon: TablerIcon;
   color: string;
   borderColor: string;
   bgColor: string;
@@ -22,7 +32,7 @@ export interface ReferenceGroup {
 export const referenceGroups: ReferenceGroup[] = [
   {
     section: 'Impactos em Manaus e na Amazônia',
-    emoji: '🌊',
+    icon: IconWaveSine,
     color: '#22D3EE',
     borderColor: 'rgba(34,211,238,0.25)',
     bgColor: 'rgba(34,211,238,0.06)',
@@ -71,7 +81,7 @@ export const referenceGroups: ReferenceGroup[] = [
   },
   {
     section: 'Permanência e Fragmentação no Ambiente',
-    emoji: '⏱️',
+    icon: IconClockHour3,
     color: '#FBBF24',
     borderColor: 'rgba(251,191,36,0.25)',
     bgColor: 'rgba(251,191,36,0.06)',
@@ -110,7 +120,7 @@ export const referenceGroups: ReferenceGroup[] = [
   },
   {
     section: 'Lei das Sacolas em Manaus e no Amazonas',
-    emoji: '⚖️',
+    icon: IconScale,
     color: '#F97316',
     borderColor: 'rgba(249,115,22,0.25)',
     bgColor: 'rgba(249,115,22,0.06)',
@@ -269,7 +279,7 @@ export const referenceGroups: ReferenceGroup[] = [
   },
   {
     section: 'Microplásticos, Saúde e Exposição Humana',
-    emoji: '🔬',
+    icon: IconMicroscope,
     color: '#A78BFA',
     borderColor: 'rgba(167,139,250,0.25)',
     bgColor: 'rgba(167,139,250,0.06)',
@@ -298,7 +308,7 @@ export const referenceGroups: ReferenceGroup[] = [
   },
   {
     section: 'Resíduos, Reciclagem e Economia Circular',
-    emoji: '♻️',
+    icon: IconRecycle,
     color: '#84CC16',
     borderColor: 'rgba(132,204,22,0.25)',
     bgColor: 'rgba(132,204,22,0.06)',
@@ -337,7 +347,7 @@ export const referenceGroups: ReferenceGroup[] = [
   },
   {
     section: 'Iniciativas e Soluções em Manaus',
-    emoji: '📍',
+    icon: IconMapPin,
     color: '#34D399',
     borderColor: 'rgba(52,211,153,0.25)',
     bgColor: 'rgba(52,211,153,0.06)',

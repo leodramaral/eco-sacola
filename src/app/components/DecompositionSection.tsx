@@ -1,11 +1,24 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { IconShoppingBag, type TablerIcon } from '@tabler/icons-react';
 import { RefCitation } from './RefCitation';
 
-const items = [
+const items: {
+  id: number;
+  icon: TablerIcon;
+  name: string;
+  years: string;
+  label: string;
+  color: string;
+  bgColor: string;
+  usageTime: string;
+  details: string;
+  comparisonNote: string;
+  refIds: number[];
+}[] = [
   {
     id: 0,
-    emoji: '🛍️',
+    icon: IconShoppingBag,
     name: 'Sacola Plástica',
     years: 'até 20',
     label: 'anos',
@@ -21,6 +34,7 @@ const items = [
 
 export function DecompositionSection() {
   const activeItem = items[0];
+  const ItemIcon = activeItem.icon;
 
   return (
     <section
@@ -91,7 +105,16 @@ export function DecompositionSection() {
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-8 lg:items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <span className="text-5xl sm:text-6xl">{activeItem.emoji}</span>
+                  <div
+                    className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-3xl border"
+                    style={{
+                      color: activeItem.color,
+                      background: `${activeItem.color}14`,
+                      borderColor: `${activeItem.color}30`,
+                    }}
+                  >
+                    <ItemIcon className="eco-icon eco-icon-display" aria-hidden="true" />
+                  </div>
                   <div>
                     <h3
                       className="text-2xl sm:text-3xl text-white"

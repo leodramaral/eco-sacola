@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Share2, CheckCircle, Download, Files, ArrowUpRight, RotateCcw } from 'lucide-react';
+import {
+  IconArrowUpRight,
+  IconCircleCheck,
+  IconDownload,
+  IconFiles,
+  IconHeart,
+  IconRotateClockwise2,
+  IconShare3,
+} from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const FOREST_IMAGE =
@@ -29,7 +37,7 @@ export function FinalCTASection({
       if (navigator.share) {
         await navigator.share({
           title: 'EcoSacola Manaus',
-          text: 'Aprendi sobre o impacto das sacolas plásticas em Manaus. Você também deveria conhecer essa cartilha! 🌿',
+          text: 'Aprendi sobre o impacto das sacolas plásticas em Manaus. Você também deveria conhecer essa cartilha!',
           url: window.location.href,
         });
         flashShareState('shared');
@@ -71,7 +79,7 @@ export function FinalCTASection({
             className="flex items-center gap-3 px-6 py-3 rounded-full border border-emerald-500/40"
             style={{ background: 'rgba(74,222,128,0.1)', backdropFilter: 'blur(10px)' }}
           >
-            <CheckCircle className="w-5 h-5 text-emerald-400" />
+            <IconCircleCheck className="eco-icon w-5 h-5 text-emerald-400" aria-hidden="true" />
             <span className="font-body text-emerald-400 text-sm">
               Cartilha completa — 7/7 seções
             </span>
@@ -112,7 +120,7 @@ export function FinalCTASection({
             }}
           >
             <span className="font-body inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-300">
-              <Share2 className="h-3.5 w-3.5" />
+              <IconShare3 className="eco-icon h-3.5 w-3.5" aria-hidden="true" />
               Ação principal
             </span>
 
@@ -136,7 +144,7 @@ export function FinalCTASection({
                   : shareState === 'shared'
                     ? 'Compartilhada'
                     : 'Compartilhar'}
-                <ArrowUpRight className="w-4 h-4" />
+                <IconArrowUpRight className="eco-icon w-4 h-4" aria-hidden="true" />
               </span>
             </motion.button>
           </motion.div>
@@ -155,9 +163,9 @@ export function FinalCTASection({
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="w-11 h-11 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 flex items-center justify-center text-cyan-300">
-                  <Files className="w-5 h-5" />
+                  <IconFiles className="eco-icon w-5 h-5" aria-hidden="true" />
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-white/35" />
+                <IconArrowUpRight className="eco-icon w-4 h-4 text-white/35" aria-hidden="true" />
               </div>
               <h3 className="font-heading mt-5 text-xl text-white font-bold">
                 Ver página de referências
@@ -181,9 +189,9 @@ export function FinalCTASection({
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="w-11 h-11 rounded-2xl border border-amber-400/20 bg-amber-400/10 flex items-center justify-center text-amber-300">
-                  <Download className="w-5 h-5" />
+                  <IconDownload className="eco-icon w-5 h-5" aria-hidden="true" />
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-white/35" />
+                <IconArrowUpRight className="eco-icon w-4 h-4 text-white/35" aria-hidden="true" />
               </div>
               <h3 className="font-heading mt-5 text-xl text-white font-bold">
                 Baixar arquivo de referências
@@ -209,7 +217,7 @@ export function FinalCTASection({
             onClick={onRestart}
             className="font-body inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white/65 transition-all hover:border-white/25 hover:text-white cursor-pointer"
           >
-            <RotateCcw className="w-4 h-4" />
+            <IconRotateClockwise2 className="eco-icon w-4 h-4" aria-hidden="true" />
             Voltar ao topo da cartilha
           </motion.button>
         </motion.div>
@@ -225,7 +233,11 @@ export function FinalCTASection({
             EcoSacola Manaus — Cartilha Digital Educativa · 2026
           </p>
           <p className="font-body text-white/20 text-xs mt-1">
-            Feita com 💚 para proteger o Amazonas
+            <span className="inline-flex items-center gap-1.5">
+              Feita com
+              <IconHeart className="eco-icon eco-icon-sm text-emerald-300/80" aria-hidden="true" />
+              para proteger o Amazonas
+            </span>
           </p>
         </motion.div>
       </div>

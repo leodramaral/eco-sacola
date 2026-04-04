@@ -118,7 +118,7 @@ export function generateABNTPDF() {
 
       return `
       <div class="group">
-        <h2 class="group-title">${group.emoji} ${group.section}</h2>
+        <h2 class="group-title">${group.section}</h2>
         ${refsHTML}
       </div>`;
     })
@@ -227,7 +227,7 @@ export function generateABNTPDF() {
   </div>
 
   <div class="abnt-note">
-    📋 <strong>Nota:</strong> As referências abaixo seguem a norma ABNT NBR 6023:2018 para
+    <strong>Nota:</strong> As referências abaixo seguem a norma ABNT NBR 6023:2018 para
     documentos eletrônicos. Quando não há uma página pública estável do material citado, o link
     redireciona para o portal institucional da fonte responsável.
   </div>
@@ -235,7 +235,7 @@ export function generateABNTPDF() {
   ${groupsHTML}
 
   <div class="footer">
-    EcoSacola Manaus — Feita com 💚 para proteger o Amazonas · ${now}
+    EcoSacola Manaus — Feita para proteger o Amazonas · ${now}
   </div>
 
   <script>

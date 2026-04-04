@@ -1,14 +1,34 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import {
+  IconBuildingCommunity,
+  IconChevronDown,
+  IconChevronUp,
+  IconFish,
+  IconFlask,
+  IconWaveSine,
+  type TablerIcon,
+} from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { RefCitation } from './RefCitation';
 
 const POLLUTION_IMAGE = 'https://images.unsplash.com/photo-1759868411143-aec66f57d370?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 const TURTLE_IMAGE = 'https://images.unsplash.com/photo-1638644344507-be07bf38377a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
-const impacts = [
+const impacts: {
+  icon: TablerIcon;
+  title: string;
+  color: string;
+  accent: string;
+  tag: string;
+  description: string;
+  stat: string;
+  statLabel: string;
+  refIds: number[];
+  image: string | null;
+}[] = [
   {
-    emoji: '🌊',
+    icon: IconWaveSine,
     title: 'Rios e Igarapés',
     color: 'from-blue-900 to-cyan-900',
     accent: '#22D3EE',
@@ -21,7 +41,7 @@ const impacts = [
     image: POLLUTION_IMAGE,
   },
   {
-    emoji: '🐢',
+    icon: IconFish,
     title: 'Fauna Amazônica',
     color: 'from-red-950 to-orange-950',
     accent: '#FB923C',
@@ -34,7 +54,7 @@ const impacts = [
     image: TURTLE_IMAGE,
   },
   {
-    emoji: '🏙️',
+    icon: IconBuildingCommunity,
     title: 'Lixo Urbano',
     color: 'from-yellow-950 to-amber-950',
     accent: '#FBBF24',
@@ -47,7 +67,7 @@ const impacts = [
     image: null,
   },
   {
-    emoji: '🧪',
+    icon: IconFlask,
     title: 'Microplásticos',
     color: 'from-violet-950 to-indigo-950',
     accent: '#A78BFA',
@@ -115,106 +135,124 @@ export function ImpactsSection() {
 
         {/* Impact cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {impacts.map((impact, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              onClick={() => setExpanded(expanded === i ? null : i)}
-              className={`relative rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
-                expanded === i ? 'border-white/20' : 'border-white/5 hover:border-white/15'
-              }`}
-              style={{ background: `linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))` }}
-            >
-              {/* Gradient background */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${impact.color} opacity-90`}
-              />
+          {impacts.map((impact, i) => {
+            const Icon = impact.icon;
+            const ToggleIcon = expanded === i ? IconChevronUp : IconChevronDown;
 
-              {/* Image overlay (for cards with images) */}
-              {impact.image && expanded === i && (
-                <div className="absolute inset-0">
-                  <ImageWithFallback
-                    src={impact.image}
-                    alt={impact.title}
-                    className="w-full h-full object-cover opacity-20"
-                  />
-                </div>
-              )}
+            return (
+              <motion.div
+                key={impact.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                onClick={() => setExpanded(expanded === i ? null : i)}
+                className={`relative rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
+                  expanded === i ? 'border-white/20' : 'border-white/5 hover:border-white/15'
+                }`}
+                style={{ background: `linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))` }}
+              >
+                {/* Gradient background */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${impact.color} opacity-90`}
+                />
 
-              <div className="relative z-10 p-6">
-                {/* Tag */}
-                <span
-                  className="inline-block px-3 py-1 rounded-full text-xs mb-3"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    color: impact.accent,
-                    background: `${impact.accent}20`,
-                    border: `1px solid ${impact.accent}40`,
-                  }}
-                >
-                  {impact.tag}
-                </span>
+                {/* Image overlay (for cards with images) */}
+                {impact.image && expanded === i && (
+                  <div className="absolute inset-0">
+                    <ImageWithFallback
+                      src={impact.image}
+                      alt={impact.title}
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                  </div>
+                )}
 
-                {/* Title row */}
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-3xl">{impact.emoji}</span>
-                  <h3
-                    className="text-xl text-white"
-                    style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-                  >
-                    {impact.title}
-                  </h3>
-                </div>
-
-                {/* Stat */}
-                <div className="flex items-baseline gap-2 mb-3">
+                <div className="relative z-10 p-6">
+                  {/* Tag */}
                   <span
-                    className="text-4xl"
+                    className="inline-block px-3 py-1 rounded-full text-xs mb-3"
                     style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontWeight: 800,
+                      fontFamily: 'var(--font-body)',
                       color: impact.accent,
+                      background: `${impact.accent}20`,
+                      border: `1px solid ${impact.accent}40`,
                     }}
                   >
-                    {impact.stat}
+                    {impact.tag}
                   </span>
-                  <span
-                    className="text-xs text-white/50"
-                    style={{ fontFamily: 'var(--font-body)' }}
-                  >
-                    {impact.statLabel}
-                  </span>
-                </div>
 
-                {/* Expandable description */}
-                <motion.div
-                  initial={false}
-                  animate={{ height: expanded === i ? 'auto' : 0, opacity: expanded === i ? 1 : 0 }}
-                  transition={{ duration: 0.35 }}
-                  className="overflow-hidden"
-                >
+                  {/* Title row */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div
+                      className="flex h-11 w-11 items-center justify-center rounded-2xl border"
+                      style={{
+                        color: impact.accent,
+                        background: `${impact.accent}16`,
+                        borderColor: `${impact.accent}35`,
+                      }}
+                    >
+                      <Icon className="eco-icon eco-icon-xl" aria-hidden="true" />
+                    </div>
+                    <h3
+                      className="text-xl text-white"
+                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+                    >
+                      {impact.title}
+                    </h3>
+                  </div>
+
+                  {/* Stat */}
+                  <div className="flex items-baseline gap-2 mb-3">
+                    <span
+                      className="text-4xl"
+                      style={{
+                        fontFamily: 'var(--font-heading)',
+                        fontWeight: 800,
+                        color: impact.accent,
+                      }}
+                    >
+                      {impact.stat}
+                    </span>
+                    <span
+                      className="text-xs text-white/50"
+                      style={{ fontFamily: 'var(--font-body)' }}
+                    >
+                      {impact.statLabel}
+                    </span>
+                  </div>
+
+                  {/* Expandable description */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: expanded === i ? 'auto' : 0,
+                      opacity: expanded === i ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.35 }}
+                    className="overflow-hidden"
+                  >
+                    <p
+                      className="text-white/80 text-sm leading-relaxed pt-2 border-t border-white/10"
+                      style={{ fontFamily: 'var(--font-body)' }}
+                    >
+                      {impact.description}
+                      <RefCitation ids={impact.refIds} />
+                    </p>
+                  </motion.div>
+
+                  {/* Expand hint */}
                   <p
-                    className="text-white/80 text-sm leading-relaxed pt-2 border-t border-white/10"
-                    style={{ fontFamily: 'var(--font-body)' }}
+                    className="text-xs mt-3 flex items-center gap-1.5"
+                    style={{ fontFamily: 'var(--font-body)', color: impact.accent }}
                   >
-                    {impact.description}
-                    <RefCitation ids={impact.refIds} />
+                    <ToggleIcon className="eco-icon eco-icon-sm" aria-hidden="true" />
+                    {expanded === i ? 'Fechar' : 'Saiba mais'}
                   </p>
-                </motion.div>
-
-                {/* Expand hint */}
-                <p
-                  className="text-xs mt-3 flex items-center gap-1"
-                  style={{ fontFamily: 'var(--font-body)', color: impact.accent }}
-                >
-                  {expanded === i ? '▲ Fechar' : '▼ Saiba mais'}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { IconChevronDown, IconLeaf } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { referenceGroups } from '../content/references';
 
@@ -117,7 +117,8 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           className="font-heading eco-button-gradient relative group px-10 py-4 rounded-full text-white overflow-hidden cursor-pointer text-[1.1rem] font-bold"
         >
           <span className="relative z-10 flex items-center gap-2">
-            Explorar <span>🌿</span>
+            Explorar
+            <IconLeaf className="eco-icon eco-icon-md" aria-hidden="true" />
           </span>
           <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </motion.button>
@@ -140,7 +141,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ChevronDown className="w-6 h-6 text-white/50" />
+          <IconChevronDown className="eco-icon w-6 h-6 text-white/50" aria-hidden="true" />
         </motion.div>
       </motion.div>
 
