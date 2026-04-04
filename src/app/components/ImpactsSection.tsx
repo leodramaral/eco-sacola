@@ -47,18 +47,21 @@ const impacts = [
     image: null,
   },
   {
-    emoji: '🔬',
-    title: 'Microplásticos',
-    color: 'from-purple-950 to-indigo-950',
-    accent: '#A78BFA',
-    tag: 'Invisíveis · Tóxicos · Permanentes',
-    description:
-      'Microplásticos já foram relatados em rios amazônicos e em peixes no Amazonas, sinal de uma contaminação difusa e difícil de reverter. Eles também podem chegar às pessoas pela água, pelo ar e pelos alimentos, enquanto aditivos e outras substâncias associadas aos plásticos ampliam a preocupação com efeitos à saúde e ao ambiente.',
-    stat: '<5mm',
-    statLabel: 'fragmentos classificados como microplásticos',
+  import microImg from './assets/microplasticos.png';
+
+const dados = [
+  {
+    emoji: '🧪',
+    titulo: 'Microplásticos',
+    cor: 'de roxo 950 para índigo 950',
+    sotaque: '#A78BFA',
+    marcação: 'Invisíveis · Tóxicos · Permanentes',
+    descrição: 'Microplásticos já foram relatados...',
+    estatística: '<5mm',
+    rótulo_de_estatística: 'fragmentos classificados...',
     refIds: [1, 3, 27, 28],
-    image: null,
-  },
+    imagem: microImg,
+  }
 ];
 
 export function ImpactsSection() {
