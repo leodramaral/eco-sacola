@@ -47,21 +47,18 @@ const impacts = [
     image: null,
   },
   {
-  import microImagem from './assets/microplasticos.png';
-
-const dados = [
-  {
     emoji: '🧪',
-    titulo: 'Microplásticos',
-    cor: 'de roxo 950 para índigo 950',
-    sotaque: '#A78BFA',
-    marcação: 'Invisíveis · Tóxicos · Permanentes',
-    descrição: 'Microplásticos já foram relatados...',
-    estatística: '<5mm',
-    rótulo_de_estatística: 'fragmentos classificados...',
+    title: 'Microplásticos',
+    color: 'from-violet-950 to-indigo-950',
+    accent: '#A78BFA',
+    tag: 'Invisíveis · Tóxicos · Persistentes',
+    description:
+      'Microplásticos já foram relatados em ambientes aquáticos amazônicos e em organismos da fauna, mostrando que a contaminação persiste mesmo quando o plástico não é mais visível a olho nu.',
+    stat: '<5 mm',
+    statLabel: 'fragmentos que persistem no ambiente e na cadeia alimentar',
     refIds: [1, 3, 27, 28],
-    imagem: 'assets/microplasticos.png'
-  }
+    image: null,
+  },
 ];
 
 export function ImpactsSection() {
