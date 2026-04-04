@@ -14,3 +14,39 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading, 'Poppins', sans-serif);
 }
+
+.font-heading {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+}
+
+.font-body {
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.eco-page-root {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  background: var(--eco-page-bg);
+}
+
+.eco-text-gradient {
+  background: var(--eco-gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eco-text-gradient-warm {
+  background: var(--eco-gradient-brand-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eco-text-gradient-alert {
+  background: var(--eco-gradient-brand-alert);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eco-button-gradient {
+  background: var(--eco-gradient-cta);
+  box-shadow: var(--eco-glow-green);
+}

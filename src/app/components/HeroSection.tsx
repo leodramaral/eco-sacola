@@ -26,9 +26,9 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           className="w-full h-full object-cover"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A2010]/70 via-[#0D3520]/80 to-[#051A0A]/90" />
+        <div className="absolute inset-0" style={{ background: 'var(--eco-hero-overlay)' }} />
         {/* Color wash */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/40 via-transparent to-green-950/60" />
+        <div className="absolute inset-0" style={{ background: 'var(--eco-hero-wash)' }} />
       </div>
 
       {/* Content */}
@@ -49,18 +49,10 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-4 leading-none tracking-tight"
-            style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
+            className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-4 leading-none tracking-tight font-extrabold"
           >
             Eco
-            <span
-              className="text-transparent"
-              style={{
-                background: 'linear-gradient(135deg, #4ADE80, #22D3EE)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span className="eco-text-gradient text-transparent">
               Sacola
             </span>
             <br />
@@ -73,8 +65,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed"
-          style={{ fontFamily: 'var(--font-body)' }}
+          className="font-body text-lg sm:text-xl md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed"
         >
           Cartilha educativa sobre sacolas plásticas, sustentabilidade e impactos ambientais na
           capital do Amazonas
@@ -102,14 +93,12 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
               <span
-                className="text-3xl md:text-4xl text-emerald-400"
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
+                className="font-heading text-3xl md:text-4xl text-emerald-400 font-extrabold"
               >
                 {stat.value}
               </span>
               <span
-                className="text-xs text-white/60 max-w-[100px] leading-tight"
-                style={{ fontFamily: 'var(--font-body)' }}
+                className="font-body text-xs text-white/60 max-w-[100px] leading-tight"
               >
                 {stat.label}
               </span>
@@ -125,14 +114,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           onClick={onExplore}
-          className="relative group px-10 py-4 rounded-full text-white overflow-hidden cursor-pointer"
-          style={{
-            fontFamily: 'var(--font-heading)',
-            fontWeight: 700,
-            fontSize: '1.1rem',
-            background: 'linear-gradient(135deg, #16A34A, #0891B2)',
-            boxShadow: '0 0 40px rgba(22, 163, 74, 0.5)',
-          }}
+          className="font-heading eco-button-gradient relative group px-10 py-4 rounded-full text-white overflow-hidden cursor-pointer text-[1.1rem] font-bold"
         >
           <span className="relative z-10 flex items-center gap-2">
             Explorar <span>🌿</span>
@@ -150,8 +132,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
         onClick={onExplore}
       >
         <span
-          className="text-xs text-white/50 tracking-widest uppercase"
-          style={{ fontFamily: 'var(--font-body)' }}
+          className="font-body text-xs text-white/50 tracking-widest uppercase"
         >
           Scroll
         </span>

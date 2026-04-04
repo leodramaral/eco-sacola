@@ -171,13 +171,7 @@ export default function App() {
   }
 
   return (
-    <div
-      className="relative"
-      style={{
-        fontFamily: 'var(--font-body)',
-        background: '#071810',
-      }}
-    >
+    <div className="relative eco-page-root">
       <ProgressNav activeSection={activeSection} onNavigate={navigateToSection} />
 
       <HeroSection onExplore={() => navigateToSection(1)} />

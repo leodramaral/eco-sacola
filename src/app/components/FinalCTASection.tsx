@@ -56,7 +56,7 @@ export function FinalCTASection({
           alt="Floresta Amazônica"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#021A08]/90 via-[#021A08]/85 to-[#021A08]/95" />
+        <div className="absolute inset-0" style={{ background: 'var(--eco-hero-overlay)' }} />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto w-full">
@@ -72,10 +72,7 @@ export function FinalCTASection({
             style={{ background: 'rgba(74,222,128,0.1)', backdropFilter: 'blur(10px)' }}
           >
             <CheckCircle className="w-5 h-5 text-emerald-400" />
-            <span
-              className="text-emerald-400 text-sm"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
+            <span className="font-body text-emerald-400 text-sm">
               Cartilha completa — 7/7 seções
             </span>
           </div>
@@ -88,26 +85,13 @@ export function FinalCTASection({
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-10"
         >
-          <h2
-            className="text-4xl sm:text-5xl md:text-6xl text-white mb-5 leading-tight"
-            style={{ fontFamily: 'var(--font-heading)', fontWeight: 900 }}
-          >
+          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-white mb-5 leading-tight font-black">
             Faça esta{' '}
-            <span
-              className="text-transparent"
-              style={{
-                background: 'linear-gradient(135deg, #4ADE80, #22D3EE)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span className="eco-text-gradient text-transparent">
               cartilha circular
             </span>
           </h2>
-          <p
-            className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
+          <p className="font-body text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             A leitura termina aqui, mas o movimento começa agora. Compartilhe a cartilha, abra as
             fontes e leve as referências com você para continuar essa conversa fora daqui.
           </p>
@@ -127,24 +111,15 @@ export function FinalCTASection({
               boxShadow: '0 24px 80px rgba(2, 26, 8, 0.35)',
             }}
           >
-            <span
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-300"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
+            <span className="font-body inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-emerald-300">
               <Share2 className="h-3.5 w-3.5" />
               Ação principal
             </span>
 
-            <h3
-              className="mt-4 text-2xl sm:text-3xl text-white leading-tight max-w-xl"
-              style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
-            >
+            <h3 className="font-heading mt-4 text-2xl sm:text-3xl text-white leading-tight max-w-xl font-extrabold">
               Compartilhe esta cartilha e faça a conversa chegar mais longe.
             </h3>
-            <p
-              className="mt-3 text-sm sm:text-base text-white/72 leading-relaxed max-w-xl"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
+            <p className="font-body mt-3 text-sm sm:text-base text-white/72 leading-relaxed max-w-xl">
               Quando a cartilha circula, ela deixa de ser só leitura e vira repertório para casa,
               escola, comércio e sala de aula.
             </p>
@@ -153,13 +128,7 @@ export function FinalCTASection({
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={handleShare}
-              className="mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-full px-7 py-4 text-white cursor-pointer"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, #16A34A, #0891B2)',
-                boxShadow: '0 0 40px rgba(22, 163, 74, 0.35)',
-              }}
+              className="font-heading eco-button-gradient mt-7 inline-flex min-h-14 items-center justify-center gap-3 rounded-full px-7 py-4 text-white cursor-pointer font-bold"
             >
               <span className="inline-flex items-center gap-2">
                 {shareState === 'copied'
@@ -190,16 +159,10 @@ export function FinalCTASection({
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-white/35" />
               </div>
-              <h3
-                className="mt-5 text-xl text-white"
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-              >
+              <h3 className="font-heading mt-5 text-xl text-white font-bold">
                 Ver página de referências
               </h3>
-              <p
-                className="mt-2 text-sm text-white/65 leading-relaxed"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
+              <p className="font-body mt-2 text-sm text-white/65 leading-relaxed">
                 Navegue pelas fontes organizadas por tema, abra os links originais e use a página
                 como apoio para leitura, aula ou apresentação.
               </p>
@@ -222,16 +185,10 @@ export function FinalCTASection({
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-white/35" />
               </div>
-              <h3
-                className="mt-5 text-xl text-white"
-                style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-              >
+              <h3 className="font-heading mt-5 text-xl text-white font-bold">
                 Baixar arquivo de referências
               </h3>
-              <p
-                className="mt-2 text-sm text-white/65 leading-relaxed"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
+              <p className="font-body mt-2 text-sm text-white/65 leading-relaxed">
                 Gere um PDF em formato ABNT para consultar offline, anexar em trabalho ou guardar
                 como material de apoio.
               </p>
@@ -250,8 +207,7 @@ export function FinalCTASection({
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={onRestart}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white/65 transition-all hover:border-white/25 hover:text-white cursor-pointer"
-            style={{ fontFamily: 'var(--font-body)' }}
+            className="font-body inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white/65 transition-all hover:border-white/25 hover:text-white cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
             Voltar ao topo da cartilha
@@ -265,16 +221,10 @@ export function FinalCTASection({
           transition={{ duration: 0.7, delay: 0.7 }}
           className="mt-16 pt-8 border-t border-white/10 text-center"
         >
-          <p
-            className="text-white/30 text-sm"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
+          <p className="font-body text-white/30 text-sm">
             EcoSacola Manaus — Cartilha Digital Educativa · 2026
           </p>
-          <p
-            className="text-white/20 text-xs mt-1"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
+          <p className="font-body text-white/20 text-xs mt-1">
             Feita com 💚 para proteger o Amazonas
           </p>
         </motion.div>
