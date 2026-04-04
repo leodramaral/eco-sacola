@@ -47,7 +47,7 @@ const impacts = [
     image: null,
   },
   {
-  import microImg from './assets/microplasticos.png';
+  import microImagem from './assets/microplasticos.png';
 
 const dados = [
   {
