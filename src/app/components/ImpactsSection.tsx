@@ -60,7 +60,7 @@ const dados = [
     estatística: '<5mm',
     rótulo_de_estatística: 'fragmentos classificados...',
     refIds: [1, 3, 27, 28],
-    imagem: microImg,
+    imagem: 'assets/microplasticos.png'
   }
 ];
 
