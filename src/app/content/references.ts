@@ -62,7 +62,7 @@ export const referenceGroups: ReferenceGroup[] = [
         title: 'Ingestão de microplásticos por espécies de peixes amazônicas com diferentes hábitos alimentares',
         author: 'Maria Tereza Vasconcelos-Souza et al. / INPA',
         year: '2022',
-        url: 'https://repositorio.inpa.gov.br/entities/publication/f7ba8da8-f89a-4c3b-a6dc-7080ae95c34a',
+        url: 'https://novo.ufmt.br/noticias/pesquisa-aponta-contaminao-de-peixes-em-rios-amaznicos-1729856938',
         type: 'estudo',
         description:
           'Estudo vinculado ao INPA sobre a presença de microplásticos no trato gastrointestinal de peixes amazônicos de água doce, útil para contextualizar os impactos da poluição plástica sobre a fauna aquática da Amazônia.',
