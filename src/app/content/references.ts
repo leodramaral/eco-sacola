@@ -98,13 +98,13 @@ export const referenceGroups: ReferenceGroup[] = [
       },
       {
         id: 6,
-        title: 'Waste decomposition times fact sheet',
-        author: 'Brisbane City Council',
-        year: '2025',
-        url: 'https://www.brisbane.qld.gov.au/content/dam/brisbanecitycouncil/corpwebsite/bins-waste-and-recycling/documents/waste-decomposition-times-fact-sheet.pdf',
-        type: 'relatorio',
+        title: 'Degradation Rates of Plastics in the Environment',
+        author: 'Ali Chamas et al.',
+        year: '2020',
+        url: 'https://pubs.acs.org/doi/10.1021/acssuschemeng.9b06635',
+        type: 'estudo',
         description:
-          'Fact sheet institucional com tempos objetivos úteis para a interface: sacola plástica até 20 anos, garrafa plástica 450 anos e copo de poliestireno mais de 500 anos.',
+          'Estudo revisado por pares que sintetiza evidências sobre taxas de degradação de plásticos em diferentes ambientes, reforçando que a persistência varia conforme o polímero e as condições ambientais, e que muitos materiais se fragmentam antes de desaparecer completamente.',
       },
       {
         id: 7,
