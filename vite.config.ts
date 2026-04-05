@@ -3,7 +3,18 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+function getBasePath() {
+  const repository = process.env.GITHUB_REPOSITORY?.split('/')[1]
+
+  if (!repository || repository.endsWith('.github.io')) {
+    return '/'
+  }
+
+  return `/${repository}/`
+}
+
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? getBasePath() : '/',
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them

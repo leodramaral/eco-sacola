@@ -53,6 +53,31 @@ Para gerar a versão de produção do projeto:
 npm run build
 ```
 
+## Deploy no GitHub Pages
+
+O projeto está configurado para deploy automático via GitHub Actions.
+
+Arquivo de workflow:
+
+- `.github/workflows/deploy-pages.yml`
+
+### Como ativar
+
+1. Suba o repositório para o GitHub.
+2. Garanta que a branch de publicação seja a `main`.
+3. No GitHub, acesse `Settings > Pages`.
+4. Em `Build and deployment`, selecione `Source: GitHub Actions`.
+5. Faça push na `main` para disparar o workflow de build e deploy.
+
+### Sobre o caminho base (`base`) no Vite
+
+O `vite.config.ts` foi preparado para calcular o `base` automaticamente em CI:
+
+- Repositório comum (`usuario/nome-repo`): usa `/<nome-repo>/`
+- Repositório de usuário (`usuario/usuario.github.io`): usa `/`
+
+Isso evita ajuste manual de URL entre ambientes local e produção.
+
 ## Observações
 
 - O projeto utiliza imagens externas em alguns trechos da interface, então é recomendável rodá-lo com acesso à internet para visualizar todos os elementos corretamente.
