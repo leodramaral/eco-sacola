@@ -64,10 +64,10 @@ Arquivo de workflow:
 ### Como ativar
 
 1. Suba o repositório para o GitHub.
-2. Garanta que a branch de publicação seja a `main`.
+2. Garanta que a branch de publicação seja a `master`.
 3. No GitHub, acesse `Settings > Pages`.
 4. Em `Build and deployment`, selecione `Source: GitHub Actions`.
-5. Faça push na `main` para disparar o workflow de build e deploy.
+5. Faça push na `master` para disparar o workflow de build e deploy.
 
 ### Sobre o caminho base (`base`) no Vite
 
