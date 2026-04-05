@@ -9,6 +9,7 @@ import { InitiativesSection } from './components/InitiativesSection';
 import { FinalCTASection } from './components/FinalCTASection';
 import { ReferencesSection } from './components/ReferencesSection';
 import { ReferenceModal } from './components/ReferenceModal';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
 import {
   buildReferencesHash,
   generateABNTPDF,
@@ -160,41 +161,49 @@ export default function App() {
     navigateWithHash(buildReferencesHash(refIds));
   };
 
-  if (route.view === 'references') {
-    return (
+  const handleCookieDecision = () => {
+    // Stub kept here so analytics can be attached only after consent.
+  };
+
+  const pageContent =
+    route.view === 'references' ? (
       <ReferencesSection
         onBack={navigateToHome}
         backLabel="Voltar para home"
         highlightedRefIds={route.refIds}
       />
+    ) : (
+      <>
+        <ProgressNav activeSection={activeSection} onNavigate={navigateToSection} />
+
+        <HeroSection onExplore={() => navigateToSection(1)} />
+        <ImpactsSection />
+        <DecompositionSection />
+        <LawSection />
+        <AlternativesSection />
+        <InitiativesSection />
+        <FinalCTASection
+          onRestart={() => navigateToSection(0)}
+          onReferences={() => navigateToReferences()}
+          onDownloadPdf={generateABNTPDF}
+        />
+
+        <ReferenceModal
+          open={isReferenceModalOpen}
+          refIds={referenceModalIds}
+          onOpenChange={setIsReferenceModalOpen}
+          onOpenFullPage={(refIds) => {
+            setIsReferenceModalOpen(false);
+            navigateToReferences(refIds);
+          }}
+        />
+      </>
     );
-  }
 
   return (
     <div className="relative eco-page-root">
-      <ProgressNav activeSection={activeSection} onNavigate={navigateToSection} />
-
-      <HeroSection onExplore={() => navigateToSection(1)} />
-      <ImpactsSection />
-      <DecompositionSection />
-      <LawSection />
-      <AlternativesSection />
-      <InitiativesSection />
-      <FinalCTASection
-        onRestart={() => navigateToSection(0)}
-        onReferences={() => navigateToReferences()}
-        onDownloadPdf={generateABNTPDF}
-      />
-
-      <ReferenceModal
-        open={isReferenceModalOpen}
-        refIds={referenceModalIds}
-        onOpenChange={setIsReferenceModalOpen}
-        onOpenFullPage={(refIds) => {
-          setIsReferenceModalOpen(false);
-          navigateToReferences(refIds);
-        }}
-      />
+      {pageContent}
+      <CookieConsentBanner onDecision={handleCookieDecision} />
     </div>
   );
 }

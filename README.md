@@ -82,4 +82,5 @@ Isso evita ajuste manual de URL entre ambientes local e produção.
 
 - O projeto utiliza imagens externas em alguns trechos da interface, então é recomendável rodá-lo com acesso à internet para visualizar todos os elementos corretamente.
 - O repositório está configurado para usar UTF-8 e finais de linha `LF` por padrão.
+- O banner de consentimento de cookies esta ativo e salva a escolha do usuario em localStorage na chave ecosacola-lgpd-consent-v1.
   
