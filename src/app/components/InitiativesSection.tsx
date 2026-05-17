@@ -164,7 +164,7 @@ export function InitiativesSection() {
             em Manaus
           </h2>
           <p
-            className="text-white/60 max-w-xl mx-auto"
+            className="text-white/68 max-w-xl mx-auto"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Da coleta na porta de casa ao retorno do plástico para a indústria, Manaus já tem uma
@@ -278,13 +278,13 @@ export function InitiativesSection() {
                       transition={{ duration: 0.35 }}
                       className="overflow-hidden"
                     >
-                      <p
-                        className="text-white/70 text-xs leading-relaxed mb-3"
-                        style={{ fontFamily: 'var(--font-body)' }}
-                      >
-                        {item.description}
-                        <RefCitation ids={item.refIds} />
-                      </p>
+                       <p
+                         className="text-white/78 text-xs leading-relaxed mb-3"
+                         style={{ fontFamily: 'var(--font-body)' }}
+                       >
+                         {item.description}
+                         <RefCitation ids={item.refIds} />
+                       </p>
                       <div className="space-y-1.5">
                         {item.details.map((d, j) => (
                           <div key={j} className="flex items-center gap-2">
@@ -293,12 +293,12 @@ export function InitiativesSection() {
                               aria-hidden="true"
                               style={{ color: item.color, fill: item.color, strokeWidth: 0 }}
                             />
-                            <span
-                              className="text-xs text-white/60"
-                              style={{ fontFamily: 'var(--font-body)' }}
-                            >
-                              {d}
-                            </span>
+                             <span
+                               className="text-xs text-white/68"
+                               style={{ fontFamily: 'var(--font-body)' }}
+                             >
+                               {d}
+                             </span>
                           </div>
                         ))}
                       </div>

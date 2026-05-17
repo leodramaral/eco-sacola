@@ -157,7 +157,7 @@ export function DecompositionSection() {
                   </div>
 
                   <p
-                    className="text-white/70 text-sm sm:text-base max-w-xl"
+                    className="text-white/78 text-sm sm:text-base max-w-xl"
                     style={{ fontFamily: 'var(--font-body)' }}
                   >
                     {activeItem.comparisonNote}
@@ -177,7 +177,7 @@ export function DecompositionSection() {
                       Voce sabia?
                     </span>
                     <p
-                      className="text-sm text-white/80 leading-relaxed"
+                      className="text-sm text-white/85 leading-relaxed"
                       style={{ fontFamily: 'var(--font-body)' }}
                     >
                       Mesmo quando deixa de ser visivel, a sacola nao desaparece por completo: ela
@@ -198,13 +198,13 @@ export function DecompositionSection() {
                   >
                     Depois do descarte
                   </span>
-                  <p
-                    className="text-white/80 leading-relaxed text-sm sm:text-base"
-                    style={{ fontFamily: 'var(--font-body)' }}
-                  >
-                    {activeItem.details}
-                    <RefCitation ids={activeItem.refIds} />
-                  </p>
+                    <p
+                      className="text-white/85 leading-relaxed text-sm sm:text-base"
+                      style={{ fontFamily: 'var(--font-body)' }}
+                    >
+                      {activeItem.details}
+                      <RefCitation ids={activeItem.refIds} />
+                    </p>
                 </div>
               </div>
             </div>

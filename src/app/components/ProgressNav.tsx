@@ -50,8 +50,8 @@ export function ProgressNav({ activeSection, onNavigate }: ProgressNavProps) {
               <span
                 className={`flex items-center justify-center rounded-full border transition-all duration-300 shadow-lg ${
                   activeSection === i
-                    ? 'w-10 h-10 bg-white text-[#071810] border-white scale-110'
-                    : 'w-9 h-9 bg-black/25 text-white/65 border-white/25 hover:bg-white/10 hover:text-white/85 hover:border-white/45'
+                    ? 'w-10 h-10 bg-white text-[#0A2418] border-white scale-110'
+                    : 'w-9 h-9 bg-black/25 text-white/78 border-white/28 hover:bg-white/15 hover:text-white/92 hover:border-white/52'
                 }`}
               >
                 <Icon className="eco-icon eco-icon-md" aria-hidden="true" />
@@ -79,9 +79,9 @@ export function ProgressNav({ activeSection, onNavigate }: ProgressNavProps) {
                 onClick={() => onNavigate(i)}
                 className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-200 ${
                   activeSection === i
-                    ? 'opacity-100 scale-110 border-white/70 bg-white/12 text-white'
-                    : 'opacity-55 border-transparent text-white/70'
-              }`}
+                    ? 'opacity-100 scale-110 border-white/82 bg-white/15 text-white'
+                    : 'opacity-68 border-transparent text-white/78'
+                }`}
                 aria-label={section.label}
               >
                 <Icon className="eco-icon eco-icon-md" aria-hidden="true" />

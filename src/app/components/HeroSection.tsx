@@ -32,7 +32,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto pt-16">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto pt-20 pb-16">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -65,7 +65,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-body text-lg sm:text-xl md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed"
+          className="font-body text-lg sm:text-xl md:text-2xl text-white/88 mb-10 max-w-2xl leading-relaxed"
         >
           Cartilha educativa sobre sacolas plásticas, sustentabilidade e impactos ambientais na
           capital do Amazonas
@@ -98,7 +98,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
                 {stat.value}
               </span>
               <span
-                className="font-body text-xs text-white/60 max-w-[100px] leading-tight"
+                className="font-body text-xs text-white/68 max-w-[100px] leading-tight"
               >
                 {stat.label}
               </span>

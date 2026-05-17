@@ -98,7 +98,7 @@ export function FinalCTASection({
               cartilha circular
             </span>
           </h2>
-          <p className="font-body text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="font-body text-white/78 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto">
             A leitura termina aqui, mas o movimento começa agora. Compartilhe a cartilha, abra as
             fontes e leve as referências com você para continuar essa conversa fora daqui.
           </p>
@@ -126,7 +126,7 @@ export function FinalCTASection({
             <h3 className="font-heading mt-4 text-2xl sm:text-3xl text-white leading-tight max-w-xl font-extrabold">
               Compartilhe esta cartilha e faça a conversa chegar mais longe.
             </h3>
-            <p className="font-body mt-3 text-sm sm:text-base text-white/72 leading-relaxed max-w-xl">
+            <p className="font-body mt-3 text-sm sm:text-base text-white/78 leading-relaxed max-w-xl">
               Quando a cartilha circula, ela deixa de ser só leitura e vira repertório para casa,
               escola, comércio e sala de aula.
             </p>
@@ -166,13 +166,13 @@ export function FinalCTASection({
                 </div>
                 <IconArrowUpRight className="eco-icon w-4 h-4 text-white/35" aria-hidden="true" />
               </div>
-              <h3 className="font-heading mt-5 text-xl text-white font-bold">
-                Ver página de referências
-              </h3>
-              <p className="font-body mt-2 text-sm text-white/65 leading-relaxed">
-                Navegue pelas fontes organizadas por tema, abra os links originais e use a página
-                como apoio para leitura, aula ou apresentação.
-              </p>
+                <h3 className="font-heading mt-5 text-xl text-white font-bold">
+                  Ver página de referências
+                </h3>
+                <p className="font-body mt-2 text-sm text-white/68 leading-relaxed">
+                  Navegue pelas fontes organizadas por tema, abra os links originais e use a página
+                  como apoio para leitura, aula ou apresentação.
+                </p>
             </motion.button>
 
             <motion.button
@@ -192,13 +192,13 @@ export function FinalCTASection({
                 </div>
                 <IconArrowUpRight className="eco-icon w-4 h-4 text-white/35" aria-hidden="true" />
               </div>
-              <h3 className="font-heading mt-5 text-xl text-white font-bold">
-                Baixar arquivo de referências
-              </h3>
-              <p className="font-body mt-2 text-sm text-white/65 leading-relaxed">
-                Gere um PDF em formato ABNT para consultar offline, anexar em trabalho ou guardar
-                como material de apoio.
-              </p>
+                <h3 className="font-heading mt-5 text-xl text-white font-bold">
+                  Baixar arquivo de referências
+                </h3>
+                <p className="font-body mt-2 text-sm text-white/68 leading-relaxed">
+                  Gere um PDF em formato ABNT para consultar offline, anexar em trabalho ou guardar
+                  como material de apoio.
+                </p>
             </motion.button>
           </div>
         </div>
@@ -214,7 +214,7 @@ export function FinalCTASection({
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={onRestart}
-            className="font-body inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm text-white/65 transition-all hover:border-white/25 hover:text-white cursor-pointer"
+            className="font-body inline-flex items-center gap-2 rounded-full border border-white/18 px-5 py-3 text-sm text-white/68 transition-all hover:border-white/28 hover:text-white cursor-pointer"
           >
             <IconRotateClockwise2 className="eco-icon w-4 h-4" aria-hidden="true" />
             Voltar ao topo da cartilha

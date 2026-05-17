@@ -125,7 +125,7 @@ export function ImpactsSection() {
             </span>
           </h2>
           <p
-            className="text-white/60 max-w-xl mx-auto text-base sm:text-lg"
+            className="text-white/70 max-w-xl mx-auto text-base sm:text-lg"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Em Manaus e na Amazônia, a poluição plástica já aparece nos rios, na fauna e na rotina
@@ -232,13 +232,13 @@ export function ImpactsSection() {
                     transition={{ duration: 0.35 }}
                     className="overflow-hidden"
                   >
-                    <p
-                      className="text-white/80 text-sm leading-relaxed pt-2 border-t border-white/10"
-                      style={{ fontFamily: 'var(--font-body)' }}
-                    >
-                      {impact.description}
-                      <RefCitation ids={impact.refIds} />
-                    </p>
+                   <p
+                     className="text-white/85 text-sm leading-relaxed pt-2 border-t border-white/10"
+                     style={{ fontFamily: 'var(--font-body)' }}
+                   >
+                     {impact.description}
+                     <RefCitation ids={impact.refIds} />
+                   </p>
                   </motion.div>
 
                   {/* Expand hint */}

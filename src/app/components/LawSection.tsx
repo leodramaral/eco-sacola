@@ -137,7 +137,7 @@ export function LawSection() {
           </h2>
 
           <p
-            className="text-white/65 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
+            className="text-white/75 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Legislação criada para reduzir a distribuição de sacolas plásticas no comércio de
@@ -225,7 +225,7 @@ export function LawSection() {
                         </h3>
 
                         <p
-                          className="text-white/78 text-sm sm:text-base leading-relaxed mb-3"
+                          className="text-white/82 text-sm sm:text-base leading-relaxed mb-3"
                           style={{ fontFamily: 'var(--font-body)' }}
                         >
                           {item.summary}

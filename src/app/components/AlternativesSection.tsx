@@ -105,7 +105,7 @@ export function AlternativesSection() {
             </span>
           </h2>
           <p
-            className="text-white/65 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed"
+            className="text-white/72 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             Hábitos simples já ajudam a reduzir o uso automático de sacolas e a aproveitar melhor
@@ -139,7 +139,7 @@ export function AlternativesSection() {
               </div>
 
               <p
-                className="text-sm text-white/72 leading-relaxed mb-4"
+                className="text-sm text-white/78 leading-relaxed mb-4"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
                 {card.text}
