@@ -11,7 +11,7 @@ import {
 } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const FOREST_IMAGE = '/images/pexels-nandofreitasr-17025853.jpg';
+const FOREST_IMAGE = 'https://github.com/leodramaral/eco-sacola/blob/master/public/images/pexels-nandofreitasr-17025853.jpg?raw=true';
 
 interface FinalCTASectionProps {
   onRestart: () => void;

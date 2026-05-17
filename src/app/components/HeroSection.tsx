@@ -4,7 +4,7 @@ import { IconChevronDown, IconLeaf } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { referenceGroups } from '../content/references';
 
-const FOREST_IMAGE = '/images/pexels-christopher-borges-1300281899-24710600.jpg';
+const FOREST_IMAGE = 'https://github.com/leodramaral/eco-sacola/blob/master/public/images/pexels-christopher-borges-1300281899-24710600.jpg?raw=true';
 
 interface HeroSectionProps {
   onExplore: () => void;
