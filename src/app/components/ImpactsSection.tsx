@@ -14,6 +14,8 @@ import { RefCitation } from './RefCitation';
 
 const POLLUTION_IMAGE = 'https://images.unsplash.com/photo-1759868411143-aec66f57d370?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 const TURTLE_IMAGE = 'https://images.unsplash.com/photo-1638644344507-be07bf38377a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const URBAN_WASTE_IMAGE = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const MICROPLASTIC_IMAGE = 'https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
 const impacts: {
   icon: TablerIcon;
@@ -60,11 +62,11 @@ const impacts: {
     accent: '#FBBF24',
     tag: 'Bairros · Ruas · Mercados',
     description:
-      'O volume de resíduos sólidos urbanos e o descarte inadequado de plásticos ampliam a pressão sobre coleta, triagem e destinação correta, com reflexos em ruas, margens e cursos d’água.',
+      'O volume de resíduos sólidos urbanos e o descarte inadequado de plásticos ampliam a pressão sobre coleta, triagem e destinação correta, com reflexos em ruas, margens e cursos dágua.',
     stat: 'Pressão',
     statLabel: 'sobre limpeza urbana e destinação correta',
     refIds: [2],
-    image: null,
+    image: URBAN_WASTE_IMAGE,
   },
   {
     icon: IconFlask,
@@ -77,7 +79,7 @@ const impacts: {
     stat: '<5 mm',
     statLabel: 'fragmentos que persistem no ambiente e na cadeia alimentar',
     refIds: [1, 3, 27, 28],
-    image: null,
+    image: MICROPLASTIC_IMAGE,
   },
 ];
 

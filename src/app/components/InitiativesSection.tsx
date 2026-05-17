@@ -15,7 +15,7 @@ import {
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { RefCitation } from './RefCitation';
 
-const RECYCLING_IMAGE = 'https://images.unsplash.com/flagged/photo-1574380555089-06f915e8c074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
+const RECYCLING_IMAGE = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
 const initiatives: {
   id: number;
