@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { IconShoppingBag, type TablerIcon } from '@tabler/icons-react';
 import { RefCitation } from './RefCitation';
 
-const DECOMPOSITION_IMAGE = '/images/pexels-shvets-production-7512941.jpg';
+const DECOMPOSITION_IMAGE = `${import.meta.env.BASE_URL}images/pexels-shvets-production-7512941.jpg`;
 
 const items: {
   id: number;

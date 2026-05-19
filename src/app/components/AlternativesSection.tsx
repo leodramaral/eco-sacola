@@ -59,7 +59,7 @@ const practicalCards: {
 ];
 
 export function AlternativesSection() {
-  const BACKGROUND_IMAGE = '/images/pexels-michael-burrows-7129141.jpg';
+  const BACKGROUND_IMAGE = `${import.meta.env.BASE_URL}images/pexels-michael-burrows-7129141.jpg`;
 
   return (
     <section
