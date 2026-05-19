@@ -4,7 +4,7 @@ import { IconChevronDown, IconLeaf } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { referenceGroups } from '../content/references';
 
-const ECOBAG = `${import.meta.env.BASE_URL}images/pexels-christopher-borges-1300281899-24710600.jpg`;
+const ECOBAG = `${import.meta.env.BASE_URL}images/pexels-sarah-chai-7263019.jpg`;
 
 interface HeroSectionProps {
   onExplore: () => void;
