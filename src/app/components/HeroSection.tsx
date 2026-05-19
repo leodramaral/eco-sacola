@@ -5,6 +5,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { referenceGroups } from '../content/references';
 
 const FOREST_IMAGE = 'https://github.com/leodramaral/eco-sacola/blob/master/public/images/pexels-christopher-borges-1300281899-24710600.jpg?raw=true';
+const ECOBAG = '/images/pexels-sarah-chai-7263019.jpg';
 
 interface HeroSectionProps {
   onExplore: () => void;
@@ -21,7 +22,7 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
       {/* Background image */}
       <div className="absolute inset-0">
         <ImageWithFallback
-          src={FOREST_IMAGE}
+          src={ECOBAG}
           alt="Floresta Amazônica"
           className="w-full h-full object-cover"
         />

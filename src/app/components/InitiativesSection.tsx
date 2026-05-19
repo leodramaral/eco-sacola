@@ -15,7 +15,6 @@ import {
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { RefCitation } from './RefCitation';
 
-const RECYCLING_IMAGE = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080';
 
 const initiatives: {
   id: number;
@@ -170,37 +169,6 @@ export function InitiativesSection() {
             Da coleta na porta de casa ao retorno do plástico para a indústria, Manaus já tem uma
             rede real de iniciativas em funcionamento.
           </p>
-        </motion.div>
-
-        {/* Image banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mb-10 rounded-2xl overflow-hidden relative h-40 sm:h-52"
-        >
-          <ImageWithFallback
-            src={RECYCLING_IMAGE}
-            alt="Cooperativa de reciclagem"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-          <div className="absolute inset-0 p-6 flex flex-col justify-center">
-            <h3
-              className="text-white text-2xl mb-1"
-              style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-            >
-              Coleta, triagem e retorno
-            </h3>
-            <p
-              className="text-white/70 text-sm max-w-sm"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              As iniciativas locais conectam moradores, catadores, PEVs e empresas para tirar
-              plástico do descarte comum.
-            </p>
-          </div>
         </motion.div>
 
         {/* Grid of cards */}

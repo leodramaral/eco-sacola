@@ -42,21 +42,28 @@ export function DecompositionSection() {
     <section
       id="section-2"
       className="relative py-20 px-4 min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #071810 0%, #0D2B1A 50%, #071810 100%)' }}
+      style={{ background: '#071810' }}
     >
-      {[...Array(4)].map((_, i) => (
+      {/* Background image */}
+      <div className="absolute inset-0">
         <div
-          key={i}
-          className="absolute rounded-full border border-white/5 pointer-events-none"
           style={{
-            width: `${(i + 1) * 250}px`,
-            height: `${(i + 1) * 250}px`,
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            backgroundImage: `url(${DECOMPOSITION_IMAGE})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'absolute',
+            inset: 0,
           }}
         />
-      ))}
+        {/* Dark overlay for readability */}
+        <div
+          style={{
+            background: 'linear-gradient(180deg, rgba(7, 24, 16, 0.9) 0%, rgba(13, 43, 26, 0.88) 50%, rgba(7, 24, 16, 0.9) 100%)',
+            position: 'absolute',
+            inset: 0,
+          }}
+        />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         <motion.div
@@ -82,14 +89,6 @@ export function DecompositionSection() {
               Permanência
             </span>
           </h2>
-          <p
-            className="text-2xl sm:text-3xl text-white/80 italic"
-            style={{ fontFamily: 'var(--font-heading)', fontWeight: 300 }}
-          >
-            "Usado por minutos,
-            <br />
-            <span className="text-amber-400">permanece por muito mais tempo"</span>
-          </p>
         </motion.div>
 
         <motion.div
@@ -97,29 +96,8 @@ export function DecompositionSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl overflow-hidden border border-white/15 mb-8 relative"
-          style={{
-            backdropFilter: 'blur(10px)',
-          }}
+          className="rounded-3xl overflow-hidden border border-white/15 mb-8 relative bg-black/30 backdrop-blur-[8px]"
         >
-          {/* Background image */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url(${DECOMPOSITION_IMAGE})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
-
-          {/* Minimal dark overlay just for text readability */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'rgba(0, 0, 0, 0.45)',
-            }}
-          />
-
           {/* Content with adjusted colors */}
           <div className="p-6 sm:p-8 lg:p-10 relative z-10">
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-8 lg:items-center">
@@ -133,22 +111,22 @@ export function DecompositionSection() {
                         fontWeight: 900,
                         color: activeItem.color,
                         lineHeight: 0.95,
-                        textShadow: '0 2px 12px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.4)',
+                        textShadow: '0 1px 6px rgba(0,0,0,0.4)',
                       }}
                     >
                       {activeItem.years}
                     </span>
                     <span
-                      className="text-3xl text-white/60 pb-2 font-medium"
-                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 300, textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
+                      className="text-3xl text-white/70 pb-2 font-semibold"
+                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 300, textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
                     >
                       {activeItem.label}
                     </span>
                   </div>
 
                   <p
-                    className="text-white/95 text-sm sm:text-base max-w-xl leading-relaxed font-medium"
-                    style={{ fontFamily: 'var(--font-body)', textShadow: '0 2px 8px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5)' }}
+                    className="text-white/95 text-sm sm:text-base max-w-xl leading-relaxed font-semibold"
+                    style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
                   >
                     {activeItem.comparisonNote}
                   </p>
@@ -156,19 +134,19 @@ export function DecompositionSection() {
                   <div
                     className="mt-5 max-w-xl rounded-2xl border p-4 backdrop-blur-sm"
                     style={{
-                      background: 'rgba(0,0,0,0.4)',
+                      background: 'rgba(0,0,0,0.5)',
                       borderColor: `${activeItem.color}40`,
                     }}
                   >
                     <span
                       className="inline-flex text-[11px] uppercase tracking-[0.18em] text-red-300 mb-2 font-bold"
-                      style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                      style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}
                     >
                       Voce sabia?
                     </span>
                     <p
-                      className="text-sm text-white/95 leading-relaxed font-medium"
-                      style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                      className="text-sm text-white/95 leading-relaxed font-semibold"
+                      style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}
                     >
                       Mesmo quando deixa de ser visivel, a sacola nao desaparece por completo: ela
                       pode se fragmentar e continuar circulando no ambiente em partes menores.
@@ -179,18 +157,18 @@ export function DecompositionSection() {
               </div>
 
                <div
-                 className="rounded-2xl border border-white/20 bg-black/30 p-5 sm:p-6 space-y-5 backdrop-blur-sm"
+                 className="rounded-2xl border border-white/20 bg-black/40 p-5 sm:p-6 space-y-5 backdrop-blur-[6px]"
                >
                  <div>
                    <span
-                     className="inline-flex text-xs uppercase tracking-[0.18em] text-white/70 mb-3 font-bold"
-                     style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                     className="inline-flex text-xs uppercase tracking-[0.18em] text-white/80 mb-3 font-bold"
+                     style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}
                    >
                      Depois do descarte
                    </span>
                      <p
-                       className="text-white/95 leading-relaxed text-sm sm:text-base font-medium"
-                       style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                       className="text-white/95 leading-relaxed text-sm sm:text-base font-semibold"
+                       style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}
                      >
                        {activeItem.details}
                        <RefCitation ids={activeItem.refIds} />

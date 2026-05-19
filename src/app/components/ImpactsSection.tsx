@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import {
   IconBuildingCommunity,
-  IconChevronDown,
-  IconChevronUp,
   IconFish,
   IconFlask,
   IconWaveSine,
@@ -84,8 +82,6 @@ const impacts: {
 ];
 
 export function ImpactsSection() {
-  const [expanded, setExpanded] = useState<number | null>(null);
-
   return (
     <section
       id="section-1"
@@ -139,7 +135,6 @@ export function ImpactsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {impacts.map((impact, i) => {
             const Icon = impact.icon;
-            const ToggleIcon = expanded === i ? IconChevronUp : IconChevronDown;
 
             return (
               <motion.div
@@ -148,10 +143,7 @@ export function ImpactsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                onClick={() => setExpanded(expanded === i ? null : i)}
-                className={`relative rounded-2xl overflow-hidden cursor-pointer border transition-all duration-300 ${
-                  expanded === i ? 'border-white/20' : 'border-white/5 hover:border-white/15'
-                }`}
+                className="relative rounded-2xl overflow-hidden border border-white/10 h-full"
                 style={{ background: `linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))` }}
               >
                 {/* Gradient background */}
@@ -159,8 +151,8 @@ export function ImpactsSection() {
                   className={`absolute inset-0 bg-gradient-to-br ${impact.color} opacity-90`}
                 />
 
-                {/* Image overlay (for cards with images) */}
-                {impact.image && expanded === i && (
+                {/* Image overlay */}
+                {impact.image && (
                   <div className="absolute inset-0">
                     <ImageWithFallback
                       src={impact.image}
@@ -170,7 +162,7 @@ export function ImpactsSection() {
                   </div>
                 )}
 
-                <div className="relative z-10 p-6">
+                <div className="relative z-10 p-6 h-full flex flex-col">
                   {/* Tag */}
                   <span
                     className="inline-block px-3 py-1 rounded-full text-xs mb-3"
@@ -224,32 +216,13 @@ export function ImpactsSection() {
                     </span>
                   </div>
 
-                  {/* Expandable description */}
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: expanded === i ? 'auto' : 0,
-                      opacity: expanded === i ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.35 }}
-                    className="overflow-hidden"
-                  >
-                   <p
-                     className="text-white/85 text-sm leading-relaxed pt-2 border-t border-white/10"
-                     style={{ fontFamily: 'var(--font-body)' }}
-                   >
-                     {impact.description}
-                     <RefCitation ids={impact.refIds} />
-                   </p>
-                  </motion.div>
-
-                  {/* Expand hint */}
+                  {/* Description - always visible */}
                   <p
-                    className="text-xs mt-3 flex items-center gap-1.5"
-                    style={{ fontFamily: 'var(--font-body)', color: impact.accent }}
+                    className="text-white/85 text-sm leading-relaxed pt-2 border-t border-white/10 flex-grow"
+                    style={{ fontFamily: 'var(--font-body)' }}
                   >
-                    <ToggleIcon className="eco-icon eco-icon-sm" aria-hidden="true" />
-                    {expanded === i ? 'Fechar' : 'Saiba mais'}
+                    {impact.description}
+                    <RefCitation ids={impact.refIds} />
                   </p>
                 </div>
               </motion.div>

@@ -59,12 +59,34 @@ const practicalCards: {
 ];
 
 export function AlternativesSection() {
+  const BACKGROUND_IMAGE = '/images/pexels-michael-burrows-7129141.jpg';
+
   return (
     <section
       id="section-4"
       className="relative py-20 px-4 min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #021A08 0%, #042D10 50%, #021A08 100%)' }}
+      style={{ background: '#021A08' }}
     >
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <div
+          style={{
+            backgroundImage: `url(${BACKGROUND_IMAGE})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'absolute',
+            inset: 0,
+          }}
+        />
+        {/* Gradient overlay for readability */}
+        <div
+          style={{
+            background: 'linear-gradient(180deg, rgba(2, 26, 8, 0.92) 0%, rgba(4, 45, 16, 0.88) 50%, rgba(2, 26, 8, 0.92) 100%)',
+            position: 'absolute',
+            inset: 0,
+          }}
+        />
+      </div>
       <div
         className="absolute top-20 left-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
         style={{
@@ -105,8 +127,8 @@ export function AlternativesSection() {
             </span>
           </h2>
           <p
-            className="text-white/72 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed"
-            style={{ fontFamily: 'var(--font-body)' }}
+            className="text-white/90 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-medium"
+            style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}
           >
             Hábitos simples já ajudam a reduzir o uso automático de sacolas e a aproveitar melhor
             os serviços de descarte em Manaus.
@@ -124,23 +146,23 @@ export function AlternativesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.06 }}
-              className="h-full rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6 backdrop-blur-[2px]"
+              className="h-full rounded-3xl border border-white/15 bg-black/35 p-5 sm:p-6 backdrop-blur-[6px]"
             >
               <div className="flex items-start gap-3 mb-4">
-                <div className="w-11 h-11 rounded-2xl bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center text-emerald-300 flex-shrink-0">
+                <div className="w-11 h-11 rounded-2xl bg-emerald-400/20 border border-emerald-400/30 flex items-center justify-center text-emerald-200 flex-shrink-0">
                   <Icon className="eco-icon eco-icon-xl" aria-hidden="true" />
                 </div>
                 <h3
-                  className="text-white text-lg leading-tight"
-                  style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
+                  className="text-white text-lg leading-tight font-semibold"
+                  style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}
                 >
                   {card.title}
                 </h3>
               </div>
 
               <p
-                className="text-sm text-white/78 leading-relaxed mb-4"
-                style={{ fontFamily: 'var(--font-body)' }}
+                className="text-sm text-white/92 leading-relaxed mb-4 font-medium"
+                style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
               >
                 {card.text}
                 {card.refIds ? <RefCitation ids={card.refIds} /> : null}
