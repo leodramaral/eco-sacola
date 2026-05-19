@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   IconAlertTriangle,
+  IconArrowLeft,
   IconArrowUp,
   IconBook,
   IconChevronDown,
@@ -280,6 +281,18 @@ export function ReferencesSection({
       />
 
       <div className="relative z-10 max-w-3xl mx-auto w-full">
+        <motion.button
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          onClick={onBack}
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-all cursor-pointer mb-8"
+          style={{ fontFamily: 'var(--font-heading)', fontWeight: 600 }}
+        >
+          <IconArrowLeft className="eco-icon w-4 h-4" aria-hidden="true" />
+          {backLabel}
+        </motion.button>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -287,28 +300,6 @@ export function ReferencesSection({
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <div className="flex justify-center mb-5">
-            <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center"
-              style={{
-                background: 'rgba(74,222,128,0.12)',
-                border: '1px solid rgba(74,222,128,0.25)',
-              }}
-            >
-              <IconBook className="eco-icon w-8 h-8 text-emerald-400" aria-hidden="true" />
-            </div>
-          </div>
-
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm text-emerald-400 border border-emerald-500/30 bg-emerald-950/30 mb-4"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            <span className="inline-flex items-center gap-1.5">
-              <IconBook className="eco-icon eco-icon-sm" aria-hidden="true" />
-              Fontes e Referências
-            </span>
-          </span>
-
           <h2
             className="text-4xl sm:text-5xl text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)', fontWeight: 800 }}
@@ -441,7 +432,7 @@ export function ReferencesSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          className="flex justify-center mb-12"
         >
           <motion.button
             whileHover={{ scale: 1.03, y: -2 }}
@@ -462,18 +453,7 @@ export function ReferencesSection({
               className={`eco-icon w-4 h-4 ${isDownloading ? 'animate-bounce' : ''}`}
               aria-hidden="true"
             />
-            {isDownloading ? 'Gerando PDF…' : 'Baixar em PDF (ABNT)'}
-          </motion.button>
-
-          <motion.button
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={onBack}
-            className="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-all cursor-pointer"
-            style={{ fontFamily: 'var(--font-heading)', fontWeight: 600 }}
-          >
-            <IconArrowUp className="eco-icon w-4 h-4" aria-hidden="true" />
-            {backLabel}
+            {isDownloading ? 'Gerando PDF…' : 'Baixar em PDF'}
           </motion.button>
         </motion.div>
 

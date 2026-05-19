@@ -8,19 +8,36 @@ interface FeedbackFormPageProps {
 
 export function FeedbackFormPage({ onBack }: FeedbackFormPageProps) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-20">
+    <section
+      className="relative py-20 px-4 min-h-screen flex flex-col justify-center"
+      style={{ background: 'linear-gradient(180deg, #050A10 0%, #071015 50%, #030810 100%)' }}
+    >
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(74,222,128,1) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
       <div className="relative z-10 max-w-4xl mx-auto w-full">
+        <motion.button
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          onClick={onBack}
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-all cursor-pointer mb-8"
+          style={{ fontFamily: 'var(--font-heading)', fontWeight: 600 }}
+        >
+          <IconArrowLeft className="eco-icon w-4 h-4" aria-hidden="true" />
+          Voltar ao início
+        </motion.button>
+
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-[2rem] border border-white/10 p-8 sm:p-12"
-          style={{
-            background: 'rgba(10, 36, 24, 0.85)',
-            backdropFilter: 'blur(20px)',
-            boxShadow: '0 24px 80px rgba(2, 26, 8, 0.45)',
-          }}
         >
 
           <motion.div
@@ -71,7 +88,7 @@ export function FeedbackFormPage({ onBack }: FeedbackFormPageProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-8 pt-8 border-t border-white/10 text-center"
+            className="pt-8 border-t border-white/8 text-center"
           >
             <p className="font-body text-white/30 text-sm">
               EcoSacola Manaus — Cartilha Digital Educativa · 2026

@@ -236,7 +236,7 @@ export function FinalCTASection({
                   Baixar arquivo de referências
                 </h3>
                 <p className="font-body mt-2 text-sm text-white/68 leading-relaxed">
-                  Gere um PDF em formato ABNT para consultar offline, anexar em trabalho ou guardar
+                  Gere um PDF para consultar offline, anexar em trabalho ou guardar
                   como material de apoio.
                 </p>
             </motion.button>

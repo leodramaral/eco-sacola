@@ -128,7 +128,7 @@ export function generateABNTPDF() {
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>EcoSacola Manaus — Referências ABNT</title>
+  <title>EcoSacola Manaus — Referências</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; }
