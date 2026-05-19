@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 import { IconShoppingBag, type TablerIcon } from '@tabler/icons-react';
 import { RefCitation } from './RefCitation';
 
+const DECOMPOSITION_IMAGE = '/images/pexels-shvets-production-7512941.jpg';
+
 const items: {
   id: number;
   icon: TablerIcon;
@@ -95,48 +97,35 @@ export function DecompositionSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl overflow-hidden border border-white/10 mb-8"
+          className="rounded-3xl overflow-hidden border border-white/15 mb-8 relative"
           style={{
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
             backdropFilter: 'blur(10px)',
           }}
         >
-          <div className={`bg-gradient-to-br ${activeItem.bgColor} p-6 sm:p-8 lg:p-10`}>
+          {/* Background image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${DECOMPOSITION_IMAGE})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+
+          {/* Minimal dark overlay just for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'rgba(0, 0, 0, 0.45)',
+            }}
+          />
+
+          {/* Content with adjusted colors */}
+          <div className="p-6 sm:p-8 lg:p-10 relative z-10">
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:gap-8 lg:items-center">
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div
-                    className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-3xl border"
-                    style={{
-                      color: activeItem.color,
-                      background: `${activeItem.color}14`,
-                      borderColor: `${activeItem.color}30`,
-                    }}
-                  >
-                    <ItemIcon className="eco-icon eco-icon-display" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3
-                      className="text-2xl sm:text-3xl text-white"
-                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 700 }}
-                    >
-                      {activeItem.name}
-                    </h3>
-                    <span
-                      className="inline-flex text-sm px-3 py-1 rounded-full mt-2"
-                      style={{
-                        fontFamily: 'var(--font-body)',
-                        color: activeItem.color,
-                        background: `${activeItem.color}20`,
-                      }}
-                    >
-                      {activeItem.usageTime}
-                    </span>
-                  </div>
-                </div>
-
                 <div>
-                  <div className="flex flex-wrap items-end gap-x-3 gap-y-2 mb-3">
+                   <div className="flex flex-wrap items-end gap-x-3 gap-y-2 mb-3">
                     <span
                       className="text-7xl sm:text-8xl"
                       style={{
@@ -144,41 +133,42 @@ export function DecompositionSection() {
                         fontWeight: 900,
                         color: activeItem.color,
                         lineHeight: 0.95,
+                        textShadow: '0 2px 12px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.4)',
                       }}
                     >
                       {activeItem.years}
                     </span>
                     <span
-                      className="text-3xl text-white/60 pb-2"
-                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 300 }}
+                      className="text-3xl text-white/60 pb-2 font-medium"
+                      style={{ fontFamily: 'var(--font-heading)', fontWeight: 300, textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
                     >
                       {activeItem.label}
                     </span>
                   </div>
 
                   <p
-                    className="text-white/78 text-sm sm:text-base max-w-xl"
-                    style={{ fontFamily: 'var(--font-body)' }}
+                    className="text-white/95 text-sm sm:text-base max-w-xl leading-relaxed font-medium"
+                    style={{ fontFamily: 'var(--font-body)', textShadow: '0 2px 8px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5)' }}
                   >
                     {activeItem.comparisonNote}
                   </p>
 
                   <div
-                    className="mt-5 max-w-xl rounded-2xl border p-4"
+                    className="mt-5 max-w-xl rounded-2xl border p-4 backdrop-blur-sm"
                     style={{
-                      background: 'rgba(251,191,36,0.08)',
-                      borderColor: 'rgba(251,191,36,0.18)',
+                      background: 'rgba(0,0,0,0.4)',
+                      borderColor: `${activeItem.color}40`,
                     }}
                   >
                     <span
-                      className="inline-flex text-[11px] uppercase tracking-[0.18em] text-amber-300 mb-2"
-                      style={{ fontFamily: 'var(--font-body)' }}
+                      className="inline-flex text-[11px] uppercase tracking-[0.18em] text-red-300 mb-2 font-bold"
+                      style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
                     >
                       Voce sabia?
                     </span>
                     <p
-                      className="text-sm text-white/85 leading-relaxed"
-                      style={{ fontFamily: 'var(--font-body)' }}
+                      className="text-sm text-white/95 leading-relaxed font-medium"
+                      style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
                     >
                       Mesmo quando deixa de ser visivel, a sacola nao desaparece por completo: ela
                       pode se fragmentar e continuar circulando no ambiente em partes menores.
@@ -188,25 +178,25 @@ export function DecompositionSection() {
                 </div>
               </div>
 
-              <div
-                className="rounded-2xl border border-white/10 bg-black/10 p-5 sm:p-6 space-y-5"
-              >
-                <div>
-                  <span
-                    className="inline-flex text-xs uppercase tracking-[0.18em] text-white/45 mb-3"
-                    style={{ fontFamily: 'var(--font-body)' }}
-                  >
-                    Depois do descarte
-                  </span>
-                    <p
-                      className="text-white/85 leading-relaxed text-sm sm:text-base"
-                      style={{ fontFamily: 'var(--font-body)' }}
-                    >
-                      {activeItem.details}
-                      <RefCitation ids={activeItem.refIds} />
-                    </p>
-                </div>
-              </div>
+               <div
+                 className="rounded-2xl border border-white/20 bg-black/30 p-5 sm:p-6 space-y-5 backdrop-blur-sm"
+               >
+                 <div>
+                   <span
+                     className="inline-flex text-xs uppercase tracking-[0.18em] text-white/70 mb-3 font-bold"
+                     style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                   >
+                     Depois do descarte
+                   </span>
+                     <p
+                       className="text-white/95 leading-relaxed text-sm sm:text-base font-medium"
+                       style={{ fontFamily: 'var(--font-body)', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
+                     >
+                       {activeItem.details}
+                       <RefCitation ids={activeItem.refIds} />
+                     </p>
+                   </div>
+                 </div>
             </div>
           </div>
         </motion.div>
