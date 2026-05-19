@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconChevronDown, IconLeaf, IconExternalLink } from '@tabler/icons-react';
+import { IconChevronDown, IconLeaf, IconExternalLink, IconClipboard } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { referenceGroups } from '../content/references';
 
@@ -84,7 +84,10 @@ export function HeroSection({ onExplore, onFeedback }: HeroSectionProps) {
           }}
         >
           <p className="font-body text-white/90 text-sm sm:text-base leading-relaxed mb-2">
-            <span className="font-bold text-emerald-400">📝 Participe da nossa pesquisa!</span>
+            <span className="font-bold text-emerald-400 inline-flex items-center gap-2">
+              <IconClipboard className="eco-icon w-5 h-5" aria-hidden="true" />
+              Participe da nossa pesquisa!
+            </span>
           </p>
           <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed mb-3">
             Sua opinião é fundamental para este trabalho acadêmico. Ao final da cartilha, você encontrará um formulário rápido para nos contar sua experiência. Sua participação ajuda a avaliar o impacto deste projeto.

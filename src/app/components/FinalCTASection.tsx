@@ -9,6 +9,7 @@ import {
   IconRotateClockwise2,
   IconShare3,
   IconExternalLink,
+  IconTarget,
 } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
@@ -122,7 +123,7 @@ export function FinalCTASection({
         >
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 flex items-center justify-center">
-              <span className="text-2xl">🎯</span>
+              <IconTarget className="eco-icon w-6 h-6 text-emerald-400" aria-hidden="true" />
             </div>
             <div className="flex-1">
               <h3 className="font-heading text-xl sm:text-2xl text-white mb-2 leading-tight font-bold">
