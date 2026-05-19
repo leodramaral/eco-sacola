@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { IconChevronDown, IconLeaf } from '@tabler/icons-react';
+import { IconChevronDown, IconLeaf, IconExternalLink } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { referenceGroups } from '../content/references';
 
@@ -8,9 +8,10 @@ const ECOBAG = `${import.meta.env.BASE_URL}images/pexels-sarah-chai-7263019.jpg`
 
 interface HeroSectionProps {
   onExplore: () => void;
+  onFeedback: () => void;
 }
 
-export function HeroSection({ onExplore }: HeroSectionProps) {
+export function HeroSection({ onExplore, onFeedback }: HeroSectionProps) {
   const totalReferences = referenceGroups.reduce((sum, group) => sum + group.refs.length, 0);
 
   return (
@@ -65,11 +66,39 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-body text-lg sm:text-xl md:text-2xl text-white/88 mb-10 max-w-2xl leading-relaxed"
+          className="font-body text-lg sm:text-xl md:text-2xl text-white/88 mb-6 max-w-2xl leading-relaxed"
         >
           Cartilha educativa sobre sacolas plásticas, sustentabilidade e impactos ambientais na
           capital do Amazonas
         </motion.p>
+
+        {/* Research invitation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="mb-8 rounded-2xl border border-emerald-500/40 p-4 sm:p-5 max-w-2xl mx-auto"
+          style={{
+            background: 'rgba(74,222,128,0.1)',
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <p className="font-body text-white/90 text-sm sm:text-base leading-relaxed mb-2">
+            <span className="font-bold text-emerald-400">📝 Participe da nossa pesquisa!</span>
+          </p>
+          <p className="font-body text-white/70 text-xs sm:text-sm leading-relaxed mb-3">
+            Sua opinião é fundamental para este trabalho acadêmico. Ao final da cartilha, você encontrará um formulário rápido para nos contar sua experiência. Sua participação ajuda a avaliar o impacto deste projeto.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={onFeedback}
+            className="font-body inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-xs sm:text-sm transition-colors cursor-pointer"
+          >
+            Ou participe agora
+            <IconExternalLink className="eco-icon w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
+          </motion.button>
+        </motion.div>
 
         {/* Divider line */}
         <motion.div

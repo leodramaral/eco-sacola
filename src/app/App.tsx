@@ -8,6 +8,7 @@ import { AlternativesSection } from './components/AlternativesSection';
 import { InitiativesSection } from './components/InitiativesSection';
 import { FinalCTASection } from './components/FinalCTASection';
 import { ReferencesSection } from './components/ReferencesSection';
+import { FeedbackFormPage } from './components/FeedbackFormPage';
 import { ReferenceModal } from './components/ReferenceModal';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import {
@@ -26,6 +27,9 @@ type AppRoute =
   | {
       view: 'references';
       refIds: number[];
+    }
+  | {
+      view: 'feedback';
     };
 
 function getCurrentRoute(): AppRoute {
@@ -43,6 +47,10 @@ function getCurrentRoute(): AppRoute {
       view: 'references',
       refIds: parseReferenceIds(search),
     };
+  }
+
+  if (path === '/feedback') {
+    return { view: 'feedback' };
   }
 
   return { view: 'home' };
@@ -161,6 +169,10 @@ export default function App() {
     navigateWithHash(buildReferencesHash(refIds));
   };
 
+  const navigateToFeedback = () => {
+    navigateWithHash('#/feedback');
+  };
+
   const handleCookieDecision = () => {
     // Stub kept here so analytics can be attached only after consent.
   };
@@ -172,11 +184,16 @@ export default function App() {
         backLabel="Voltar para home"
         highlightedRefIds={route.refIds}
       />
+    ) : route.view === 'feedback' ? (
+      <FeedbackFormPage onBack={navigateToHome} />
     ) : (
       <>
         <ProgressNav activeSection={activeSection} onNavigate={navigateToSection} />
 
-        <HeroSection onExplore={() => navigateToSection(1)} />
+        <HeroSection
+          onExplore={() => navigateToSection(1)}
+          onFeedback={navigateToFeedback}
+        />
         <ImpactsSection />
         <DecompositionSection />
         <LawSection />
@@ -185,6 +202,7 @@ export default function App() {
         <FinalCTASection
           onRestart={() => navigateToSection(0)}
           onReferences={() => navigateToReferences()}
+          onFeedback={navigateToFeedback}
           onDownloadPdf={generateABNTPDF}
         />
 

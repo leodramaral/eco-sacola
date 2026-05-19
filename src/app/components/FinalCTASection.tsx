@@ -8,6 +8,7 @@ import {
   IconHeart,
   IconRotateClockwise2,
   IconShare3,
+  IconExternalLink,
 } from '@tabler/icons-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
@@ -16,12 +17,14 @@ const FOREST_IMAGE = `${import.meta.env.BASE_URL}images/pexels-nandofreitasr-170
 interface FinalCTASectionProps {
   onRestart: () => void;
   onReferences: () => void;
+  onFeedback: () => void;
   onDownloadPdf: () => void;
 }
 
 export function FinalCTASection({
   onRestart,
   onReferences,
+  onFeedback,
   onDownloadPdf,
 }: FinalCTASectionProps) {
   const [shareState, setShareState] = useState<'idle' | 'copied' | 'shared'>('idle');
@@ -102,6 +105,43 @@ export function FinalCTASection({
             A leitura termina aqui, mas o movimento começa agora. Compartilhe a cartilha, abra as
             fontes e leve as referências com você para continuar essa conversa fora daqui.
           </p>
+        </motion.div>
+
+        {/* Research invitation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="rounded-[2rem] border border-emerald-500/40 p-6 sm:p-8 mb-8"
+          style={{
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%)',
+            backdropFilter: 'blur(12px)',
+            boxShadow: '0 16px 48px rgba(16, 185, 129, 0.15)',
+          }}
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 flex items-center justify-center">
+              <span className="text-2xl">🎯</span>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-heading text-xl sm:text-2xl text-white mb-2 leading-tight font-bold">
+                Sua opinião faz a diferença!
+              </h3>
+              <p className="font-body text-white/70 text-sm sm:text-base leading-relaxed mb-4">
+                Este é um trabalho acadêmico desenvolvido como projeto extensionista. Sua participação é essencial para avaliar o impacto da cartilha na conscientização sobre sacolas plásticas. Responda ao nosso formulário — são apenas 2 minutos!
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={onFeedback}
+                className="font-heading eco-button-gradient inline-flex items-center gap-2 px-6 py-3 rounded-full text-white cursor-pointer font-bold text-sm sm:text-base"
+              >
+                Participar da pesquisa
+                <IconExternalLink className="eco-icon w-4 h-4" aria-hidden="true" />
+              </motion.button>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.95fr] gap-4 sm:gap-5">
