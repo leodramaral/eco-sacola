@@ -56,27 +56,18 @@ export function CookieConsentBanner({ onDecision }: CookieConsentBannerProps) {
           backdropFilter: 'blur(12px)',
         }}
       >
-        <p className="font-heading text-base font-bold text-white sm:text-lg">Privacidade e cookies</p>
+        <p className="font-heading text-base font-bold text-white sm:text-lg">Sobre esse projeto</p>
         <p className="font-body mt-2 text-sm leading-relaxed text-white/80">
-          Usamos cookies para melhorar sua experiencia e entender como a cartilha e utilizada.
-          Voce pode aceitar ou recusar cookies não essenciais.
+          Este projeto é um trabalho acadêmico da disciplina Projeto Extensionista I do curso de Análise e Desenvolvimento de Sistemas (ADS) do CIESA, desenvolvido para apresentação na Semana de Tecnologia CIESA 2026. Não coletamos nenhuma informação de cookies. Este projeto é desenvolvido para fins exclusivamente acadêmicos, sem fins lucrativos.
         </p>
 
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:justify-end">
           <Button
             type="button"
-            variant="outline"
-            onClick={() => handleChoice('rejected')}
-            className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
-          >
-            Recusar
-          </Button>
-          <Button
-            type="button"
             onClick={() => handleChoice('accepted')}
             className="eco-button-gradient border-0 text-white hover:opacity-90"
           >
-            Aceitar
+            Entendi
           </Button>
         </div>
       </div>

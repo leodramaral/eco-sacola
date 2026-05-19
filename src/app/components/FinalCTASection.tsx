@@ -232,8 +232,11 @@ export function FinalCTASection({
             EcoSacola Manaus — Cartilha Digital Educativa · 2026
           </p>
           <p className="font-body text-white/20 text-xs mt-1">
+            Trabalho acadêmico da disciplina Projeto Extensionista I do curso de Análise e Desenvolvimento de Sistemas (ADS) do CIESA, apresentado na Semana de Tecnologia CIESA 2026
+          </p>
+          <p className="font-body text-white/20 text-xs mt-1">
             <span className="inline-flex items-center gap-1.5">
-              Feita com
+              Desenvolvido para fins exclusivamente acadêmicos, sem fins lucrativos · Feita com
               <IconHeart className="eco-icon eco-icon-sm text-emerald-300/80" aria-hidden="true" />
               para proteger o Amazonas
             </span>
